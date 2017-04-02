@@ -27,17 +27,21 @@ if ($senhas->qtdeSenhas() == 0){
         header("Refresh:0");
     }
 }else{
-    //pegar a senha chamada e jogar no cookie para ser mostrada sempre mesmo que atualize a pagina
-    $ultimas = $senhas->pegarUltimaSenha();
+    //MOSTRAR AS TRÊS ÚLTIMAS SENHAS CHAMADAS
+    $ultima = $senhas->pegarUltimaSenha();
+    $idUltima = $senhas->pegarIdSenha($ultima);
     $linhas = (int)$senhas->qtdeSenhas();
 
-//    if($linhas == 1){
-//        $ultimas_inner = "<p id='#ultimas-senhas'>Última senha pedida: $ultimas</p>";
-//    }else if ($linhas == 2){
-//        $ultimas_inner = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($ultimas-1) ." - ". $ultimas ."</p>";
-//    }else if ($linhas >= 3){
-//        $ultimas_inner = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($ultimas-2) ." - ". ($ultimas-1) ." - ". $ultimas ."</p>";
-//    }
+    if($linhas == 1){
+        $ultimasSenhas = "<p id='#ultimas-senhas'>Última senha pedida: $ultimas</p>";
+    }else if ($linhas == 2){
+        $ultimasSenhas = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($senhas->pegarSenhaPorId($idUltima - 1)) ." - ". $ultima ."</p>";
+    }else if ($linhas >= 3){
+        $ultimasSenhas = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($senhas->pegarSenhaPorId($idUltima - 2)) ." - ". ($senhas->pegarSenhaPorId($idUltima - 1)) ." - ". $ultima ."</p>";
+    }
+
+
+    //PEGAR A SENHA CHAMADA E JOGAR EM UM COOKIE PARA SER MOSTRADA MESMO QUE ATUALIZE A PÁGINA
     if (!isset($_COOKIE['senha_chamada'])){
         $senha_chamada_cookie = "Chame uma senha";
     }else{

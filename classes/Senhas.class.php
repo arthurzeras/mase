@@ -11,6 +11,21 @@ class Senhas extends BD{
         return $stmt->rowCount();
     }
 
+    public function pegarSenhaPorId($idSenha){
+        $result = "";
+
+        $sql = "SELECT senha FROM tabela_senhas WHERE id_senha = :senha";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":senha", $idSenha);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key) {
+            $result = $key->senha;
+        }
+
+        return $result;
+    }
+
     public function pegarUltimaSenha($tipoDeSenha = null){
         $ultima_senha = 0;
 
