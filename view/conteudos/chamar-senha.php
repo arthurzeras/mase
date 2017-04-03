@@ -17,7 +17,7 @@
         <p><?=$senha_chamada_cookie?></p>
         <div id="conteudo"></div>
 
-        <script type="text/javascript" src="../js/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="../js/scripts.js"></script>
+        <script type="text/javascript" src="../../js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../../js/scripts.js"></script>
     </body>
 </html>
