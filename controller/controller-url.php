@@ -1,5 +1,4 @@
 <?php
-include_once "classes/Url.class.php";
 
 $r = (isset($_GET['r'])) ? htmlentities(strip_tags($_GET['r'])) : "";
 
@@ -18,14 +17,25 @@ if(isset($_SESSION['atendente'])){
             break;
     }
 }else{
-    if ($r == ""){
-        route("login");
+
+    switch ($r){
+        case "":
+            route("login");
+            break;
+
+        case "admin":
+            route("admin/admin");
+            break;
+        case "admin/addatendente":
+            route("admin/addAtendente");
+            break;
     }
 }
 
+
+
 function route ($rota){
-    $escrever = new escrever();
-    $escrever->conteudo = "/conteudos/".$rota.".php";
+    $conteudo = "/conteudos/".$rota.".php";
     require "view/main.php";
 }
 

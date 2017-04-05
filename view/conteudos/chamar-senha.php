@@ -10,14 +10,14 @@
 
     </head>
     <body>
-        <form action="chamar-senha.php" method="post">
+        <form method="post">
             <input type="submit" value="Chamar Próxima Senha" name="chamar">
         </form>
         <br><br>
         <p><?=$senha_chamada_cookie?></p>
         <div id="conteudo"></div>
 
-        <script type="text/javascript" src="../../js/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="../../js/scripts.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/scripts.js"></script>
     </body>
 </html>
