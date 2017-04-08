@@ -1,14 +1,14 @@
 <?php
-require "classes/Atendentes.class.php";
+require "classes/Acesso.class.php";
 
-echo "Veio pro inicio";
+echo "Veio pro atendente";
 
-$atendentes = new Atendentes();
+$atendentes = new Acesso();
 
 //FAZER LOGOUT
 if(isset($_GET['logout']) && $_GET['logout']==true){
     $atendentes->logout();
-    header("Refresh:0");
+    header("Location: /mase/");
 }
 
 ?>

@@ -16,25 +16,27 @@ if(isset($_SESSION['atendente'])){
             route($r);
             break;
     }
-}else{
-
+}else if(isset($_SESSION['adm'])){
     switch ($r){
         case "":
-            route("login");
-            break;
-
-        case "admin":
             route("admin/admin");
             break;
         case "admin/addatendente":
             route("admin/addAtendente");
             break;
     }
+}else{
+    switch ($r){
+        case "":
+            route("login");
+            break;
+    }
+
 }
 
 
 
-function route ($rota){
+function route($rota){
     $conteudo = "/conteudos/".$rota.".php";
     require "view/main.php";
 }

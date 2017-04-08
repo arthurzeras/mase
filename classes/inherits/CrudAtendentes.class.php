@@ -1,6 +1,6 @@
 <?php
 
-require "classes/Crud.class.php";
+require_once "classes/Crud.class.php";
 
 class CrudAtendentes extends Crud{
     protected $table = "tabela_atendentes";

@@ -13,6 +13,9 @@ function getUrlVars() {
     return vars;
 }
 
-if (getUrlVars()['do'].length > 0){
-    document.getElementById("janela_alterar").className = "janela_alterar";
+//POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DE ATENDENTE
+function confirmar(id, nome) {
+    if(confirm("Deletar "+nome+"?")){
+        location.href="/mase/admin&do=del&id="+id;
+    }
 }

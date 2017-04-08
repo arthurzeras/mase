@@ -1,8 +1,8 @@
 <?php
 
-require "BD.class.php";
+require_once "BD.class.php";
 
-class Atendentes extends BD{
+class Acesso extends BD{
 
 
     //FAZER LOGIN
@@ -33,6 +33,7 @@ class Atendentes extends BD{
     //FAZER LOGOUT
     public function logout(){
         unset($_SESSION['atendente']);
+        unset($_SESSION['adm']);
         session_destroy();
     }
 }

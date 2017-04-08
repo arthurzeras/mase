@@ -1,22 +1,27 @@
 <?php
-require "classes/Atendentes.class.php";
+require "classes/Acesso.class.php";
 
-$atendente = new Atendentes();
+$atendente = new Acesso();
 $error = "";
 
 if(isset($_POST['matricula']) && isset($_POST['senha'])){
     $matricula = $_POST['matricula'];
-    $senha = md5($_POST['senha']); //CRIPTOGRAFAR SENHA
+    $senha = md5((string)$_POST['senha']); //CRIPTOGRAFAR SENHA
 
     //SE DIGITOU ALGUMA COISA ERRADA, EXIBE UMA MENSAGEM DE ERRO
     if ($atendente->login($matricula,$senha) == false){
         $error = "Algum campo está errado, tente novamente.";
 
-    //SE ESTIVER CERTO, INICIA UMA SESSÃO COM O NOME DO ATENDENTE
+    //SE ESTIVER CERTO, INICIA A SESSÃO
     }else{
-        $nomeAtendente = $atendente->login($matricula,$senha);
-        $_SESSION['atendente'] = $nomeAtendente;
+        $nome = $atendente->login($matricula, $senha);
+
+        if($nome == "admin"){
+            $_SESSION['adm'] = $nome;
+            header("Location: /mase/");
+        }else{
+            $_SESSION['atendente'] = $nome;
+            header("Location: /mase/");
+        }
     }
-
-
 }
