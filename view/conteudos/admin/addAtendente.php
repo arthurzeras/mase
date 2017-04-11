@@ -12,7 +12,7 @@
     }
 </style>
 
-<a href="/mase/admin" style="position: absolute; left: 10px;">< Voltar</a>
+<a href="/mase/" style="position: absolute; left: 10px;">< Voltar</a>
 
 <div align="center">
     <h1>Cadastrar novo atendente</h1>

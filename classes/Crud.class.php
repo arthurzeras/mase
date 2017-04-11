@@ -1,5 +1,5 @@
 <?php
-require "BD.class.php";
+require_once "BD.class.php";
 
 
 abstract class Crud extends BD{

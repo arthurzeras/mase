@@ -1,6 +1,6 @@
 <?php
 
-require "BD.class.php";
+require_once "BD.class.php";
 
 class Senhas extends BD{
 
@@ -68,6 +68,7 @@ class Senhas extends BD{
         $stmt->bindParam(":senha", $senha);
         $stmt->bindParam(":tipo", $tipoDeSenha);
 
+
         return $stmt->execute();
     }
 
@@ -92,10 +93,28 @@ class Senhas extends BD{
         return self::pegarUltimaSenha($tipoDeAtendimento);
     }
 
-    public function alterarStatus($status,$id_senha){
-        $sql = "UPDATE tabela_senhas SET status = '$status' WHERE id_senha = $id_senha";
+    public function alterarStatus($status, $id_senha, $atendente = null){
+        $sql = "UPDATE tabela_senhas SET status = :status, fk_atendente = :atendente WHERE id_senha = :id_senha";
         $stmt = BD::prepare($sql);
+        $stmt->bindParam(":status", $status);
+        $stmt->bindParam(":atendente", $atendente);
+        $stmt->bindParam(":id_senha", $id_senha);
         $stmt->execute();
+    }
+
+    public function verificarStatus($atendente){
+        $result = "";
+
+        $sql = "SELECT status FROM tabela_senhas WHERE fk_atendente = :atendente";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":atendente", $atendente);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key){
+            $result = $key->status;
+        }
+
+        return $result;
     }
 
     public function chamarTipoSenha($tipoSenha){
@@ -113,9 +132,7 @@ class Senhas extends BD{
         return $result;
     }
 
-    public function chamarSenha(){
-        $status = "";
-
+    public function chamarSenha($atendente){
         //VERIFICAR SE HÁ ALGUM PREFERENCIAL
         $sql = "SELECT senha FROM tabela_senhas WHERE status = 'Aguardando' AND tipo_senha = 'Preferencial'";
         $stmt = BD::prepare($sql);
@@ -124,32 +141,23 @@ class Senhas extends BD{
 
         //CONDIÇÕES DE CHAMADAS PARA SENHA PREFERENCIAL OU NORMAL
         if($preferencial == 0){
-            $aguardando = self::chamarTipoSenha("Normal");
+            $senha = self::chamarTipoSenha("Normal");
         }else{
-            $aguardando = self::chamarTipoSenha("Preferencial");
+            $senha = self::chamarTipoSenha("Preferencial");
         }
 
-        //PEGAR O ID DA SENHA PARA ATUALIZAR O STATUS DA SENHA ANTERIOR
-        $id_senha = self::pegarIdSenha($aguardando);
-
-        //VERIFICAR O STATUS DA SENHA
-        $id_senha_status = $id_senha -1;
-        $sql = "SELECT status FROM tabela_senhas WHERE id_senha = $id_senha_status";
-        $stmt = BD::prepare($sql);
-        $stmt->execute();
-
-        foreach ($stmt->fetchAll() as $key){
-            $status = $key->status;
-        }
-
-        //ALTERAR O STATUS DA SENHA ANTERIOR PARA FINALIZADO
-        if ($status == "Em Atendimento"){
-            self::alterarStatus('Finalizado', $id_senha_status);
-        }
+        $id_senha = self::pegarIdSenha($senha);
 
         //ALTERAR O STATUS DE: AGUARDANDO PARA: EM ATENDIMENTO
-        self::alterarStatus('Em Atendimento', $id_senha);
+        self::alterarStatus('Em Atendimento', $id_senha, $atendente);
 
-        return $aguardando;
+        return $senha;
+    }
+
+    public function finalizarAtendimento($senha){
+        $sql = "UPDATE tabela_senhas SET status = 'Finalizado' WHERE senha = :senha";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->execute();
     }
 }

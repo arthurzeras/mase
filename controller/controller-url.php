@@ -31,13 +31,10 @@ if(isset($_SESSION['atendente'])){
             route("login");
             break;
     }
-
 }
 
-
-
 function route($rota){
-    $conteudo = "/conteudos/".$rota.".php";
+    $conteudo = "view/conteudos/".$rota.".php";
     require "view/main.php";
 }
 

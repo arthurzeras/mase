@@ -1,50 +1,51 @@
 <?php
 
-require "../classes/Senhas.class.php";
+require_once "classes/Senhas.class.php";
+require_once "classes/Acesso.class.php";
+require_once "classes/inherits/Atendentes.class.php";
 
 $senhas = new Senhas();
+$acesso = new Acesso();
+$atendente = new Atendentes();
 $ultimas = 0;
-$ultimas_inner = "";
+$senha_chamada = "";
 
 
-
-//se nao houver nada no banco
-if ($senhas->qtdeSenhas() == 0){
-    $senha_chamada_cookie = "Não há senha para ser chamada.";
-
-//se existir o pedido de senha e evitar o erro de chamar senha que nao existe
-}else if (isset($_POST['chamar'])){
-    $senha_chamada = $senhas->chamarSenha();
-    $senha_chamada_id = $senhas->pegarIdSenha($senha_chamada);
-    setcookie("senha_chamada", $senha_chamada, time() + (24*3600));
-    setcookie("senha_chamada_id", $senha_chamada_id, time() + (24*3600));
-
-    if($senha_chamada === null){
-        $senhas->alterarStatus("Finalizado",$_COOKIE['senha_chamada_id']);
-        $senha_chamada_cookie = "Não há mais senha para ser chamada";
+if(isset($_SESSION['atendente'])){
+    //se nao houver nada no banco
+    if ($senhas->qtdeSenhas() == 0){
+        $mensagem = "Não há senha para ser chamada.";
+    }else if(isset($_POST['chamar'])){
+        if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) != "Em Atendimento") {
+            $senha_chamada = $senhas->chamarSenha($atendente->pegarId($_SESSION['atendente']));
+            $_SESSION['senha_chamada'] = $senha_chamada;
+            $mensagem = "Você está atendendo a senha: ".$_SESSION['senha_chamada'];
+        }else{
+            $mensagem = "Você já está atendendo uma senha. Finalize este atendimento";
+        }
+    }else if(isset($_POST['finalizar'])){
+        //FINALIZAR O ATENDIMENTO
+        $senhas->finalizarAtendimento($_SESSION['senha_chamada']);
+        $mensagem = "Chame uma senha";
     }else{
-        $senha_chamada_cookie = "Você está atendendo a senha: ".$_COOKIE['senha_chamada'];
-        header("Refresh:0");
-    }
-}else{
-    //MOSTRAR AS TRÊS ÚLTIMAS SENHAS CHAMADAS
-    $ultima = $senhas->pegarUltimaSenha();
-    $idUltima = $senhas->pegarIdSenha($ultima);
-    $linhas = (int)$senhas->qtdeSenhas();
-
-    if($linhas == 1){
-        $ultimasSenhas = "<p id='#ultimas-senhas'>Última senha pedida: $ultimas</p>";
-    }else if ($linhas == 2){
-        $ultimasSenhas = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($senhas->pegarSenhaPorId($idUltima - 1)) ." - ". $ultima ."</p>";
-    }else if ($linhas >= 3){
-        $ultimasSenhas = "<p id='#ultimas-senhas'>Últimas senhas pedidas: ". ($senhas->pegarSenhaPorId($idUltima - 2)) ." - ". ($senhas->pegarSenhaPorId($idUltima - 1)) ." - ". $ultima ."</p>";
+        //PEGAR A SENHA CHAMADA E JOGAR NA SESSÃO PARA SER MOSTRADA MESMO QUE ATUALIZE A PÁGINA
+        if (!isset($_SESSION['senha_chamada'])){
+            $mensagem = "Chame uma senha";
+        }else{
+            $mensagem = "Você está atendendo a senha: ".$_SESSION['senha_chamada'];
+        }
     }
 
+}
 
-    //PEGAR A SENHA CHAMADA E JOGAR EM UM COOKIE PARA SER MOSTRADA MESMO QUE ATUALIZE A PÁGINA
-    if (!isset($_COOKIE['senha_chamada'])){
-        $senha_chamada_cookie = "Chame uma senha";
+
+//FAZER LOGOUT
+if(isset($_GET['logout']) && $_GET['logout'] == true){
+    if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) == "Em Atendimento"){
+        $mensagem = "Termine o atendimento antes de sair do sistema.";
     }else{
-        $senha_chamada_cookie = "Você está atendendo a senha: ".$_COOKIE['senha_chamada'];
+        $acesso->logout();
+        header("Location: /mase/");
+        unset($_SESSION['senha_chamada']);
     }
 }

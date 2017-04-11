@@ -1,9 +1,9 @@
 <?php
-require "classes/inherits/CrudAtendentes.class.php";
+require "classes/inherits/Atendentes.class.php";
 require "classes/Acesso.class.php";
 $msg = "";
 $result = "";
-$atendente = new CrudAtendentes();
+$atendente = new Atendentes();
 $sair = new Acesso();
 
 if(isset($_SESSION['adm'])) {

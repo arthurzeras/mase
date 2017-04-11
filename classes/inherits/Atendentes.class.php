@@ -2,7 +2,7 @@
 
 require_once "classes/Crud.class.php";
 
-class CrudAtendentes extends Crud{
+class Atendentes extends Crud{
     protected $table = "tabela_atendentes";
     protected $id = "id_atendente";
 
@@ -48,6 +48,21 @@ class CrudAtendentes extends Crud{
         $stmt->bindParam(":nome", $this->nome);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
+    }
+
+    public function pegarId($nome){
+        $return = "";
+
+        $sql = "SELECT $this->id FROM $this->table WHERE nome_atendente = :nome";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":nome",$nome);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key){
+            $return = $key->id_atendente;
+        }
+
+        return $return;
     }
 
 }

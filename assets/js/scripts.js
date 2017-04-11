@@ -1,7 +1,9 @@
+// alert("to aqui");
+
 //ATUALIZA O MÉTODO DE TRAZER A PÁGINA QUE CARREGA AS ÚTIMAS SENHAS CHAMADAS
 window.setInterval(carrega, 1000);
 function carrega() {
-    $('#conteudo').load("ultimas-senhas-include.php");
+    $('#conteudo').load("view/conteudos/ultimas-senhas-include.php");
 }
 
 //SUBIR A JANELA POPUP DE ALTERAR DADOS DO ATENDENTE
@@ -19,3 +21,4 @@ function confirmar(id, nome) {
         location.href="/mase/admin&do=del&id="+id;
     }
 }
+

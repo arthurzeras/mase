@@ -1,6 +1,6 @@
 <?php
 
-require "../classes/Senhas.class.php";
+require "../../classes/Senhas.class.php";
 
 $senhas = new Senhas();
 
