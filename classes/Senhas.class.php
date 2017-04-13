@@ -102,19 +102,29 @@ class Senhas extends BD{
         $stmt->execute();
     }
 
-    public function verificarStatus($atendente){
+    public function verificarStatus($atendente = null){
         $result = "";
 
-        $sql = "SELECT status FROM tabela_senhas WHERE fk_atendente = :atendente";
-        $stmt = BD::prepare($sql);
-        $stmt->bindParam(":atendente", $atendente);
-        $stmt->execute();
+        if($atendente != null){
+            $sql = "SELECT status FROM tabela_senhas WHERE fk_atendente = :atendente";
+            $stmt = BD::prepare($sql);
+            $stmt->bindParam(":atendente", $atendente);
+            $stmt->execute();
 
-        foreach ($stmt->fetchAll() as $key){
-            $result = $key->status;
+            foreach ($stmt->fetchAll() as $key){
+                $result = $key->status;
+            }
+
+            return $result;
+
+        }else{
+            $sql = "SELECT status FROM tabela_senhas";
+            $stmt = BD::prepare($sql);
+            $stmt->bindParam(":atendente", $atendente);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
         }
-
-        return $result;
     }
 
     public function chamarTipoSenha($tipoSenha){

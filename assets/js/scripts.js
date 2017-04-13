@@ -1,5 +1,3 @@
-// alert("to aqui");
-
 //ATUALIZA O MÉTODO DE TRAZER A PÁGINA QUE CARREGA AS ÚTIMAS SENHAS CHAMADAS
 window.setInterval(carrega, 1000);
 function carrega() {
@@ -22,3 +20,5 @@ function confirmar(id, nome) {
     }
 }
 
+var senha_chamada = getSenha();
+document.getElementById("senha_chamada").innerHTML = senha_chamada;

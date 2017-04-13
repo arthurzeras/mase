@@ -30,6 +30,9 @@ if(isset($_SESSION['atendente'])){
         case "":
             route("login");
             break;
+        case "senhas":
+            route("visualizadorSenhas");
+            break;
     }
 }
 
