@@ -8,7 +8,7 @@
 <div align="center">
     <p><?=$mensagem?></p>
     <form method="post">
-        <input type="submit" value="Chamar Próxima Senha" name="chamar">
+        <?=$botao?>
         <input type="submit" value="Finalizar atendimento" name="finalizar">
     </form>
     <div id="conteudo"></div>

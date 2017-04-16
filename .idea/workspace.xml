@@ -21,43 +21,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="visualizadorSenhas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php">
+      <file leaf-file-name="controller-chamar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/controller-chamar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+            <state relative-caret-position="580">
+              <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Atendentes.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/inherits/Atendentes.class.php">
+      <file leaf-file-name="scr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/scr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="60">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Senhas.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/Senhas.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="186" column="61" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="61" />
               <folding>
-                <element signature="n#setMatricula#0;n#Atendentes#0;n#!!top" expanded="false" />
-                <element signature="n#getMatricula#0;n#Atendentes#0;n#!!top" expanded="false" />
-                <element signature="n#setNome#0;n#Atendentes#0;n#!!top" expanded="false" />
-                <element signature="n#getNome#0;n#Atendentes#0;n#!!top" expanded="false" />
-                <element signature="n#setSenha#0;n#Atendentes#0;n#!!top" expanded="false" />
-                <marker date="1491841957399" expanded="true" signature="652:756" ph="INSERT INTO ${$this-&gt;table}... " />
-                <marker date="1491841957399" expanded="true" signature="1055:1131" ph="UPDATE ${$th... " />
-                <marker date="1491841957399" expanded="true" signature="1055:1132" ph="UPDATE ${$th... " />
-                <marker date="1491841957399" expanded="true" signature="1055:1147" ph="UPDATE ${$th... " />
-                <marker date="1491841957399" expanded="true" signature="1460:1482" ph="SELECT ${$th... ${$thu}" />
-                <marker date="1491841957399" expanded="true" signature="1460:1523" ph="SELECT ${$th... ${$this-&gt;table}" />
+                <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+                <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+                <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+                <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+                <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+                <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller-admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/controller-admin.php">
+      <file leaf-file-name="visualizadorSenhas.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="60">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="senhas-chamadas-include.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/conteudos/senhas-chamadas-include.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,76 +107,9 @@
       <file leaf-file-name="inicio.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/conteudos/inicio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state relative-caret-position="200">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controller-chamar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/controller-chamar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Senhas.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/Senhas.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="132" column="120" selection-start-line="132" selection-start-column="99" selection-end-line="132" selection-end-column="120" />
-              <folding>
-                <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-                <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-                <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-                <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-                <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-                <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-                <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Acesso.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Acesso.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-              <folding>
-                <marker date="1491681046876" expanded="true" signature="226:328" ph="SELECT nome_... tabela_atendentes" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gerador.php" />
         <option value="$PROJECT_DIR$/classes/config.php" />
         <option value="$PROJECT_DIR$/classes/bd.class.php" />
         <option value="$PROJECT_DIR$/paginas/pedir-senha" />
@@ -173,7 +146,6 @@
         <option value="$PROJECT_DIR$/view/ultimas-senhas-include.php" />
         <option value="$PROJECT_DIR$/classes/atendentes.class.php" />
         <option value="$PROJECT_DIR$/controller/url.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/conteudos/login.php" />
         <option value="$PROJECT_DIR$/view/conteudos/admin/index.php" />
         <option value="$PROJECT_DIR$/view/conteudos/admin.php" />
@@ -183,7 +155,6 @@
         <option value="$PROJECT_DIR$/classes/Login.class.php" />
         <option value="$PROJECT_DIR$/classes/Acesso.class.php" />
         <option value="$PROJECT_DIR$/view/conteudos/admin/admin.php" />
-        <option value="$PROJECT_DIR$/controller/controller-login.php" />
         <option value="$PROJECT_DIR$/view/conteudos/admin/addAtendente.php" />
         <option value="$PROJECT_DIR$/view/conteudos/chamar-senha.php" />
         <option value="$PROJECT_DIR$/view/conteudos/pedir-senha.php" />
@@ -194,14 +165,21 @@
         <option value="$PROJECT_DIR$/controller/controller-admin.php" />
         <option value="$PROJECT_DIR$/classes/inherits/Atendentes.class.php" />
         <option value="$PROJECT_DIR$/controller/teste.php" />
-        <option value="$PROJECT_DIR$/view/conteudos/ultimas-senhas-include.php" />
-        <option value="$PROJECT_DIR$/classes/Senhas.class.php" />
         <option value="$PROJECT_DIR$/controller/controller-url.php" />
-        <option value="$PROJECT_DIR$/view/main.php" />
+        <option value="$PROJECT_DIR$/controller/controller-login.php" />
         <option value="$PROJECT_DIR$/view/conteudos/inicio.php" />
-        <option value="$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php" />
-        <option value="$PROJECT_DIR$/controller/controller-chamar.php" />
+        <option value="$PROJECT_DIR$/view/conteudos/includes/ultimas-senhas-include.php" />
+        <option value="$PROJECT_DIR$/view/conteudos/ultimas-senhas-include.php" />
+        <option value="$PROJECT_DIR$/view/conteudos/senhas_chamadas_include.php" />
         <option value="$PROJECT_DIR$/assets/js/scripts.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/view/main.php" />
+        <option value="$PROJECT_DIR$/assets/js/js.js" />
+        <option value="$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php" />
+        <option value="$PROJECT_DIR$/classes/Senhas.class.php" />
+        <option value="$PROJECT_DIR$/controller/controller-chamar.php" />
+        <option value="$PROJECT_DIR$/assets/js/jss.js" />
+        <option value="$PROJECT_DIR$/view/conteudos/senhas-chamadas-include.php" />
       </list>
     </option>
   </component>
@@ -217,6 +195,22 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -244,7 +238,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,22 +352,39 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mase" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../helmert-novo" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mase\view\conteudos\includes" />
       <recent name="C:\xampp\htdocs\mase\view\conteudos" />
       <recent name="C:\xampp\htdocs\mase\assets" />
       <recent name="C:\xampp\htdocs\mase\view" />
       <recent name="C:\xampp\htdocs\mase\classes\" />
-      <recent name="C:\xampp\htdocs\mase\controller" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.mase">
@@ -463,22 +473,22 @@
       <workItem from="1490972607583" duration="18670000" />
       <workItem from="1491152865437" duration="5511000" />
       <workItem from="1491225346251" duration="409000" />
-      <workItem from="1491242103948" duration="90451000" />
+      <workItem from="1491242103948" duration="115285000" />
+      <workItem from="1492279158682" duration="20041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168258000" />
+    <option name="totallyTimeSpent" value="213133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18228404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1749634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -489,6 +499,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -511,14 +522,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/conteudos/pedir-senha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/BD.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -556,30 +559,38 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-            <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-            <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-            <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+            <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
           </folding>
         </state>
       </provider>
@@ -613,30 +624,38 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-            <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-            <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-            <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+            <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
           </folding>
         </state>
       </provider>
@@ -670,30 +689,38 @@
         <state relative-caret-position="540">
           <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
-            <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-            <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-            <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-            <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+            <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
           </folding>
         </state>
       </provider>
@@ -727,30 +754,38 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-            <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-            <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-            <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+            <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
           </folding>
         </state>
       </provider>
@@ -773,30 +808,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tadsa.html" />
     <entry file="file://$PROJECT_DIR$/js/prototype.js" />
-    <entry file="file://$PROJECT_DIR$/classes/Crud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Url.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/conteudos/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Crud.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Url.class.php" />
+    <entry file="file://$PROJECT_DIR$/view/conteudos/admin.php" />
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -813,19 +827,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/conteudos/admin/admLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/view/conteudos/admin/admLogin.php" />
     <entry file="file://$PROJECT_DIR$/view/conteudos/admin/addAtendente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,14 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/conteudos/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -853,34 +851,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/.php" />
     <entry file="file://$PROJECT_DIR$/view/conteudos/admin/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-pedir.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -903,46 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/teste.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/conteudos/ultimas-senhas-include.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="151" selection-start-line="14" selection-start-column="151" selection-end-line="14" selection-end-column="151" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="75" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-url.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/teste.php" />
     <entry file="file://$PROJECT_DIR$/classes/BD.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -951,9 +887,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/conteudos/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Acesso.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="740">
           <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding>
             <marker date="1491681046876" expanded="true" signature="226:328" ph="SELECT nome_... tabela_atendentes" />
@@ -961,25 +913,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-admin.php">
+    <entry file="file://$PROJECT_DIR$/controller/controller-pedir.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state relative-caret-position="40">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php">
+    <entry file="file://$PROJECT_DIR$/controller/controller-login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="180">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/inherits/Atendentes.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="360">
           <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding>
             <element signature="n#setMatricula#0;n#Atendentes#0;n#!!top" expanded="false" />
@@ -997,60 +949,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller-url.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/conteudos/senhas-pedidas-include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/conteudos/inicio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="200">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-chamar.php">
+    <entry file="file://$PROJECT_DIR$/view/conteudos/visualizadorSenhas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Senhas.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="132" column="120" selection-start-line="132" selection-start-column="99" selection-end-line="132" selection-end-column="120" />
+        <state relative-caret-position="243">
+          <caret line="186" column="61" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="61" />
           <folding>
-            <marker date="1491930896648" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
-            <marker date="1491930896648" expanded="true" signature="2911:2997" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="2911:3006" ph="UPDATE tabel... " />
-            <marker date="1491930896648" expanded="true" signature="3356:3420" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="3717:3749" ph="SELECT statu... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4021:4126" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4487" ph="SELECT senha... tablea" />
-            <marker date="1491930896648" expanded="true" signature="4466:4512" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4557" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="4466:4901" ph="SELECT senha... tabela_senhas" />
-            <marker date="1491930896648" expanded="true" signature="5182:5206" ph="UPDATE senha... " />
-            <marker date="1491930896648" expanded="true" signature="5182:5249" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="113:144" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="335:390" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="769:887" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:858" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="819:886" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="960:1084" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1049" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1010:1083" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1148:1238" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1198:1237" ph="SELECT MAX(i... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1577" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1528:1583" ph="SELECT id_se... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="1882:1970" ph="INSERT INTO tabela_senhas... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3026" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="2918:3035" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="3427:3491" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="3788:3820" ph="SELECT statu... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4336:4441" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4809" ph="SELECT senha... tablea" />
+            <marker date="1492305267245" expanded="true" signature="4788:4834" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:4879" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="4788:5223" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="5513:5537" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5554" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5558" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5572" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5513:5579" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5850" ph="UPDATE senha... " />
+            <marker date="1492305267245" expanded="true" signature="5826:5893" ph="UPDATE tabel... " />
+            <marker date="1492305267245" expanded="true" signature="6090:6188" ph="SELECT senha... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6144:6187" ph="SELECT MAX(h... tabela_senhas" />
+            <marker date="1492305267245" expanded="true" signature="6453:6512" ph="SELECT hora_... tabela_senhas" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller-chamar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/scr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/conteudos/senhas-chamadas-include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

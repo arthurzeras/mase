@@ -1,38 +1,46 @@
 <?php
-
 require_once "classes/Senhas.class.php";
 require_once "classes/Acesso.class.php";
 require_once "classes/inherits/Atendentes.class.php";
-
 $senhas = new Senhas();
 $acesso = new Acesso();
 $atendente = new Atendentes();
 $senha_chamada = "";
+$botao = "<input type='submit' value='Chamar próxima senha' name='chamar'>";
 
 if(isset($_SESSION['atendente'])){
+
     //SE NAO HOUVER SENHAS NO BANCO DE DADOS
     if ($senhas->qtdeSenhas() == 0){
         $mensagem = "Não há senha para ser chamada.";
+
+
+    //SE O ATENDENTE CLICOU NO BOTAO DE CHAMAR SENHA
     }else if(isset($_POST['chamar'])){
-        //VERIFICA SE HÁ SENHA PARA SER CHAMADA
-        $status_senha = $senhas->verificarStatus();
-        $array_status = array();
-        $i = 0;
-        foreach ($status_senha as $key => $value){
-            $array_status[$i] = $value->status;
-            $i++;
-        }
-        if(!in_array("Aguardando",$array_status)){
+        $botao = "<input type='submit' value='Chamar senha novamente' name='chamar_novamente'>";
+
+        //SE NÃO HÁ NENHUMA SENHA COM STATUS AGUARDANDO
+        if(!in_array("Aguardando",$senhas->verificarStatus())){
             $mensagem = "Não há senha para ser chamada.";
+
+        //SE EXISTIR SENHAS COM STATUS DIFERENTE DE EM ATENDIMENTO ELE CHAMA A SENHA
         }else if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) != "Em Atendimento") {
-            $senha_chamada = $senhas->chamarSenha($atendente->pegarId($_SESSION['atendente']));
+            $hora_atual = date("H:i:s");
+            $senha_chamada = $senhas->chamarSenha($atendente->pegarId($_SESSION['atendente']), $hora_atual);
             $_SESSION['senha_chamada'] = $senha_chamada;
             $mensagem = "Você chamou a senha: ".$_SESSION['senha_chamada'];
-            echo "<script>document.onclick(setSenha(2);</script>";
+
+        //
         }else{
-            echo "<script>alert('Você já está atendendo uma senha. Finalize este atendimento');</script>";
+            $botao = "<input type='submit' value='Chamar ".$_SESSION['senha_chamada']." novamente' name='chamar_novamente'>";
             $mensagem = "Você está atendendo a senha: ".$_SESSION['senha_chamada'];
         }
+    }else if(isset($_POST['chamar_novamente'])){
+        $hora_atual = date("H:i:s");
+        $senha_chamada = $senhas->chamarNovamente($_SESSION['senha_chamada'], $hora_atual);
+        $_SESSION['senha_chamada'] = $senha_chamada;
+        $botao = "<input type='submit' value='Chamar ".$_SESSION['senha_chamada']." novamente' name='chamar_novamente'>";
+        $mensagem = "Você chamou a senha: ".$_SESSION['senha_chamada'];
     }else if(isset($_POST['finalizar'])){
         //FINALIZAR O ATENDIMENTO
         $senhas->finalizarAtendimento($_SESSION['senha_chamada']);
@@ -46,7 +54,6 @@ if(isset($_SESSION['atendente'])){
         }
     }
 }
-
 //FAZER LOGOUT
 if(isset($_GET['logout']) && $_GET['logout'] == true){
     if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) == "Em Atendimento"){

@@ -93,11 +93,12 @@ class Senhas extends BD{
         return self::pegarUltimaSenha($tipoDeAtendimento);
     }
 
-    public function alterarStatus($status, $id_senha, $atendente = null){
-        $sql = "UPDATE tabela_senhas SET status = :status, fk_atendente = :atendente WHERE id_senha = :id_senha";
+    public function alterarStatus($status, $id_senha, $atendente = null, $hora){
+        $sql = "UPDATE tabela_senhas SET status = :status, fk_atendente = :atendente, hora_chamada = :hora WHERE id_senha = :id_senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":status", $status);
         $stmt->bindParam(":atendente", $atendente);
+        $stmt->bindParam(":hora", $hora);
         $stmt->bindParam(":id_senha", $id_senha);
         $stmt->execute();
     }
@@ -123,7 +124,15 @@ class Senhas extends BD{
             $stmt->bindParam(":atendente", $atendente);
             $stmt->execute();
 
-            return $stmt->fetchAll();
+            $status_senha = $stmt->fetchAll();
+            $array_status = array();
+            $i = 0;
+            foreach ($status_senha as $key => $value){
+                $array_status[$i] = $value->status;
+                $i++;
+            }
+
+            return $array_status;
         }
     }
 
@@ -142,7 +151,7 @@ class Senhas extends BD{
         return $result;
     }
 
-    public function chamarSenha($atendente){
+    public function chamarSenha($atendente, $hora){
         //VERIFICAR SE HÁ ALGUM PREFERENCIAL
         $sql = "SELECT senha FROM tabela_senhas WHERE status = 'Aguardando' AND tipo_senha = 'Preferencial'";
         $stmt = BD::prepare($sql);
@@ -159,7 +168,17 @@ class Senhas extends BD{
         $id_senha = self::pegarIdSenha($senha);
 
         //ALTERAR O STATUS DE: AGUARDANDO PARA: EM ATENDIMENTO
-        self::alterarStatus('Em Atendimento', $id_senha, $atendente);
+        self::alterarStatus('Em Atendimento', $id_senha, $atendente, $hora);
+
+        return $senha;
+    }
+
+    public function chamarNovamente($senha, $hora){
+        $sql = "UPDATE tabela_senhas SET hora_chamada = :hora WHERE senha = :senha";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":hora", $hora);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->execute();
 
         return $senha;
     }
@@ -169,5 +188,34 @@ class Senhas extends BD{
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();
+    }
+
+    public function mostrarSenhaChamada(){
+        $result = "";
+
+        $sql = "SELECT senha FROM tabela_senhas WHERE hora_chamada = (SELECT MAX(hora_chamada) FROM tabela_senhas)";
+        $stmt = BD::prepare($sql);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key){
+            $result = $key->senha;
+        }
+
+        return $result;
+    }
+
+    public function pegarHora($senha){
+        $result = "";
+
+        $sql = "SELECT hora_chamada FROM tabela_senhas WHERE senha = :senha";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key){
+            $result = $key->hora_chamada;
+        }
+
+        return $result;
     }
 }

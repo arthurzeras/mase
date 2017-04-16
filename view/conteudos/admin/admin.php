@@ -2,7 +2,7 @@
 include_once "controller/controller-admin.php";
 ?>
 
-<script src="assets/js/scripts.js"></script>
+<script src="assets/js/scr.js"></script>
 <style>
     input{
         width:50%;

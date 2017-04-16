@@ -15,6 +15,10 @@ if(isset($_SESSION['atendente'])){
         case "sobre":
             route($r);
             break;
+
+        case "senhas":
+            route("visualizadorSenhas");
+            break;
     }
 }else if(isset($_SESSION['adm'])){
     switch ($r){
