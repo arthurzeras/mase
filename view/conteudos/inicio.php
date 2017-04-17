@@ -9,7 +9,30 @@
     <p><?=$mensagem?></p>
     <form method="post">
         <?=$botao?>
-        <input type="submit" value="Finalizar atendimento" name="finalizar">
     </form>
+    <a href="/mase/&finalizar=ok">Finalizar atendimento</a>
     <div id="conteudo"></div>
 </div>
+
+<?php if(isset($_GET['finalizar'])){ ?>
+    <div id="finalizar_senha">
+        <h2>Finalizar atendimento</h2>
+        <p>Selecione o tipo de atendimento realizado.</p>
+        <form method="post">
+    <?php
+        if($tipoAtendimento->pegarTudoLinhas() > 0){ ?>
+            <select>
+    <?php
+            foreach($tipoAtendimento->pegarTudo() as $key => $value){
+    ?>
+                <option value="<?=$value->id_tipo_atendimento?>"><?=$value->nome_tipo?></option>
+            <?php } ?>
+            </select>
+        <?php }else{?>
+        <p>Não há nenhum tipo de atendimento para ser escolhido</p>
+            <?php }?>
+            <input type="submit" value="Finalizar" name="finalizar">
+            <a href="/mase/">Cancelar</a>
+        </form>
+    </div>
+<?php } ?>

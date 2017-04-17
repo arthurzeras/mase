@@ -34,4 +34,12 @@ abstract class Crud extends BD{
 
         return true;
     }
+
+    public function pegarTudoLinhas(){
+        $sql = "SELECT * FROM $this->table";
+        $stmt = BD::prepare($sql);
+        $stmt->execute();
+
+        return $stmt->rowCount();
+    }
 }

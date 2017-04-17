@@ -1,14 +1,16 @@
 <?php
-require "config.php";
-
 
 class BD{
     private static $instance;
+    private static $bd = "Senhas";
+    private static $host = "localhost";
+    private static $user = "root";
+    private static $pass = "";
 
     public static function getInstance(){
         if(!isset(self::$instance)){
             try{
-                self::$instance = new PDO('mysql:host='.HOST.';dbname='.BD,USER,PASS);
+                self::$instance = new PDO('mysql:host='.self::$host.';dbname='.self::$bd,self::$user,self::$pass);
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             }catch (PDOException $e){

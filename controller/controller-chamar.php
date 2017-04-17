@@ -1,11 +1,15 @@
 <?php
 require_once "classes/Senhas.class.php";
 require_once "classes/Acesso.class.php";
+require_once "classes/inherits/TipoAtendimento.class.php";
 require_once "classes/inherits/Atendentes.class.php";
+
 $senhas = new Senhas();
 $acesso = new Acesso();
 $atendente = new Atendentes();
+$tipoAtendimento = new TipoAtendimento();
 $senha_chamada = "";
+$mensagem = "";
 $botao = "<input type='submit' value='Chamar próxima senha' name='chamar'>";
 
 if(isset($_SESSION['atendente'])){
@@ -22,6 +26,7 @@ if(isset($_SESSION['atendente'])){
         //SE NÃO HÁ NENHUMA SENHA COM STATUS AGUARDANDO
         if(!in_array("Aguardando",$senhas->verificarStatus())){
             $mensagem = "Não há senha para ser chamada.";
+            $botao = "<input type='submit' value='Chamar próxima senha' name='chamar'>";
 
         //SE EXISTIR SENHAS COM STATUS DIFERENTE DE EM ATENDIMENTO ELE CHAMA A SENHA
         }else if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) != "Em Atendimento") {
@@ -42,6 +47,7 @@ if(isset($_SESSION['atendente'])){
         $botao = "<input type='submit' value='Chamar ".$_SESSION['senha_chamada']." novamente' name='chamar_novamente'>";
         $mensagem = "Você chamou a senha: ".$_SESSION['senha_chamada'];
     }else if(isset($_POST['finalizar'])){
+
         //FINALIZAR O ATENDIMENTO
         $senhas->finalizarAtendimento($_SESSION['senha_chamada']);
         $mensagem = "Chame uma senha";

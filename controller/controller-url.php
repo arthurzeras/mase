@@ -8,14 +8,6 @@ if(isset($_SESSION['atendente'])){
             route("inicio");
             break;
 
-        case "portfolio":
-            route($r);
-            break;
-
-        case "sobre":
-            route($r);
-            break;
-
         case "senhas":
             route("visualizadorSenhas");
             break;
@@ -23,10 +15,19 @@ if(isset($_SESSION['atendente'])){
 }else if(isset($_SESSION['adm'])){
     switch ($r){
         case "":
-            route("admin/admin");
+            route("admin/index");
+            break;
+        case "admin/tipoAtendimento";
+            route("admin/tipoAtendimento");
+            break;
+        case "admin/atendentes":
+            route("admin/atendentes");
             break;
         case "admin/addatendente":
             route("admin/addAtendente");
+            break;
+        case "senhas":
+            route("visualizadorSenhas");
             break;
     }
 }else{

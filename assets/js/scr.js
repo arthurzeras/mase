@@ -10,18 +10,18 @@ function senhaChamada() {
     $('#senha_chamada').load("view/conteudos/senhas-chamadas-include.php");
 }
 
-//SUBIR A JANELA POPUP DE ALTERAR DADOS DO ATENDENTE
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
 //POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DE ATENDENTE
-function confirmar(id, nome) {
-    if (confirm("Deletar " + nome + "?")) {
-        location.href = "/mase/admin&do=del&id=" + id;
+function confirmar(pagina, id, nome) {
+    switch (pagina){
+        case "tipo_atendimento":
+            if (confirm("Deletar "+ nome +"?")){
+                location.href = "/mase/admin/tipoAtendimento&pagina="+pagina+"&do=del&id=" + id;
+            }
+            break;
+        case "atendentes":
+            if (confirm("Deletar "+ nome +"?")){
+                location.href = "/mase/admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
+            }
+            break;
     }
 }
