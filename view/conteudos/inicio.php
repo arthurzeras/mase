@@ -1,6 +1,11 @@
 <?php /*Página de atendente - chamar senha*/
     require_once "controller/controller-chamar.php";
     //TER TAMBEM A CONTAGEM DE QUANTAS SENHAS FORAM CHAMADAS NO DIA
+$hora1 = new DateTime(date("H:i:s"));
+$hora2 = new DateTime("19:22:12");
+
+$hr = $hora2->diff($hora1)->format('%H:%I:%S');
+echo date("H:i:s");
 ?>
 
 <a href="?logout=true">Sair</a>
@@ -21,7 +26,9 @@
         <form method="post">
     <?php
         if($tipoAtendimento->pegarTudoLinhas() > 0){ ?>
-            <select>
+            <input type="hidden" name="atendente" value="<?=$atendente->pegarId($_SESSION['atendente'])?>">
+            <input type="hidden" name="data" value="<?=date("Y-m-d")?>">
+            <select name="tipo_atendimento" required>
     <?php
             foreach($tipoAtendimento->pegarTudo() as $key => $value){
     ?>

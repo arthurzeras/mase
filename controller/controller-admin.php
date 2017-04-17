@@ -1,8 +1,9 @@
 <?php
 require_once "classes/inherits/Atendentes.class.php";
 require_once "classes/inherits/TipoAtendimento.class.php";
+require_once "classes/inherits/Atendimentos.class.php";
 require_once "classes/Acesso.class.php";
-require_once "classes/Atendimentos.class.php";
+
 $msg = "";
 $result = "";
 $atendente = new Atendentes();
@@ -28,9 +29,6 @@ if(isset($_SESSION['adm'])) {
     if(isset($_POST['tipo_atendimento'])){
         $tipo = $_POST['tipo_atendimento'];
         $tipoAtendimento->setNomeAtendimento($tipo);
-
-        //INSERIR O TIPO DE ATENDIMENTO COMO COLUNA NA TABELA ATENDIMENTOS
-        $atendimento->inserirColuna($atendimento->formatarVariavel($tipo));
 
         //CADASTRAR O TIPO NA TABELA TIPO ATENDIMENTO
         if($tipoAtendimento->inserir() == true){
