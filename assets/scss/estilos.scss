@@ -1,0 +1,33 @@
+@import "bootstrap/bootstrap/mixins";
+@import "bootstrap/bootstrap/variables";
+@import "includes/variaveis";
+
+@font-face {
+  font-family: 'lato';
+  src: url("../fonts/lato_light.ttf");
+}
+
+*{
+  font-family: 'lato', sans-serif;
+  color: $preto;
+}
+
+body{
+  background-color: $lighter;
+}
+
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+input{
+  &:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+@import "includes/login";

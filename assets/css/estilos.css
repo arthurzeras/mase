@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'lato';
+  src: url("../fonts/lato_light.ttf"); }
+* {
+  font-family: 'lato', sans-serif;
+  color: #202020; }
+
+body {
+  background-color: #a5c8de; }
+
+a:hover {
+  text-decoration: none; }
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none; }
+
+#conteudo_login {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 992px) {
+    #conteudo_login {
+      float: left;
+      width: 100%; } }
+  #conteudo_login #imagem_logo {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30px; }
+    @media (min-width: 992px) {
+      #conteudo_login #imagem_logo {
+        float: left;
+        width: 25%; } }
+    @media (min-width: 992px) {
+      #conteudo_login #imagem_logo {
+        margin-left: 4.16667%; } }
+  #conteudo_login #janela_login {
+    width: 400px;
+    height: 400px;
+    transform: translateY(30%);
+    background-color: #eee;
+    border: solid 2px #4b7191; }
+    #conteudo_login #janela_login h1 {
+      text-align: center;
+      font-size: 40pt;
+      margin: 10px 0;
+      color: #202020; }
+    #conteudo_login #janela_login #linha_login {
+      background-color: #202020;
+      height: 2px;
+      display: block;
+      width: 120px;
+      transform: translateY(-10px);
+      margin-left: 220px; }
+    #conteudo_login #janela_login #formulario_login {
+      margin: 10px 30px 30px 30px; }
+      #conteudo_login #janela_login #formulario_login .campos_login {
+        width: 100%;
+        height: 50px;
+        font-size: 18pt;
+        margin-top: 20px;
+        border: none;
+        background-color: transparent; }
+      #conteudo_login #janela_login #formulario_login .placeholder {
+        transform: translate(1px, -43px);
+        display: block;
+        position: absolute;
+        transition: .3s;
+        font-size: 18pt;
+        color: #7d7d7d;
+        font-weight: 100;
+        cursor: text; }
+      #conteudo_login #janela_login #formulario_login #matricula:focus ~ .matricula, #conteudo_login #janela_login #formulario_login #senha:focus ~ .senha, #conteudo_login #janela_login #formulario_login .active {
+        transform: translate(1px, -65px);
+        z-index: 1;
+        font-size: 12pt;
+        color: #202020; }
+      #conteudo_login #janela_login #formulario_login .input_login:focus ~ .limpar {
+        opacity: 1; }
+      #conteudo_login #janela_login #formulario_login .input_login {
+        border-bottom: solid 1px #4b7191; }
+      #conteudo_login #janela_login #formulario_login input[type="number"]::-webkit-outer-spin-button, #conteudo_login #janela_login #formulario_login input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      #conteudo_login #janela_login #formulario_login input[type=number] {
+        -moz-appearance: textfield; }
+      #conteudo_login #janela_login #formulario_login .limpar {
+        position: absolute;
+        right: 40px;
+        transform: translateY(-40px);
+        font-size: 15pt;
+        color: #7d7d7d;
+        opacity: 0; }
+        #conteudo_login #janela_login #formulario_login .limpar:hover {
+          text-decoration: none; }
+      #conteudo_login #janela_login #formulario_login .botao {
+        border: solid 2px #4b7191;
+        border-color: #1a3145;
+        background-color: transparent;
+        transition: .4s;
+        margin-top: 25px; }
+        #conteudo_login #janela_login #formulario_login .botao:hover {
+          background-color: #1a3145;
+          color: #fff; }
+      #conteudo_login #janela_login #formulario_login #panel_end {
+        margin: 10px auto 0 auto; }
+        #conteudo_login #janela_login #formulario_login #panel_end #input_checkbox {
+          margin-top: 10px;
+          width: 25px;
+          height: 12px;
+          background-color: #1a3145;
+          position: relative;
+          border-radius: 50px;
+          border: solid 2px #4b7191;
+          border-color: #202020;
+          display: inline-block; }
+          #conteudo_login #janela_login #formulario_login #panel_end #input_checkbox label {
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: -4px;
+            left: -3px;
+            cursor: pointer;
+            background-color: #fff;
+            border: solid 2px #4b7191;
+            border-color: #1a3145;
+            border-radius: 50px;
+            transition: all .3s ease; }
+          #conteudo_login #janela_login #formulario_login #panel_end #input_checkbox input[type=checkbox] {
+            visibility: hidden; }
+            #conteudo_login #janela_login #formulario_login #panel_end #input_checkbox input[type=checkbox]:checked + label {
+              left: 8px; }
+        #conteudo_login #janela_login #formulario_login #panel_end #label {
+          display: inline-block;
+          font-size: 12pt;
+          transform: translateY(-7px); }
+        #conteudo_login #janela_login #formulario_login #panel_end #esqueceu_senha {
+          font-size: 12pt;
+          float: right;
+          display: block;
+          margin-top: 4px;
+          color: #e7982a;
+          font-weight: bolder; }
+          #conteudo_login #janela_login #formulario_login #panel_end #esqueceu_senha:hover {
+            opacity: .7; }
+      #conteudo_login #janela_login #formulario_login .mensagem-erro {
+        color: #ff0000;
+        text-align: center;
+        font-size: 12pt;
+        font-weight: bold; }
+
+/*# sourceMappingURL=estilos.css.map */
