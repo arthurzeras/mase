@@ -1,0 +1,206 @@
+#conteudo_atendente{
+  .header{
+    float: none;
+    .imagem_logo{
+      margin-top: 20px;
+    }
+    #info{
+      float: right;
+      width: 250px;
+      #nome_atendente{
+        text-align: center;
+        font-size: 16pt;
+        color: $hard;
+        font-weight: bold;
+        width: 100%;
+      }
+    }
+  }
+
+  #atendendo{
+    width: 400px;
+    text-align: center;
+    transform: translate(calc(50vw - 200px), 30px);
+    .box_senha{
+      background-color: $clean;
+      width: 100px;
+      margin-left: 150px;
+      text-align: center;
+      padding: 5px 0;
+      border: $borda1px;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+
+    .sem_senha,.chamar_senha{
+      padding: 0;
+      width: 300px;
+      margin-left: 50px;
+      font-size: 15pt;
+    }
+
+    #linha_atendente{
+      width: 150px;
+      height: 1px;
+      display: block;
+      background-color: $hard;
+      margin-left: 125px;
+    }
+    #botoes_senha{
+      width: 100%;
+      display: inline-block;
+      form{
+        width: 70px;
+        display: inline-block;
+      }
+      .botao_chamar{
+        margin-top: 10px;
+        margin-right: 10px;
+        background-color: $main;
+        border: solid $hard 1px;
+        transition: .3s;
+        width: 70px;
+        &:hover{
+          background-color: $light;
+        }
+        .icon_call{
+          width: 40px;
+        }
+      }
+      .botao_finalizar{
+        width: 70px;
+        display: inline-block;
+        background-color: $hard;
+        padding: 2px 0;
+        margin-left: 10px;
+        transition: .3s;
+        border: solid $hard 1px;
+        &:hover{
+          background-color: $light;
+        }
+        #icon_finish{
+          width: 38px;
+        }
+      }
+    }
+  }
+
+  #ultimas_pedidas{
+    width: 400px;
+    text-align: center;
+    transform: translate(calc(50vw - 200px), 100px);
+    h2{
+      font-size: 25pt;
+    }
+    #ultimas_conteudo{
+      font-size: 18pt;
+      font-weight: bold;
+      #ultimas_senhas{
+        color: $main;
+        .divisor{
+          color: $hard;
+        }
+      }
+    }
+  }
+
+  #finalizar_senha{
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0,46,68,.9);
+    transition: .4s;
+    #janela_finalizar{
+      width: 400px;
+      background-color: $light;
+      transform: translate(calc(50vw - 200px), calc(50vh - 150px));
+      border: $borda1px;
+      text-align: center;
+      padding: 0 20px 20px 20px;
+      a{
+        &:hover{
+          #icon_close {
+            transform: rotate(134deg);
+          }
+        }
+        #icon_close{
+          position: absolute;
+          left: 420px;
+          width: 25px;
+          transition: .3s;
+        }
+      }
+      h2{
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      #linha_atendimento{
+        background-color: $preto;
+        height: 1px;
+        display: block;
+        width: 90px;
+        transform: translateY(-10px);
+        margin-left: 260px;
+        margin-top: 20px;
+      }
+      h3{
+        font-size: 14pt;
+        margin-top: 5px;
+      }
+
+      #formulario_finalizar{
+        width: 100%;
+        #botao_select{
+          position: absolute;
+          left: 78%;
+          transform: translateY(5px);
+          z-index: -100;
+        }
+        #tipos_atendimento{
+          width: 80%;
+          margin-left: 10%;
+          cursor: pointer;
+          font-size: 14pt;
+          height: 40px;
+          display: block;
+          border: solid 1px $hard;
+          padding: 0 10px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: rgba(26,19,69,.01);
+          transition: .3s;
+          &:focus{
+            border: solid 1px $hard;
+            background: rgba(26,19,69,.2);
+            color: #fff;
+          }
+          &:hover{
+            background: rgba(26,19,69,.2);
+            color: #fff;
+          }
+        }
+        #botao_finalizar{
+          display: block;
+          width: 50%;
+          margin-left: 25%;
+          background-color: $clean;
+          margin-top: 40px;
+          border: solid 2px $hard;
+          font-weight: bold;
+          font-size: 16pt;
+          color: $hard;
+          transition: .3s;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

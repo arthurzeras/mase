@@ -6,15 +6,75 @@
   color: #202020; }
 
 body {
-  background-color: #a5c8de; }
+  background-color: #e4ecf7; }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none; }
 
-input:focus {
+input:focus, button:focus, select:focus {
   outline: none;
   box-shadow: none;
   border: none; }
+
+.imagem_logo {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px; }
+  @media (min-width: 992px) {
+    .imagem_logo {
+      float: left;
+      width: 25%; } }
+  @media (min-width: 992px) {
+    .imagem_logo {
+      margin-left: 4.16667%; } }
+
+.header {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #b8d3e4;
+  height: 107px; }
+  @media (min-width: 992px) {
+    .header {
+      float: left;
+      width: 100%; } }
+
+#info {
+  text-align: center;
+  margin-top: 10px; }
+  #info .logout {
+    transform: translateY(-1px); }
+  #info .info, #info .config, #info .logout {
+    width: 25%;
+    display: inline-block;
+    text-align: center; }
+    #info .info #icon_info, #info .config #icon_info, #info .logout #icon_info {
+      width: 32px;
+      transform: translateY(-7px);
+      transition: .2s;
+      border: 2px solid transparent;
+      border-radius: 50px; }
+      #info .info #icon_info:hover, #info .config #icon_info:hover, #info .logout #icon_info:hover {
+        padding: 5px;
+        width: 44px;
+        border: 2px solid #1a3145; }
+    #info .info .flaticon-settings:hover::before, #info .info .flaticon-logout:hover::before, #info .config .flaticon-settings:hover::before, #info .config .flaticon-logout:hover::before, #info .logout .flaticon-settings:hover::before, #info .logout .flaticon-logout:hover::before {
+      padding: 5px;
+      border: 2px solid #1a3145; }
+    #info .info .flaticon-logout:hover::before, #info .config .flaticon-logout:hover::before, #info .logout .flaticon-logout:hover::before {
+      padding: 7px; }
+    #info .info .flaticon-settings::before, #info .info .flaticon-logout::before, #info .config .flaticon-settings::before, #info .config .flaticon-logout::before, #info .logout .flaticon-settings::before, #info .logout .flaticon-logout::before {
+      border: 2px solid transparent;
+      border-radius: 50px;
+      font-size: 21pt;
+      color: #1a3145;
+      margin: 0;
+      transition: .2s; }
+    #info .info .flaticon-logout::before, #info .config .flaticon-logout::before, #info .logout .flaticon-logout::before {
+      font-size: 18pt; }
 
 #conteudo_login {
   position: relative;
@@ -25,19 +85,6 @@ input:focus {
     #conteudo_login {
       float: left;
       width: 100%; } }
-  #conteudo_login #imagem_logo {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 30px; }
-    @media (min-width: 992px) {
-      #conteudo_login #imagem_logo {
-        float: left;
-        width: 25%; } }
-    @media (min-width: 992px) {
-      #conteudo_login #imagem_logo {
-        margin-left: 4.16667%; } }
   #conteudo_login #janela_login {
     width: 400px;
     height: 400px;
@@ -153,5 +200,165 @@ input:focus {
         text-align: center;
         font-size: 12pt;
         font-weight: bold; }
+
+#conteudo_atendente .header {
+  float: none; }
+  #conteudo_atendente .header .imagem_logo {
+    margin-top: 20px; }
+  #conteudo_atendente .header #info {
+    float: right;
+    width: 250px; }
+    #conteudo_atendente .header #info #nome_atendente {
+      text-align: center;
+      font-size: 16pt;
+      color: #1a3145;
+      font-weight: bold;
+      width: 100%; }
+#conteudo_atendente #atendendo {
+  width: 400px;
+  text-align: center;
+  transform: translate(calc(50vw - 200px), 30px); }
+  #conteudo_atendente #atendendo .box_senha {
+    background-color: #e5dfa7;
+    width: 100px;
+    margin-left: 150px;
+    text-align: center;
+    padding: 5px 0;
+    border: solid 1px #4b7191;
+    font-size: 22pt;
+    font-weight: bold; }
+  #conteudo_atendente #atendendo .sem_senha, #conteudo_atendente #atendendo .chamar_senha {
+    padding: 0;
+    width: 300px;
+    margin-left: 50px;
+    font-size: 15pt; }
+  #conteudo_atendente #atendendo #linha_atendente {
+    width: 150px;
+    height: 1px;
+    display: block;
+    background-color: #1a3145;
+    margin-left: 125px; }
+  #conteudo_atendente #atendendo #botoes_senha {
+    width: 100%;
+    display: inline-block; }
+    #conteudo_atendente #atendendo #botoes_senha form {
+      width: 70px;
+      display: inline-block; }
+    #conteudo_atendente #atendendo #botoes_senha .botao_chamar {
+      margin-top: 10px;
+      margin-right: 10px;
+      background-color: #4b7191;
+      border: solid #1a3145 1px;
+      transition: .3s;
+      width: 70px; }
+      #conteudo_atendente #atendendo #botoes_senha .botao_chamar:hover {
+        background-color: #b8d3e4; }
+      #conteudo_atendente #atendendo #botoes_senha .botao_chamar .icon_call {
+        width: 40px; }
+    #conteudo_atendente #atendendo #botoes_senha .botao_finalizar {
+      width: 70px;
+      display: inline-block;
+      background-color: #1a3145;
+      padding: 2px 0;
+      margin-left: 10px;
+      transition: .3s;
+      border: solid #1a3145 1px; }
+      #conteudo_atendente #atendendo #botoes_senha .botao_finalizar:hover {
+        background-color: #b8d3e4; }
+      #conteudo_atendente #atendendo #botoes_senha .botao_finalizar #icon_finish {
+        width: 38px; }
+#conteudo_atendente #ultimas_pedidas {
+  width: 400px;
+  text-align: center;
+  transform: translate(calc(50vw - 200px), 100px); }
+  #conteudo_atendente #ultimas_pedidas h2 {
+    font-size: 25pt; }
+  #conteudo_atendente #ultimas_pedidas #ultimas_conteudo {
+    font-size: 18pt;
+    font-weight: bold; }
+    #conteudo_atendente #ultimas_pedidas #ultimas_conteudo #ultimas_senhas {
+      color: #4b7191; }
+      #conteudo_atendente #ultimas_pedidas #ultimas_conteudo #ultimas_senhas .divisor {
+        color: #1a3145; }
+#conteudo_atendente #finalizar_senha {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: rgba(0, 46, 68, 0.9);
+  transition: .4s; }
+  #conteudo_atendente #finalizar_senha #janela_finalizar {
+    width: 400px;
+    background-color: #b8d3e4;
+    transform: translate(calc(50vw - 200px), calc(50vh - 150px));
+    border: solid 1px #4b7191;
+    text-align: center;
+    padding: 0 20px 20px 20px; }
+    #conteudo_atendente #finalizar_senha #janela_finalizar a:hover #icon_close {
+      transform: rotate(134deg); }
+    #conteudo_atendente #finalizar_senha #janela_finalizar a #icon_close {
+      position: absolute;
+      left: 420px;
+      width: 25px;
+      transition: .3s; }
+    #conteudo_atendente #finalizar_senha #janela_finalizar h2 {
+      margin-top: 10px;
+      font-weight: bold; }
+    #conteudo_atendente #finalizar_senha #janela_finalizar #linha_atendimento {
+      background-color: #202020;
+      height: 1px;
+      display: block;
+      width: 90px;
+      transform: translateY(-10px);
+      margin-left: 260px;
+      margin-top: 20px; }
+    #conteudo_atendente #finalizar_senha #janela_finalizar h3 {
+      font-size: 14pt;
+      margin-top: 5px; }
+    #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar {
+      width: 100%; }
+      #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #botao_select {
+        position: absolute;
+        left: 78%;
+        transform: translateY(5px);
+        z-index: -100; }
+      #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #tipos_atendimento {
+        width: 80%;
+        margin-left: 10%;
+        cursor: pointer;
+        font-size: 14pt;
+        height: 40px;
+        display: block;
+        border: solid 1px #1a3145;
+        padding: 0 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: rgba(26, 19, 69, 0.01);
+        transition: .3s; }
+        #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #tipos_atendimento:focus {
+          border: solid 1px #1a3145;
+          background: rgba(26, 19, 69, 0.2);
+          color: #fff; }
+        #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #tipos_atendimento:hover {
+          background: rgba(26, 19, 69, 0.2);
+          color: #fff; }
+      #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #botao_finalizar {
+        display: block;
+        width: 50%;
+        margin-left: 25%;
+        background-color: #e5dfa7;
+        margin-top: 40px;
+        border: solid 2px #1a3145;
+        font-weight: bold;
+        font-size: 16pt;
+        color: #1a3145;
+        transition: .3s; }
+        #conteudo_atendente #finalizar_senha #janela_finalizar #formulario_finalizar #botao_finalizar:hover {
+          background-color: transparent; }
 
 /*# sourceMappingURL=estilos.css.map */

@@ -1,10 +1,5 @@
 #conteudo_login{
   @include make-md-column(12);
-  #imagem_logo{
-    @include make-md-column(3);
-    @include make-md-column-offset(0.5);
-    margin-top: 30px;
-  }
 
   #janela_login{
     width: 400px;

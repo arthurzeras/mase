@@ -2,7 +2,7 @@ $(document).ready(function (){
     //ATUALIZA O METODO DE TRAZER A SENHA PEDIDA MAIS RECENTEMENTE
     window.setInterval(ultimasSenhas, 1000);
     function ultimasSenhas() {
-        $('#conteudo').load("view/conteudos/senhas-pedidas-include.php");
+        $('#ultimas_conteudo').load("view/conteudos/senhas-pedidas-include.php");
     }
 
     //ATUALIZA O METODO DE TRAZER A SENHA CHAMADA MAIS RECENTEMENTE
@@ -49,4 +49,7 @@ $(document).ready(function (){
         $("#"+nomeTipo).val('');
         $("#placeholder_"+nomeTipo).removeClass("active");
     });
+
+    //TOOLTIP
+    $('[data-toggle="tooltip"]').tooltip();
 });

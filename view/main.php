@@ -9,6 +9,10 @@ if(isset($_GET['r'])){
 }else{
     $diretorio = "assets";
 }
+
+$imagemLogo = '<img src="assets/img/logo_header.png" class="imagem_logo img-responsive">';
+$botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="flaticon flaticon-logout"></i></a>';
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +21,7 @@ if(isset($_GET['r'])){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/flaticon.css">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/estilos.css">
     </head>
     <body>
