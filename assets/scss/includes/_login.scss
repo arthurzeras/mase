@@ -55,11 +55,11 @@
         color: $preto;
       }
 
-      .input_login:focus ~ .limpar{
+      .input_attr:focus ~ .limpar{
         opacity: 1;
       }
 
-      .input_login{
+      .input_attr{
         border-bottom: $borda1px;
       }
 

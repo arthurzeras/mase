@@ -11,29 +11,13 @@ $(document).ready(function (){
         $('#senha_chamada').load("view/conteudos/senhas-chamadas-include.php");
     }
 
-    //POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DE ATENDENTE
-    function confirmar(pagina, id, nome) {
-        switch (pagina){
-            case "tipo_atendimento":
-                if (confirm("Deletar "+ nome +"?")){
-                    location.href = "/mase/admin/tipoAtendimento&pagina="+pagina+"&do=del&id=" + id;
-                }
-                break;
-            case "atendentes":
-                if (confirm("Deletar "+ nome +"?")){
-                    location.href = "/mase/admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
-                }
-                break;
-        }
-    }
-
     //SOMENTE NUMEROS NO INPUT
     $("#matricula").keyup(function (){
         this.value = this.value.replace(/[^0-9\.]/g,'');
     });
 
     //SUBIR O PLACEHOLDER DO INPUT
-    $('.input_login').on('blur', function (){
+    $('.input_attr').on('blur', function (){
         var nome_input = $(this).attr('id');
         if(!$(this).val()){
             $("#placeholder_"+nome_input).removeClass("active");
@@ -53,3 +37,19 @@ $(document).ready(function (){
     //TOOLTIP
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+//POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DE ATENDENTE
+function confirmar(pagina, id, nome) {
+    switch (pagina){
+        case "tipo_atendimento":
+            if (confirm("Deletar "+ nome +"?")){
+                location.href = "/mase/admin/tipoAtendimento&pagina="+pagina+"&do=del&id=" + id;
+            }
+            break;
+        case "atendentes":
+            if (confirm("Deletar "+ nome +"?")){
+                location.href = "/mase/admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
+            }
+            break;
+    }
+}

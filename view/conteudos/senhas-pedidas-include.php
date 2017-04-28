@@ -9,7 +9,9 @@ $linhas = (int)$senhas->qtdeSenhas();
 
 $_SESSION['ultimasSenhas'] = "";
 
-if($linhas == 1){
+if($linhas <= 0){
+    $_SESSION['ultimasSenhas'] = '<p id="ultimas_senhas">Nenhuma</p>';
+}else if($linhas == 1){
     $_SESSION['ultimasSenhas'] = "<p id='ultimas_senhas'>$ultima</p>";
 }else if ($linhas == 2){
     $_SESSION['ultimasSenhas'] = "<p id='ultimas_senhas'>". ($senhas->pegarSenhaPorId($idUltima - 1)) ." <span class='divisor'>&#8226;</span> ". $ultima ."</p>";

@@ -103,6 +103,21 @@ class Senhas extends BD{
         $stmt->execute();
     }
 
+    public function statusPorSenha($senha){
+        $result = "";
+
+        $sql = "SELECT status FROM tabela_senhas WHERE senha = :senha";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->execute();
+
+        foreach ($stmt->fetchAll() as $key){
+            $result = $key->status;
+        }
+
+        return $result;
+    }
+
     public function verificarStatus($atendente = null){
         $result = "";
 

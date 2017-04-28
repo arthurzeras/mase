@@ -20,6 +20,7 @@
     <form method="post">
         <input type="text" placeholder="Matrícula do Atendente" name="matricula" required>
         <input type="text" placeholder="Nome" name="nome" required>
+        <input type="email" placeholder="Email" name="email" required>
         <input type="password" placeholder="Senha" name="senha" required>
         <input type="submit" value="Cadastrar">
     </form>

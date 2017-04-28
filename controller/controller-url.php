@@ -5,9 +5,11 @@ $r = (isset($_GET['r'])) ? htmlentities(strip_tags($_GET['r'])) : "";
 if(isset($_SESSION['atendente'])){
     switch ($r){
         case "":
-            route("inicio");
+            route("atendente/index");
             break;
-
+        case "atendente/editar":
+            route("atendente/editar");
+            break;
         case "senhas":
             route("visualizadorSenhas");
             break;
@@ -22,6 +24,9 @@ if(isset($_SESSION['atendente'])){
             break;
         case "admin/atendentes":
             route("admin/atendentes");
+            break;
+        case "admin/teste":
+            route("admin/teste");
             break;
         case "admin/addatendente":
             route("admin/addAtendente");

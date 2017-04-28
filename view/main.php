@@ -10,7 +10,7 @@ if(isset($_GET['r'])){
     $diretorio = "assets";
 }
 
-$imagemLogo = '<img src="assets/img/logo_header.png" class="imagem_logo img-responsive">';
+$imagemLogo = '<img src="'.$diretorio.'/img/logo_header.png" class="imagem_logo img-responsive">';
 $botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="flaticon flaticon-logout"></i></a>';
 
 ?>
@@ -29,5 +29,6 @@ $botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="fl
         <script type="text/javascript" src="<?=$diretorio?>/js/jquery-2.2.1.min.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/scr2.js"></script>
+        <script type="text/javascript" src="<?=$diretorio?>/js/collapse.js"></script>
     </body>
 </html>

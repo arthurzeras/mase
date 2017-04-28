@@ -1,0 +1,206 @@
+#conteudo_adm{
+  #header_adm{
+    float: none;
+    .voltar_pagina{
+      position: absolute;
+      float: left;
+      left: 50px;
+      top: 30px;
+      .flaticon-back{
+        &::before{
+          font-size: 18pt;
+        }
+        &:hover::before{
+          color: $main;
+        }
+      }
+    }
+
+    .imagem_logo{
+      margin-left: 0;
+      left: 37.5%;
+    }
+
+    .icones_header{
+      position: absolute;
+      right: 50px;
+      top: 35px;
+      .flaticon-logout{
+        &::before{
+          font-size: 18pt;
+          color: $hard;
+        }
+        &:hover::before{
+          color: $main;
+        }
+      }
+    }
+
+    //PÁGINA ADD ATENDENTES
+    #botoes_adm_atendente{
+      position: absolute;
+      right: 50px;
+      top: 30px;
+      .add_novo{
+        display: inline-block;
+        img{
+          width: 35px;
+          transform: translateY(-5px);
+          transition: .3s;
+          &:hover{
+            opacity: .7;
+          }
+        }
+      }
+
+      #divisor{
+        display: inline-block;
+        width: 2px;
+        height: 14px;
+        background-color: $hard;
+        border-radius: 50px;
+        border: 1px solid $hard;
+        transform: translateX(9px);
+      }
+
+      .logout{
+        position: relative;
+        display: inline-block;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  #botoes_adm{
+    width: 100%;
+    text-align: center;
+    transform: translateY(30vh);
+    .botoes{
+      display: inline-block;
+      width: 45%;
+      a{
+        font-size: 35pt;
+        color: $hard;
+        border: $hard 2px solid;
+        padding: 15px;
+        display: block;
+        width: 100%;
+        transition: .3s;
+        &:hover{
+          background-color: $light;
+        }
+      }
+    }
+  }
+
+  #atendentes{
+    width: 100%;
+    #atendentes_header{
+      padding-left: 40px;
+      img,h1{
+        display: inline-block;
+        font-weight: bold;
+        color: $hard;
+      }
+      img{
+        width: 40px;
+        transform: translateY(-10px);
+        margin-right: 10px;
+      }
+      #linha_adm_atendentes{
+        display: block;
+        height: 2px;
+        width: 120px;
+        background-color: $hard;
+        margin-left: 170px;
+      }
+    }
+    #atendentes_conteudo{
+    padding: 20px 40px;
+      table{
+        width: 100%;
+        text-align: center;
+        tr{
+          font-size: 18pt;
+          th{
+            font-weight: bold;
+            text-align: center;
+
+          }
+          td{
+            a{
+              cursor: pointer;
+              .flaticon-garbage,.flaticon-edit{
+                &:hover::before{
+                  color: $bg;
+                }
+                &::before{
+                  margin-left: 0;
+                }
+              }
+            }
+          }
+          .editando{
+            padding: 20px 0;
+            .flaticon-edit{
+              position: absolute;
+              left: 25px;
+              transform: translateY(-8px);
+              &::before{
+                font-size: 25pt;
+                color: $hard;
+              }
+            }
+            input,button{
+              border: none;
+              background-color: transparent;
+              padding: 0;
+            }
+            input{
+              text-align: center;
+              border-bottom: $borda2px;
+              width: 90%;
+              font-weight: bold;
+              &:focus{
+                border-color: $links;
+              }
+            }
+            button{
+              img{
+                width: 30px;
+                transform: translateY(-3px);
+                &:hover{
+                  position: relative;
+                  -webkit-filter: contrast(200%) brightness(200%) saturate(64%) sepia(100%) grayscale(100%) invert(100%);
+                  filter: contrast(200%) brightness(200%) saturate(64%) sepia(100%) grayscale(100%) invert(100%);
+                }
+              }
+            }
+            a{
+              .flaticon-cancel{
+                &:hover::before{
+                  color: $bg;
+                }
+                &::before{
+                  margin: 0;
+                  font-size: 18pt;
+                  color: $hard;
+                }
+              }
+            }
+          }
+
+          .bloqueado{
+            pointer-events: none;
+            opacity: .4;
+          }
+        }
+        .items{
+          &:hover{
+            background-color: $light;
+          }
+        }
+      }
+    }
+  }
+}

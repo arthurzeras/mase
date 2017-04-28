@@ -16,6 +16,7 @@ if(isset($_SESSION['adm'])) {
     if (isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['senha'])) {
         $atendente->setMatricula($_POST['matricula']);
         $atendente->setNome($_POST['nome']);
+        $atendente->setEmail($_POST['email']);
         $atendente->setSenha(md5($_POST['senha']));
 
         if ($atendente->inserir() == true) {
@@ -42,10 +43,12 @@ if(isset($_SESSION['adm'])) {
     if (isset($_POST['alterar_atendente'])) {
         $matricula = (int)$_POST['matricula'];
         $nome = $_POST['nome'];
+        $email = $_POST['email'];
         $idAtendente = (int)$_POST['id'];
 
         $atendente->setMatricula($matricula);
         $atendente->setNome($nome);
+        $atendente->setEmail($email);
 
         if ($atendente->alterar($idAtendente)) {
             header("Location: /mase/admin/atendentes&update=ok");
@@ -86,13 +89,13 @@ if(isset($_SESSION['adm'])) {
 
     //MENSAGENS
     if (isset($_GET['update']) && $_GET['update'] == "ok") {
-        $msg = "<p align='center'>Alterado com sucesso!</p>";
+        $msg = '<script>alert("Alterado com sucesso.")</script>';
     } else if (isset($_GET['del']) && $_GET['del'] == "ok") {
-        $msg = "<p align='center'>Deletado com sucesso!</p>";
+        $msg = '<script>alert("Deletado com sucesso.")</script>';
     }
 
     //LOGOUT
-    if(isset($_GET['logout']) && $_GET['logout'] == "ok"){
+    if(isset($_GET['logout']) && $_GET['logout'] == "true"){
         $sair->logout();
         header("Location: /mase/");
     }

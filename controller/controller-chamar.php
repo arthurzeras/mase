@@ -41,8 +41,6 @@ if(isset($_SESSION['atendente'])){
             $senha_chamada = $senhas->chamarSenha($atendente->pegarId($_SESSION['atendente']), $hora_atual);
             $_SESSION['senha_chamada'] = $senha_chamada;
             $mensagem = '<p class="box_senha">'.$_SESSION['senha_chamada'].'</p>';
-
-        //
         }else{
             $botao = "<button data-toggle='tooltip' title='Chamar senha de novo' class='botao_chamar' type='submit' name='chamar_novamente'><img class='icon_call' src='assets/img/icon-repeat.png'></button>";
             $mensagem = '<p class="box_senha">'.$_SESSION['senha_chamada'].'</p>';
@@ -72,8 +70,38 @@ if(isset($_SESSION['atendente'])){
         //PEGAR A SENHA CHAMADA E JOGAR NA SESSÃO PARA SER MOSTRADA MESMO QUE ATUALIZE A PÁGINA
         if (!isset($_SESSION['senha_chamada'])){
             $mensagem = '<p class="box_senha chamar_senha">Chame uma senha</p>';
+        }else if($senhas->statusPorSenha($_SESSION['senha_chamada']) == "Finalizado"){
+            $mensagem = '<p class="box_senha chamar_senha">Chame uma senha</p>';
         }else{
             $mensagem = '<p class="box_senha">'.$_SESSION['senha_chamada'].'</p>';
+        }
+    }
+
+    //EDITAR INFORMAÇÕES DO ATENDENTE
+    if(isset($_POST['editar'])){
+        $matricula = $_POST['matricula'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $id = $_POST['id_atendente'];
+
+        $atendente->setMatricula($matricula);
+        $atendente->setNome($nome);
+        $atendente->setEmail($email);
+        if($atendente->alterar($id)){
+            $mensagem = '<script>alert("Dados alterados com sucesso!");</script>';
+        }else{
+            $mensagem = '<script>alert("Ocorreu algum erro");</script>';
+        }
+
+        if(isset($_GET['senha'])){
+            $senha_atual = $_POST['senha_atual'];
+            $nova_senha = $_POST['nova_senha'];
+            $atendente->setSenha(md5($nova_senha));
+            if ($atendente->alterarSenha($id, md5($senha_atual)) === false){
+                $mensagem = '<script>alert("A senha digitada não existe");</script>';
+            }else{
+                $mensagem = '<script>alert("Dados alterados com sucesso!");</script>';
+            }
         }
     }
 }

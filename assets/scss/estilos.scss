@@ -40,56 +40,64 @@ input, button, select{
   @include make-md-column(12);
   background-color: $light;
   height: 107px;
+  .imagem_logo{
+    margin-top: 20px;
+  }
 }
 
 #info{
   text-align: center;
   margin-top: 10px;
-  .logout{
-    transform: translateY(-1px);
-  }
-  .info,.config,.logout{
-    width: 25%;
-    display: inline-block;
+  #icones_header,#header_adm{
     text-align: center;
-    #icon_info{
-      width: 32px;
-      transform: translateY(-7px);
-      transition: .2s;
-      border: 2px solid transparent;
-      border-radius: 50px;
-      &:hover{
-        padding: 5px;
-        width: 44px;
-        border: 2px solid $hard;
-      }
+    .logout{
+      transform: translateY(-1px);
     }
-    .flaticon-settings,.flaticon-logout{
-      &:hover::before{
-        padding: 5px;
-        border: 2px solid $hard;
+    .info,.config,.logout{
+      width: 25%;
+      display: inline-block;
+      text-align: center;
+      #icon_info{
+        width: 32px;
+        transform: translateY(-7px);
+        transition: .2s;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        &:hover{
+          padding: 5px;
+          width: 44px;
+          border: 2px solid $hard;
+        }
       }
-    }
+      .flaticon-settings,.flaticon-logout{
+        &:hover::before{
+          padding: 5px;
+          border: 2px solid $hard;
+        }
+      }
 
-    .flaticon-logout{
-      &:hover::before{
-        padding: 7px;
+      .flaticon-logout{
+        &:hover::before{
+          padding: 7px;
+        }
       }
-    }
 
-    .flaticon-settings::before,.flaticon-logout::before{
-      border: 2px solid transparent;
-      border-radius: 50px;
-      font-size: 21pt;
-      color: $hard;
-      margin: 0;
-      transition: .2s;
-    }
-    .flaticon-logout::before{
-      font-size: 18pt;
+      .flaticon-settings::before,.flaticon-logout::before{
+        border: 2px solid transparent;
+        border-radius: 50px;
+        font-size: 21pt;
+        color: $hard;
+        margin: 0;
+        transition: .2s;
+      }
+      .flaticon-logout::before{
+        font-size: 18pt;
+      }
     }
   }
 }
 
 @import "includes/login";
 @import "includes/atendente";
+@import "includes/adm";
+@import "includes/collapse";

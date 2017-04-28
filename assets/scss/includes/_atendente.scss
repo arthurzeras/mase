@@ -1,12 +1,8 @@
 #conteudo_atendente{
   .header{
     float: none;
-    .imagem_logo{
-      margin-top: 20px;
-    }
     #info{
       float: right;
-      width: 250px;
       #nome_atendente{
         text-align: center;
         font-size: 16pt;
@@ -104,7 +100,35 @@
     }
   }
 
-  #finalizar_senha{
+  #menu_info{
+    width: 400px;
+    position: fixed;
+    right: 0;
+    top: 110px;
+    transform: translateX(410px);
+    background-color: $light;
+    transition: .4s;
+    border: $borda1px;
+    border-right: none;
+    padding: 10px;
+    text-align: center;
+    h2{
+      margin-top: 0;
+      font-weight: bold;
+    }
+    table{
+      font-size: 15pt;
+      width: 100%;
+      caption{
+        font-weight: bold;
+      }
+      tr,td,th{
+        text-align: center;
+      }
+    }
+  }
+
+  #finalizar_senha,#editar_atendente{
     z-index: 100;
     width: 100vw;
     height: 100vh;
@@ -115,7 +139,7 @@
     position: absolute;
     background-color: rgba(0,46,68,.9);
     transition: .4s;
-    #janela_finalizar{
+    #janela_finalizar,#janela_editar{
       width: 400px;
       background-color: $light;
       transform: translate(calc(50vw - 200px), calc(50vh - 150px));
@@ -199,6 +223,138 @@
           &:hover{
             background-color: transparent;
           }
+        }
+      }
+    }
+  }
+
+  #editar_atendente{
+    #janela_editar{
+      transform: translate(calc(50vw - 200px), 2px);
+      padding: 0;
+      a{
+        &:hover{
+          #fechar_editar {
+            transform: rotate(134deg);
+          }
+        }
+        #fechar_editar{
+          position: absolute;
+          left: 420px;
+          width: 25px;
+          transition: .3s;
+        }
+      }
+      #formulario_editar{
+        margin: 10px 30px 30px 30px;
+
+        .campos_input{
+          width: 100%;
+          height: 50px;
+          font-size: 18pt;
+          margin-top: 20px;
+          border: none;
+          background-color: transparent;
+        }
+
+        #matricula,#nome{
+          opacity: .3;
+        }
+
+        a{
+          font-size: 15pt;
+          transform: translateY(20px);
+          display: block;
+          font-weight: bold;
+          color: $links;
+          text-align: right;
+          margin-bottom: 10px;
+          &:hover{
+            color: $linksHover;
+          }
+        }
+
+        .placeholder{
+          transform: translate(1px, -43px);
+          display: block;
+          position: absolute;
+          transition: .3s;
+          font-size: 18pt;
+          color: $cinza;
+          font-weight: 100;
+          cursor: text;
+        }
+
+        #senhaAtual:focus ~ .senhaAtual,
+        #novaSenha:focus ~ .novaSenha,
+        #repeteSenha:focus ~ .repeteSenha,
+        #email:focus ~ .email,
+        .active{
+          transform: translate(1px, -65px);
+          z-index: 1;
+          font-size: 12pt;
+          color: $preto;
+        }
+
+        .input_attr:focus ~ .limpar{
+          opacity: 1;
+        }
+
+        .input_attr{
+          border-bottom: $borda1px;
+        }
+
+        .limpar{
+          position: absolute;
+          right: 40px;
+          transform: translateY(-40px);
+          font-size: 15pt;
+          color: $cinza;
+          opacity: 0;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+
+        .botao {
+          border: $borda2px;
+          border-color: $hard;
+          background-color: transparent;
+          transition: .4s;
+          margin-top: 25px;
+          &:hover {
+            background-color: $hard;
+            color: #fff;
+          }
+        }
+
+        p{
+          margin: 0;
+          font-size: 14pt;
+          float: right;
+          margin-top: 10px;
+          font-weight: bold;
+          a{
+            display: inline-block;
+            margin: 0;
+            transform: translateY(0);
+            .flaticon-cancel::before{
+              margin-left: 7px;
+              color: $links;
+              display: block;
+              transform: translateY(1px);
+            }
+          }
+        }
+
+        #botao_alterarSenha{
+          .flaticon-padlock::before{
+            font-size: 12pt;
+          }
+        }
+
+        #alterar_senha{
+          margin-top: 25px;
         }
       }
     }

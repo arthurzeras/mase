@@ -1,15 +1,17 @@
 <?php /*Página de atendente - chamar senha*/
-    require_once "controller/controller-chamar.php";
-    //TER TAMBEM A CONTAGEM DE QUANTAS SENHAS FORAM CHAMADAS NO DIA
+require_once "controller/controller-chamar.php";
+//TER TAMBEM A CONTAGEM DE QUANTAS SENHAS FORAM CHAMADAS NO DIA
 ?>
 <section id="conteudo_atendente">
     <header class="header" id="header_atendente">
         <?=$imagemLogo?>
         <div id="info">
-            <p id="nome_atendente">kk eae <?=$_SESSION['atendente']?></p>
-            <a class="icones_header info" href="#"><img id="icon_info" src="assets/img/icon-info.png"></a>
-            <a class="icones_header config" href="#"><i class="flaticon flaticon-settings"></i></a>
-            <?=$botaoLogout?>
+            <p id="nome_atendente"><?=$_SESSION['atendente']?></p>
+            <div id="icones_header">
+                <a class="icones_header info" href="javascript:void(0)"><img id="icon_info" src="<?=$diretorio?>/img/icon-info.png"></a>
+                <a class="icones_header config" href="&editar=editar"><i class="flaticon flaticon-settings"></i></a>
+                <?=$botaoLogout?>
+            </div>
         </div>
     </header>
     <div id="atendendo">
@@ -27,7 +29,8 @@
         <h2>Já pedidas</h2>
         <div id="ultimas_conteudo"></div>
     </div>
-    <?php if(isset($_GET['finalizar'])){ ?>
+    <?php include_once "view/conteudos/atendente/menu-info.php";
+     if(isset($_GET['finalizar'])){ ?>
         <div id="finalizar_senha">
             <div id="janela_finalizar">
                 <a href="/mase/"><img id="icon_close" src="assets/img/icon-close.png"></a>
@@ -54,5 +57,8 @@
                 </form>
             </div>
         </div>
-    <?php } ?>
+    <?php }else if(isset($_GET['editar'])){
+            include_once "view/conteudos/atendente/alterar-senha.php";
+        }
+    ?>
 </section>
