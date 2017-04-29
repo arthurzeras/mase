@@ -1,63 +1,85 @@
 <?php require_once "controller/controller-admin.php";?>
-<div align="center">
-    <a href="/mase/admin/tipoAtendimento&add=novo" style="position:absolute; right: 10px">+ Cadastrar Novo</a>
-    <a href="/mase/" style="position: absolute; left: 10px">&lsaquo; Voltar</a>
-    <h2>Tipos de Atendimento</h2>
 
-    <table>
-        <tr>
-            <td>Tipo de Atendimento</td>
-            <td colspan="2" align="center">Ações</td>
-        </tr>
+<section id="conteudo_tipo_atendimento">
+    <header class="header" id="header_adm">
+        <a class="voltar_pagina" href="/mase/"><i class="flaticon-back"></i></a>
+        <?=$imagemLogo?>
+        <div id="botoes_adm_atendente">
+            <a data-toggle="tooltip" id="add_atendimento" data-placement="bottom" title="Cadastrar novo" class="add_novo" href="/mase/admin/tipoatendimento&add=novo"><img src="../assets/img/icon-plus.png"></a>
+            <span id="divisor"></span>
+            <?=$botaoLogout?>
+        </div>
+    </header>
+    <div id="corpo">
+        <div class="header_corpo" id="tipo_atendimento_header">
+            <img id="icon-plus" src="../assets/img/icon-tipos.png">&nbsp;<h1>Tipos de Atendimento</h1>
+            <span class="linha_header"></span>
+        </div>
+        <div class="lista_tabela">
+            <table>
+                <tr>
+                    <th>Tipo de Atendimento</th>
+                    <th colspan="2" align="center">Ações</th>
+                </tr>
+        <?php if(!isset($_GET['do'])){
+                if($tipoAtendimento->pegarTudoLinhas() > 0){
+                    foreach ($tipoAtendimento->pegarTudo() as $key => $item) { ?>
+                        <tr class="items">
+                            <td><?=$item->nome_tipo?></td>
+                            <td><a href="/mase/admin/tipoatendimento&do=update&id=<?=$item->id_tipo_atendimento?>"><i class="flaticon-edit"></i></a></td>
+                            <td><a onclick="confirmar('tipo_atendimento','<?php echo ($item->id_tipo_atendimento);?>', '<?php echo ($item->nome_tipo);?>');"><i class="flaticon-garbage"></i></a></td>
+                        </tr>
+                    <?php }
+                }else{ ?>
+                    <tr>
+                        <td colspan="3">Não há nenhum tipo de atendimento cadastrado.</td>
+                    </tr>
+            <?php }
+        }else if (isset($_GET['do']) && $_GET['do'] == "update"){
+            $id = $_GET['id'];
+            foreach ($tipoAtendimento->pegarTudo() as $key => $item){ ?>
+                <tr class="items">
         <?php
-            if($tipoAtendimento->pegarTudoLinhas() > 0){
-                foreach ($tipoAtendimento->pegarTudo() as $key => $item) { ?>
-            <tr>
-                <td><?=$item->nome_tipo?></td>
-                <td><a href="/mase/admin/tipoAtendimento&do=update&id=<?=$item->id_tipo_atendimento?>">Alterar</a></td>
-                <td><a style="cursor: pointer;" onclick="confirmar('tipo_atendimento','<?php echo ($item->id_tipo_atendimento);?>', '<?php echo ($item->nome_tipo);?>');">Deletar</a></td>
-            </tr>
-        <?php }
-        }else{ ?>
-            <tr>
-                <td colspan="3">Não há nenhum tipo de atendimento cadastrado.</td>
-            </tr>
-        <?php } ?>
-    </table>
-</div>
-<?php
+                if ($tipoAtendimento->pegarId($item->nome_tipo) == $id){
+                    $tipoEditar = $item->nome_tipo;
+                    $result = $tipoAtendimento->pegarLinha($id);
 
-//TESTES
-//if(isset($_GET['vsf']) && $_GET['vsf'] == "ta") {
-//    echo "<a id='click' href='#'>AAAAAAAAAAAAAAAAA</a>";
-//    echo "<div class='teste'></div>";
-//}
-?>
+        ?>
+                    <form method="post">
+                        <td class="editando">
+                            <span class="flaticon-edit"></span>
+                            <input type="text" value="<?=$result->nome_tipo?>" placeholder="Título do atendimento" name="nome_tipo" required autofocus>
+                        </td>
+                        <input type="hidden" value="<?=$result->id_tipo_atendimento?>" name="id">
+                        <td class="editando"><button name="alterar_atendimento" type="submit"><img src="../assets/img/icon-save.png"></button></td>
+                        <td class="editando"><a href="/mase/admin/tipoatendimento"><i class="flaticon-cancel"></i></a></td>
+                    </form>
+        <?php } else { ?>
+                    <td class="bloqueado"><?=$item->nome_tipo?></td>
+                </tr>
+        <?php } } } ?>
+            </table>
+        </div>
+    </div>
 
-<?php
-echo $msg;
+    <?php
+    echo $msg;
 
-if(isset($_GET['add']) && $_GET['add'] == "novo"){
-?>
-<div id="add_tipo">
-    <a href="/mase/admin/tipoAtendimento">Fechar</a>
-    <form method="post">
-        <input type="text" name="tipo_atendimento" placeholder="Nome do tipo de atendimento" required>
-        <input type="submit" value="Cadastrar">
-    </form>
-</div>
-<?php }
+    if(isset($_GET['add']) && $_GET['add'] == "novo"){
+        ?>
+        <div id="add_tipo">
+            <div id="janela_add_tipo">
+                <a id="fechar" href="/mase/admin/tipoatendimento"><img src="../assets/img/icon-close.png"></a>
+                <h2>Novo tipo de atendimento</h2>
+                <form method="post">
+                    <input type="text" class="campos_tipo input_attr" id="tipo_atendimento" name="tipo_atendimento" required autofocus>
+                    <label id="placeholder_tipo" class="placeholder tipo_atendimento" for="tipo_atendimento" >Nome do tipo</label>
+                    <a href="javascript:void(0);" tabindex="-1" class="limpar limpar_tipo">×</a>
 
-if(isset($_GET['do']) && $_GET['do'] == "update"){
-    $id = $_GET['id'];
-    $result = $tipoAtendimento->pegarLinha($id);
-?>
-<div id="alterar_tipo">
-    <a href="/mase/admin/tipoAtendimento">Fechar</a>
-    <form method="post">
-        <input type="text" name="nome_tipo" placeholder="Nome do tipo de atendimento" value="<?=$result->nome_tipo?>">
-        <input type="hidden" value="<?=$result->id_tipo_atendimento?>" name="id">
-        <input type="submit" name="alterar_atendimento" value="Alterar">
-    </form>
-</div>
-<?php } ?>
+                    <input type="submit" class="campos_tipo botao" value="Cadastrar">
+                </form>
+                <?=$msgerr?>
+            </div>
+        </div>
+    <?php } ?>
+</section>

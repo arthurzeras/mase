@@ -1,4 +1,5 @@
-#conteudo_adm,#conteudo_add_atendente{
+//HEADER ADM
+#conteudo_adm_index,#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento{
   #header_adm{
     float: none;
     .voltar_pagina{
@@ -71,6 +72,37 @@
       }
     }
   }
+}
+
+//HEADER DE CADA PAGINA
+#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento{
+  #corpo{
+    width: 100%;
+    .header_corpo{
+      padding-left: 40px;
+      img,h1{
+        display: inline-block;
+        font-weight: bold;
+        color: $hard;
+      }
+      img{
+        width: 40px;
+        transform: translateY(-10px);
+        margin-right: 10px;
+      }
+      .linha_header{
+        display: block;
+        height: 2px;
+        width: 120px;
+        background-color: $hard;
+        margin-left: 170px;
+      }
+    }
+  }
+}
+
+//PÁGINA INICIAL DO ADM
+#conteudo_adm_index{
   #botoes_adm{
     width: 100%;
     text-align: center;
@@ -92,37 +124,14 @@
       }
     }
   }
+}
 
-  #atendentes,#add_atentente{
-    width: 100%;
-    #atendentes_header,#add_atentente_header{
-      padding-left: 40px;
-      img,h1{
-        display: inline-block;
-        font-weight: bold;
-        color: $hard;
-      }
-      img{
-        width: 40px;
-        transform: translateY(-10px);
-        margin-right: 10px;
-      }
-      #icon-plus{
-        filter: brightness(2.3);
-      }
-      #linha_adm_atendentes{
-        display: block;
-        height: 2px;
-        width: 120px;
-        background-color: $hard;
-        margin-left: 170px;
-      }
-      .linha_add_atendente{
-        margin-left: 320px !important;
-      }
-    }
-    #atendentes_conteudo{
-    padding: 20px 40px;
+
+//LISTA DE CADASTROS DE ATENDENTES E TIPOS DE ATENDIMENTO
+#conteudo_adm,#conteudo_tipo_atendimento{
+  #corpo{
+    .lista_tabela{
+      padding: 20px 40px;
       table{
         width: 100%;
         text-align: center;
@@ -131,7 +140,6 @@
           th{
             font-weight: bold;
             text-align: center;
-
           }
           td{
             a{
@@ -208,7 +216,21 @@
         }
       }
     }
-    #conteudo{
+  }
+}
+
+//PAGINA ADD ATENDENTE
+#conteudo_add_atendente{
+  #corpo{
+    #add_atentente_header{
+      img{
+        filter: brightness(2.3);
+      }
+      .linha_header{
+        margin-left: 320px;
+      }
+    }
+    #formulario_add{
       padding: 20px;
       form{
         width: 50%;
@@ -249,15 +271,6 @@
           border-bottom: $borda1px;
         }
 
-        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button{
-          -webkit-appearance: none;
-          margin: 0;
-        }
-
-        input[type=number]{
-          -moz-appearance: textfield;
-        }
-
         .limpar{
           position: absolute;
           right: 27%;
@@ -288,6 +301,116 @@
         margin-top: 20px;
       }
       .mensagem_erro{
+        color: #ff0000;
+        text-align: center;
+        font-size: 14pt;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//PÁGINA TIPOS DE ATENDIMENTO
+#conteudo_tipo_atendimento{
+  #corpo{
+    .header_corpo{
+      .linha_header{
+        margin-left: 320px;
+      }
+    }
+  }
+  #add_tipo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 46, 68, 0.9);
+    #janela_add_tipo{
+      padding: 10px;
+      width: 30%;
+      margin-left: 35%;
+      margin-top: 20vh;
+      background-color: $bg;
+      border: $borda2px;
+      #fechar{
+        position: absolute;
+        right: 32%;
+        transition: .3s;
+        img{
+          width: 30px;
+        }
+        &:hover{
+          transform: rotate(134deg);
+        }
+      }
+      h2{
+        margin: 10px 0 30px 0;
+        font-size: 17pt;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .campos_tipo{
+        width: 100%;
+        height: 50px;
+        font-size: 18pt;
+        margin-top: 20px;
+        border: none;
+        background-color: transparent;
+      }
+
+      .placeholder{
+        transform: translate(1px, -43px);
+        display: block;
+        position: absolute;
+        transition: .3s;
+        font-size: 18pt;
+        color: $cinza;
+        font-weight: 100;
+        cursor: text;
+      }
+
+      #tipo_atendimento:focus ~ .tipo_atendimento, .active{
+        transform: translate(1px, -65px);
+        z-index: 1;
+        font-size: 12pt;
+        color: $preto;
+      }
+
+      .input_attr:focus ~ .limpar{
+        opacity: 1;
+      }
+
+      .input_attr{
+        border-bottom: $borda1px;
+      }
+
+      .limpar{
+        position: static;
+        float: right;
+        transform: translateY(-40px);
+        font-size: 15pt;
+        color: $cinza;
+        opacity: 0;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+
+      .botao{
+        border: $borda2px;
+        border-color: $hard;
+        background-color: transparent;
+        transition: .4s;
+        margin-top: 0;
+        &:hover{
+          background-color: $hard;
+          color: #fff;
+        }
+      }
+      #erro{
         color: #ff0000;
         text-align: center;
         font-size: 14pt;

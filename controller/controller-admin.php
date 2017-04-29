@@ -6,7 +6,7 @@ require_once "classes/Acesso.class.php";
 
 $msg = "";
 $result = "";
-$buceta = "";
+$msgerr = "";
 $_SESSION['matricula'] = "";
 $_SESSION['nome'] = "";
 $_SESSION['email'] = "";
@@ -59,11 +59,15 @@ if(isset($_SESSION['adm'])) {
         $tipo = $_POST['tipo_atendimento'];
         $tipoAtendimento->setNomeAtendimento($tipo);
 
-        //CADASTRAR O TIPO NA TABELA TIPO ATENDIMENTO
-        if($tipoAtendimento->inserir() == true){
-            $msg = "Tipo de atendimento inserido com sucesso!";
+        if($id = $tipoAtendimento->pegarId($tipo) === ""){
+            if($tipoAtendimento->inserir() == true){
+                echo '<script>alert("Tipo de atendimento inserido com sucesso!")</script>';
+                echo '<script>window.location.href="/mase/admin/tipoatendimento"</script>';
+            }else{
+                $msg = "Ocorreu algum erro.";
+            }
         }else{
-            $msg = "Ocorreu algum erro.";
+            $msgerr = "<p id='erro'>Já existe um tipo de atendimento com este nome!</p>";
         }
     }
 
@@ -91,7 +95,7 @@ if(isset($_SESSION['adm'])) {
         $tipoAtendimento->setNomeAtendimento($_POST['nome_tipo']);
 
         if($tipoAtendimento->alterar($idAtendimento)){
-            header("Location: /mase/admin/tipoAtendimento&update=ok");
+            header("Location: /mase/admin/tipoatendimento&update=ok");
         }else{
             $msg = "Não foi possível alterar";
         }
@@ -103,10 +107,8 @@ if(isset($_SESSION['adm'])) {
         $id = $_GET['id'];
         switch ($pagina){
             case "tipo_atendimento":
-                $tipo = $tipoAtendimento->pegarLinha($id);
-                $atendimento->deletarColuna($atendimento->formatarVariavel($tipo->nome_tipo));
                 $tipoAtendimento->excluir($id);
-                header("Location: /mase/admin/tipoAtendimento&del=ok");
+                header("Location: /mase/admin/tipoatendimento&del=ok");
                 break;
             case "atendentes":
                 $atendente->excluir($id);

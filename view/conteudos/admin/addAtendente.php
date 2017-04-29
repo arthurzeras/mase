@@ -15,12 +15,12 @@ if($_SESSION['matricula'] != ""){
             <?=$botaoLogout?>
         </div>
     </header>
-    <div id="add_atentente">
-        <div id="add_atentente_header">
-            <img id="icon-plus" src="../assets/img/icon-plus.png">&nbsp;<h1>Cadastrar novo atendente</h1>
-            <span class="linha_add_atendente" id="linha_adm_atendentes"></span>
+    <div id="corpo">
+        <div class="header_corpo" id="add_atentente_header">
+            <img src="../assets/img/icon-plus.png">&nbsp;<h1>Cadastrar novo atendente</h1>
+            <span class="linha_header"></span>
         </div>
-        <div id="conteudo">
+        <div id="formulario_add">
             <form method="post">
                 <input type="number" value="<?=$_SESSION['matricula']?>" id="matricula" class="campos_add input_attr" name="matricula" required autofocus>
                 <label id="placeholder_matricula" class="placeholder matricula <?=$activePlaceholder?>" for="matricula">Matrícula</label>

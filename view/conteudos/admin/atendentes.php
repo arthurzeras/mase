@@ -13,13 +13,13 @@ echo $msg;
             <?=$botaoLogout?>
         </div>
     </header>
-    <div id="atendentes">
-        <div id="atendentes_header">
+    <div id="corpo">
+        <div class="header_corpo" id="atendentes_header">
             <img src="../assets/img/icon-users.png">
             <h1>Atendentes</h1>
-            <span id="linha_adm_atendentes"></span>
+            <span class="linha_header"></span>
         </div>
-        <div id="atendentes_conteudo">
+        <div class="lista_tabela">
             <table>
                 <tr>
                     <th>Matrícula</th>
@@ -58,7 +58,7 @@ echo $msg;
                             $result = $atendente->pegarLinha($id);
                 ?>
                             <form method="post">
-                                <td class="editando"><span class="flaticon-edit"></span><input type="text" value="<?=$result->matricula?>" placeholder="Matrícula do Atendente" name="matricula" required></td>
+                                <td class="editando"><span class="flaticon-edit"></span><input type="text" value="<?=$result->matricula?>" placeholder="Matrícula do Atendente" name="matricula" required autofocus></td>
                                 <td class="editando"><input type="text" value="<?=$result->nome_atendente?>" placeholder="Nome" name="nome" required></td>
                                 <td class="editando"><input type="email" value="<?=$result->email_atendente?>" placeholder="Email" name="email" required></td>
                                 <input type="hidden" value="<?=$result->id_atendente?>" name="id">

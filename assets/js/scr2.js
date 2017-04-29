@@ -43,7 +43,7 @@ function confirmar(pagina, id, nome) {
     switch (pagina){
         case "tipo_atendimento":
             if (confirm("Deletar "+ nome +"?")){
-                location.href = "/mase/admin/tipoAtendimento&pagina="+pagina+"&do=del&id=" + id;
+                location.href = "/mase/admin/tipoatendimento&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
         case "atendentes":

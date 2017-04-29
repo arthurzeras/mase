@@ -1,6 +1,6 @@
 <?php require_once "controller/controller-admin.php"?>
 
-<section id="conteudo_adm">
+<section id="conteudo_adm_index">
     <header class="header" id="header_adm">
         <?=$botaoLogout?>
         <?=$imagemLogo?>
@@ -11,7 +11,7 @@
             <a href="/mase/admin/atendentes">Atendentes</a>
         </div>
         <div class="botoes">
-            <a href="/mase/admin/tipoAtendimento">Tipos de Atendimentos</a>
+            <a href="/mase/admin/tipoatendimento">Tipos de Atendimentos</a>
         </div>
     </article>
 </section>

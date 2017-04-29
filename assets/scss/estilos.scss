@@ -45,6 +45,15 @@ input, button, select{
   }
 }
 
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
 #info{
   text-align: center;
   margin-top: 10px;

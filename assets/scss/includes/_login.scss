@@ -63,15 +63,6 @@
         border-bottom: $borda1px;
       }
 
-      input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button{
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      input[type=number]{
-        -moz-appearance: textfield;
-      }
-
       .limpar{
         position: absolute;
         right: 40px;
