@@ -1,29 +1,43 @@
-<?php include_once "controller/controller-admin.php";?>
+<?php include_once "controller/controller-admin.php";
 
-<style>
-    input{
-        width:50%;
-        height: 40px;
-        font-size: 13pt;
-        margin-bottom: 5px
-    }
-    input[type="submit"]{
-        cursor: pointer;
-    }
-</style>
+if($_SESSION['matricula'] != ""){
+    $activePlaceholder = "active";
+}else{
+    $activePlaceholder = "";
+}
 
-<a href="/mase/admin/atendentes" style="position: absolute; left: 10px;">&lsaquo; Voltar</a>
+?>
+<section id="conteudo_add_atendente">
+    <header class="header" id="header_adm">
+        <a class="voltar_pagina" href="/mase/admin/atendentes"><i class="flaticon-back"></i></a>
+        <?=$imagemLogo?>
+        <div id="botoes_adm_atendente">
+            <?=$botaoLogout?>
+        </div>
+    </header>
+    <div id="add_atentente">
+        <div id="add_atentente_header">
+            <img id="icon-plus" src="../assets/img/icon-plus.png">&nbsp;<h1>Cadastrar novo atendente</h1>
+            <span class="linha_add_atendente" id="linha_adm_atendentes"></span>
+        </div>
+        <div id="conteudo">
+            <form method="post">
+                <input type="number" value="<?=$_SESSION['matricula']?>" id="matricula" class="campos_add input_attr" name="matricula" required autofocus>
+                <label id="placeholder_matricula" class="placeholder matricula <?=$activePlaceholder?>" for="matricula">Matrícula</label>
+                <a href="javascript:void(0);" tabindex="-1" class="limpar limpar_matricula">×</a>
 
-<div align="center">
-    <h1>Cadastrar novo atendente</h1>
+                <input type="text" value="<?=$_SESSION['nome']?>" id="nome" class="campos_add input_attr" name="nome" required>
+                <label id="placeholder_nome" class="placeholder nome <?=$activePlaceholder?>" for="nome">Nome</label>
+                <a href="javascript:void(0);" tabindex="-1" class="limpar limpar_nome">×</a>
 
-    <form method="post">
-        <input type="text" placeholder="Matrícula do Atendente" name="matricula" required>
-        <input type="text" placeholder="Nome" name="nome" required>
-        <input type="email" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Senha" name="senha" required>
-        <input type="submit" value="Cadastrar">
-    </form>
+                <input type="email" value="<?=$_SESSION['email']?>" id="email" class="campos_add input_attr" name="email" required>
+                <label id="placeholder_email" class="placeholder email <?=$activePlaceholder?>" for="email">E-mail</label>
+                <a href="javascript:void(0);" tabindex="-1" class="limpar limpar_email">×</a>
 
-    <?=$msg?>
-</div>
+                <input class="campos_add botao" type="submit" value="Cadastrar">
+            </form>
+            <p id="obs">*A senha é gerada automaticamente, sendo o mesmo número da matrícula.</p>
+            <?=$msg?>
+        </div>
+    </div>
+</section>

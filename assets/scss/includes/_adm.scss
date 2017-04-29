@@ -1,4 +1,4 @@
-#conteudo_adm{
+#conteudo_adm,#conteudo_add_atendente{
   #header_adm{
     float: none;
     .voltar_pagina{
@@ -93,9 +93,9 @@
     }
   }
 
-  #atendentes{
+  #atendentes,#add_atentente{
     width: 100%;
-    #atendentes_header{
+    #atendentes_header,#add_atentente_header{
       padding-left: 40px;
       img,h1{
         display: inline-block;
@@ -107,12 +107,18 @@
         transform: translateY(-10px);
         margin-right: 10px;
       }
+      #icon-plus{
+        filter: brightness(2.3);
+      }
       #linha_adm_atendentes{
         display: block;
         height: 2px;
         width: 120px;
         background-color: $hard;
         margin-left: 170px;
+      }
+      .linha_add_atendente{
+        margin-left: 320px !important;
       }
     }
     #atendentes_conteudo{
@@ -200,6 +206,92 @@
             background-color: $light;
           }
         }
+      }
+    }
+    #conteudo{
+      padding: 20px;
+      form{
+        width: 50%;
+        margin-left: 25%;
+        .campos_add{
+          width: 100%;
+          height: 50px;
+          font-size: 18pt;
+          margin-top: 20px;
+          border: none;
+          background-color: transparent;
+        }
+        .placeholder{
+          transform: translate(1px, -42px);
+          display: block;
+          position: absolute;
+          transition: .3s;
+          font-size: 18pt;
+          color: $cinza;
+          font-weight: 100;
+          cursor: text;
+        }
+        #matricula:focus ~ .matricula,
+        #nome:focus ~ .nome,
+        #email:focus ~ .email,
+        .active{
+          transform: translate(1px, -65px);
+          z-index: 1;
+          font-size: 12pt;
+          color: $preto;
+        }
+
+        .input_attr:focus ~ .limpar{
+          opacity: 1;
+        }
+
+        .input_attr{
+          border-bottom: $borda1px;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button{
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type=number]{
+          -moz-appearance: textfield;
+        }
+
+        .limpar{
+          position: absolute;
+          right: 27%;
+          transform: translateY(-40px);
+          font-size: 15pt;
+          color: $cinza;
+          opacity: 0;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+
+        .botao{
+          border: $borda2px;
+          border-color: $hard;
+          background-color: transparent;
+          transition: .4s;
+          margin-top: 25px;
+          &:hover{
+            background-color: $hard;
+            color: #fff;
+          }
+        }
+      }
+      #obs{
+        font-size: 16pt;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .mensagem_erro{
+        color: #ff0000;
+        text-align: center;
+        font-size: 14pt;
+        font-weight: bold;
       }
     }
   }

@@ -474,42 +474,42 @@ input:focus, button:focus, select:focus {
     #conteudo_atendente #editar_atendente #janela_editar #formulario_editar #alterar_senha {
       margin-top: 25px; }
 
-#conteudo_adm #header_adm {
+#conteudo_adm #header_adm, #conteudo_add_atendente #header_adm {
   float: none; }
-  #conteudo_adm #header_adm .voltar_pagina {
+  #conteudo_adm #header_adm .voltar_pagina, #conteudo_add_atendente #header_adm .voltar_pagina {
     position: absolute;
     float: left;
     left: 50px;
     top: 30px; }
-    #conteudo_adm #header_adm .voltar_pagina .flaticon-back::before {
+    #conteudo_adm #header_adm .voltar_pagina .flaticon-back::before, #conteudo_add_atendente #header_adm .voltar_pagina .flaticon-back::before {
       font-size: 18pt; }
-    #conteudo_adm #header_adm .voltar_pagina .flaticon-back:hover::before {
+    #conteudo_adm #header_adm .voltar_pagina .flaticon-back:hover::before, #conteudo_add_atendente #header_adm .voltar_pagina .flaticon-back:hover::before {
       color: #4b7191; }
-  #conteudo_adm #header_adm .imagem_logo {
+  #conteudo_adm #header_adm .imagem_logo, #conteudo_add_atendente #header_adm .imagem_logo {
     margin-left: 0;
     left: 37.5%; }
-  #conteudo_adm #header_adm .icones_header {
+  #conteudo_adm #header_adm .icones_header, #conteudo_add_atendente #header_adm .icones_header {
     position: absolute;
     right: 50px;
     top: 35px; }
-    #conteudo_adm #header_adm .icones_header .flaticon-logout::before {
+    #conteudo_adm #header_adm .icones_header .flaticon-logout::before, #conteudo_add_atendente #header_adm .icones_header .flaticon-logout::before {
       font-size: 18pt;
       color: #1a3145; }
-    #conteudo_adm #header_adm .icones_header .flaticon-logout:hover::before {
+    #conteudo_adm #header_adm .icones_header .flaticon-logout:hover::before, #conteudo_add_atendente #header_adm .icones_header .flaticon-logout:hover::before {
       color: #4b7191; }
-  #conteudo_adm #header_adm #botoes_adm_atendente {
+  #conteudo_adm #header_adm #botoes_adm_atendente, #conteudo_add_atendente #header_adm #botoes_adm_atendente {
     position: absolute;
     right: 50px;
     top: 30px; }
-    #conteudo_adm #header_adm #botoes_adm_atendente .add_novo {
+    #conteudo_adm #header_adm #botoes_adm_atendente .add_novo, #conteudo_add_atendente #header_adm #botoes_adm_atendente .add_novo {
       display: inline-block; }
-      #conteudo_adm #header_adm #botoes_adm_atendente .add_novo img {
+      #conteudo_adm #header_adm #botoes_adm_atendente .add_novo img, #conteudo_add_atendente #header_adm #botoes_adm_atendente .add_novo img {
         width: 35px;
         transform: translateY(-5px);
         transition: .3s; }
-        #conteudo_adm #header_adm #botoes_adm_atendente .add_novo img:hover {
+        #conteudo_adm #header_adm #botoes_adm_atendente .add_novo img:hover, #conteudo_add_atendente #header_adm #botoes_adm_atendente .add_novo img:hover {
           opacity: .7; }
-    #conteudo_adm #header_adm #botoes_adm_atendente #divisor {
+    #conteudo_adm #header_adm #botoes_adm_atendente #divisor, #conteudo_add_atendente #header_adm #botoes_adm_atendente #divisor {
       display: inline-block;
       width: 2px;
       height: 14px;
@@ -517,19 +517,19 @@ input:focus, button:focus, select:focus {
       border-radius: 50px;
       border: 1px solid #1a3145;
       transform: translateX(9px); }
-    #conteudo_adm #header_adm #botoes_adm_atendente .logout {
+    #conteudo_adm #header_adm #botoes_adm_atendente .logout, #conteudo_add_atendente #header_adm #botoes_adm_atendente .logout {
       position: relative;
       display: inline-block;
       right: 0;
       top: 0; }
-#conteudo_adm #botoes_adm {
+#conteudo_adm #botoes_adm, #conteudo_add_atendente #botoes_adm {
   width: 100%;
   text-align: center;
   transform: translateY(30vh); }
-  #conteudo_adm #botoes_adm .botoes {
+  #conteudo_adm #botoes_adm .botoes, #conteudo_add_atendente #botoes_adm .botoes {
     display: inline-block;
     width: 45%; }
-    #conteudo_adm #botoes_adm .botoes a {
+    #conteudo_adm #botoes_adm .botoes a, #conteudo_add_atendente #botoes_adm .botoes a {
       font-size: 35pt;
       color: #1a3145;
       border: #1a3145 2px solid;
@@ -537,80 +537,158 @@ input:focus, button:focus, select:focus {
       display: block;
       width: 100%;
       transition: .3s; }
-      #conteudo_adm #botoes_adm .botoes a:hover {
+      #conteudo_adm #botoes_adm .botoes a:hover, #conteudo_add_atendente #botoes_adm .botoes a:hover {
         background-color: #b8d3e4; }
-#conteudo_adm #atendentes {
+#conteudo_adm #atendentes, #conteudo_adm #add_atentente, #conteudo_add_atendente #atendentes, #conteudo_add_atendente #add_atentente {
   width: 100%; }
-  #conteudo_adm #atendentes #atendentes_header {
+  #conteudo_adm #atendentes #atendentes_header, #conteudo_adm #atendentes #add_atentente_header, #conteudo_adm #add_atentente #atendentes_header, #conteudo_adm #add_atentente #add_atentente_header, #conteudo_add_atendente #atendentes #atendentes_header, #conteudo_add_atendente #atendentes #add_atentente_header, #conteudo_add_atendente #add_atentente #atendentes_header, #conteudo_add_atendente #add_atentente #add_atentente_header {
     padding-left: 40px; }
-    #conteudo_adm #atendentes #atendentes_header img, #conteudo_adm #atendentes #atendentes_header h1 {
+    #conteudo_adm #atendentes #atendentes_header img, #conteudo_adm #atendentes #atendentes_header h1, #conteudo_adm #atendentes #add_atentente_header img, #conteudo_adm #atendentes #add_atentente_header h1, #conteudo_adm #add_atentente #atendentes_header img, #conteudo_adm #add_atentente #atendentes_header h1, #conteudo_adm #add_atentente #add_atentente_header img, #conteudo_adm #add_atentente #add_atentente_header h1, #conteudo_add_atendente #atendentes #atendentes_header img, #conteudo_add_atendente #atendentes #atendentes_header h1, #conteudo_add_atendente #atendentes #add_atentente_header img, #conteudo_add_atendente #atendentes #add_atentente_header h1, #conteudo_add_atendente #add_atentente #atendentes_header img, #conteudo_add_atendente #add_atentente #atendentes_header h1, #conteudo_add_atendente #add_atentente #add_atentente_header img, #conteudo_add_atendente #add_atentente #add_atentente_header h1 {
       display: inline-block;
       font-weight: bold;
       color: #1a3145; }
-    #conteudo_adm #atendentes #atendentes_header img {
+    #conteudo_adm #atendentes #atendentes_header img, #conteudo_adm #atendentes #add_atentente_header img, #conteudo_adm #add_atentente #atendentes_header img, #conteudo_adm #add_atentente #add_atentente_header img, #conteudo_add_atendente #atendentes #atendentes_header img, #conteudo_add_atendente #atendentes #add_atentente_header img, #conteudo_add_atendente #add_atentente #atendentes_header img, #conteudo_add_atendente #add_atentente #add_atentente_header img {
       width: 40px;
       transform: translateY(-10px);
       margin-right: 10px; }
-    #conteudo_adm #atendentes #atendentes_header #linha_adm_atendentes {
+    #conteudo_adm #atendentes #atendentes_header #icon-plus, #conteudo_adm #atendentes #add_atentente_header #icon-plus, #conteudo_adm #add_atentente #atendentes_header #icon-plus, #conteudo_adm #add_atentente #add_atentente_header #icon-plus, #conteudo_add_atendente #atendentes #atendentes_header #icon-plus, #conteudo_add_atendente #atendentes #add_atentente_header #icon-plus, #conteudo_add_atendente #add_atentente #atendentes_header #icon-plus, #conteudo_add_atendente #add_atentente #add_atentente_header #icon-plus {
+      filter: brightness(2.3); }
+    #conteudo_adm #atendentes #atendentes_header #linha_adm_atendentes, #conteudo_adm #atendentes #add_atentente_header #linha_adm_atendentes, #conteudo_adm #add_atentente #atendentes_header #linha_adm_atendentes, #conteudo_adm #add_atentente #add_atentente_header #linha_adm_atendentes, #conteudo_add_atendente #atendentes #atendentes_header #linha_adm_atendentes, #conteudo_add_atendente #atendentes #add_atentente_header #linha_adm_atendentes, #conteudo_add_atendente #add_atentente #atendentes_header #linha_adm_atendentes, #conteudo_add_atendente #add_atentente #add_atentente_header #linha_adm_atendentes {
       display: block;
       height: 2px;
       width: 120px;
       background-color: #1a3145;
       margin-left: 170px; }
-  #conteudo_adm #atendentes #atendentes_conteudo {
+    #conteudo_adm #atendentes #atendentes_header .linha_add_atendente, #conteudo_adm #atendentes #add_atentente_header .linha_add_atendente, #conteudo_adm #add_atentente #atendentes_header .linha_add_atendente, #conteudo_adm #add_atentente #add_atentente_header .linha_add_atendente, #conteudo_add_atendente #atendentes #atendentes_header .linha_add_atendente, #conteudo_add_atendente #atendentes #add_atentente_header .linha_add_atendente, #conteudo_add_atendente #add_atentente #atendentes_header .linha_add_atendente, #conteudo_add_atendente #add_atentente #add_atentente_header .linha_add_atendente {
+      margin-left: 320px !important; }
+  #conteudo_adm #atendentes #atendentes_conteudo, #conteudo_adm #add_atentente #atendentes_conteudo, #conteudo_add_atendente #atendentes #atendentes_conteudo, #conteudo_add_atendente #add_atentente #atendentes_conteudo {
     padding: 20px 40px; }
-    #conteudo_adm #atendentes #atendentes_conteudo table {
+    #conteudo_adm #atendentes #atendentes_conteudo table, #conteudo_adm #add_atentente #atendentes_conteudo table, #conteudo_add_atendente #atendentes #atendentes_conteudo table, #conteudo_add_atendente #add_atentente #atendentes_conteudo table {
       width: 100%;
       text-align: center; }
-      #conteudo_adm #atendentes #atendentes_conteudo table tr {
+      #conteudo_adm #atendentes #atendentes_conteudo table tr, #conteudo_adm #add_atentente #atendentes_conteudo table tr, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr {
         font-size: 18pt; }
-        #conteudo_adm #atendentes #atendentes_conteudo table tr th {
+        #conteudo_adm #atendentes #atendentes_conteudo table tr th, #conteudo_adm #add_atentente #atendentes_conteudo table tr th, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr th, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr th {
           font-weight: bold;
           text-align: center; }
-        #conteudo_adm #atendentes #atendentes_conteudo table tr td a {
+        #conteudo_adm #atendentes #atendentes_conteudo table tr td a, #conteudo_adm #add_atentente #atendentes_conteudo table tr td a, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr td a, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr td a {
           cursor: pointer; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-garbage:hover::before, #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-edit:hover::before {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-garbage:hover::before, #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-edit:hover::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr td a .flaticon-garbage:hover::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr td a .flaticon-edit:hover::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr td a .flaticon-garbage:hover::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr td a .flaticon-edit:hover::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr td a .flaticon-garbage:hover::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr td a .flaticon-edit:hover::before {
             color: #e4ecf7; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-garbage::before, #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-edit::before {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-garbage::before, #conteudo_adm #atendentes #atendentes_conteudo table tr td a .flaticon-edit::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr td a .flaticon-garbage::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr td a .flaticon-edit::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr td a .flaticon-garbage::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr td a .flaticon-edit::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr td a .flaticon-garbage::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr td a .flaticon-edit::before {
             margin-left: 0; }
-        #conteudo_adm #atendentes #atendentes_conteudo table tr .editando {
+        #conteudo_adm #atendentes #atendentes_conteudo table tr .editando, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando {
           padding: 20px 0; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando .flaticon-edit {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando .flaticon-edit, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando .flaticon-edit, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando .flaticon-edit, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando .flaticon-edit {
             position: absolute;
             left: 25px;
             transform: translateY(-8px); }
-            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando .flaticon-edit::before {
+            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando .flaticon-edit::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando .flaticon-edit::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando .flaticon-edit::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando .flaticon-edit::before {
               font-size: 25pt;
               color: #1a3145; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input, #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input, #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando input, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando button, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando input, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando button, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando input, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando button {
             border: none;
             background-color: transparent;
             padding: 0; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando input, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando input, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando input {
             text-align: center;
             border-bottom: solid 2px #4b7191;
             width: 90%;
             font-weight: bold; }
-            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input:focus {
+            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando input:focus, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando input:focus, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando input:focus, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando input:focus {
               border-color: #e7982a; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button img {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button img, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando button img, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando button img, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando button img {
             width: 30px;
             transform: translateY(-3px); }
-            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button img:hover {
+            #conteudo_adm #atendentes #atendentes_conteudo table tr .editando button img:hover, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando button img:hover, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando button img:hover, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando button img:hover {
               position: relative;
               -webkit-filter: contrast(200%) brightness(200%) saturate(64%) sepia(100%) grayscale(100%) invert(100%);
               filter: contrast(200%) brightness(200%) saturate(64%) sepia(100%) grayscale(100%) invert(100%); }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel:hover::before {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel:hover::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando a .flaticon-cancel:hover::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel:hover::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando a .flaticon-cancel:hover::before {
             color: #e4ecf7; }
-          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel::before {
+          #conteudo_adm #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel::before, #conteudo_adm #add_atentente #atendentes_conteudo table tr .editando a .flaticon-cancel::before, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .editando a .flaticon-cancel::before, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .editando a .flaticon-cancel::before {
             margin: 0;
             font-size: 18pt;
             color: #1a3145; }
-        #conteudo_adm #atendentes #atendentes_conteudo table tr .bloqueado {
+        #conteudo_adm #atendentes #atendentes_conteudo table tr .bloqueado, #conteudo_adm #add_atentente #atendentes_conteudo table tr .bloqueado, #conteudo_add_atendente #atendentes #atendentes_conteudo table tr .bloqueado, #conteudo_add_atendente #add_atentente #atendentes_conteudo table tr .bloqueado {
           pointer-events: none;
           opacity: .4; }
-      #conteudo_adm #atendentes #atendentes_conteudo table .items:hover {
+      #conteudo_adm #atendentes #atendentes_conteudo table .items:hover, #conteudo_adm #add_atentente #atendentes_conteudo table .items:hover, #conteudo_add_atendente #atendentes #atendentes_conteudo table .items:hover, #conteudo_add_atendente #add_atentente #atendentes_conteudo table .items:hover {
         background-color: #b8d3e4; }
+  #conteudo_adm #atendentes #conteudo, #conteudo_adm #add_atentente #conteudo, #conteudo_add_atendente #atendentes #conteudo, #conteudo_add_atendente #add_atentente #conteudo {
+    padding: 20px; }
+    #conteudo_adm #atendentes #conteudo form, #conteudo_adm #add_atentente #conteudo form, #conteudo_add_atendente #atendentes #conteudo form, #conteudo_add_atendente #add_atentente #conteudo form {
+      width: 50%;
+      margin-left: 25%; }
+      #conteudo_adm #atendentes #conteudo form .campos_add, #conteudo_adm #add_atentente #conteudo form .campos_add, #conteudo_add_atendente #atendentes #conteudo form .campos_add, #conteudo_add_atendente #add_atentente #conteudo form .campos_add {
+        width: 100%;
+        height: 50px;
+        font-size: 18pt;
+        margin-top: 20px;
+        border: none;
+        background-color: transparent; }
+      #conteudo_adm #atendentes #conteudo form .placeholder, #conteudo_adm #add_atentente #conteudo form .placeholder, #conteudo_add_atendente #atendentes #conteudo form .placeholder, #conteudo_add_atendente #add_atentente #conteudo form .placeholder {
+        transform: translate(1px, -42px);
+        display: block;
+        position: absolute;
+        transition: .3s;
+        font-size: 18pt;
+        color: #7d7d7d;
+        font-weight: 100;
+        cursor: text; }
+      #conteudo_adm #atendentes #conteudo form #matricula:focus ~ .matricula,
+      #conteudo_adm #atendentes #conteudo form #nome:focus ~ .nome,
+      #conteudo_adm #atendentes #conteudo form #email:focus ~ .email,
+      #conteudo_adm #atendentes #conteudo form .active, #conteudo_adm #add_atentente #conteudo form #matricula:focus ~ .matricula,
+      #conteudo_adm #add_atentente #conteudo form #nome:focus ~ .nome,
+      #conteudo_adm #add_atentente #conteudo form #email:focus ~ .email,
+      #conteudo_adm #add_atentente #conteudo form .active, #conteudo_add_atendente #atendentes #conteudo form #matricula:focus ~ .matricula,
+      #conteudo_add_atendente #atendentes #conteudo form #nome:focus ~ .nome,
+      #conteudo_add_atendente #atendentes #conteudo form #email:focus ~ .email,
+      #conteudo_add_atendente #atendentes #conteudo form .active, #conteudo_add_atendente #add_atentente #conteudo form #matricula:focus ~ .matricula,
+      #conteudo_add_atendente #add_atentente #conteudo form #nome:focus ~ .nome,
+      #conteudo_add_atendente #add_atentente #conteudo form #email:focus ~ .email,
+      #conteudo_add_atendente #add_atentente #conteudo form .active {
+        transform: translate(1px, -65px);
+        z-index: 1;
+        font-size: 12pt;
+        color: #202020; }
+      #conteudo_adm #atendentes #conteudo form .input_attr:focus ~ .limpar, #conteudo_adm #add_atentente #conteudo form .input_attr:focus ~ .limpar, #conteudo_add_atendente #atendentes #conteudo form .input_attr:focus ~ .limpar, #conteudo_add_atendente #add_atentente #conteudo form .input_attr:focus ~ .limpar {
+        opacity: 1; }
+      #conteudo_adm #atendentes #conteudo form .input_attr, #conteudo_adm #add_atentente #conteudo form .input_attr, #conteudo_add_atendente #atendentes #conteudo form .input_attr, #conteudo_add_atendente #add_atentente #conteudo form .input_attr {
+        border-bottom: solid 1px #4b7191; }
+      #conteudo_adm #atendentes #conteudo form input[type="number"]::-webkit-outer-spin-button, #conteudo_adm #atendentes #conteudo form input[type="number"]::-webkit-inner-spin-button, #conteudo_adm #add_atentente #conteudo form input[type="number"]::-webkit-outer-spin-button, #conteudo_adm #add_atentente #conteudo form input[type="number"]::-webkit-inner-spin-button, #conteudo_add_atendente #atendentes #conteudo form input[type="number"]::-webkit-outer-spin-button, #conteudo_add_atendente #atendentes #conteudo form input[type="number"]::-webkit-inner-spin-button, #conteudo_add_atendente #add_atentente #conteudo form input[type="number"]::-webkit-outer-spin-button, #conteudo_add_atendente #add_atentente #conteudo form input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      #conteudo_adm #atendentes #conteudo form input[type=number], #conteudo_adm #add_atentente #conteudo form input[type=number], #conteudo_add_atendente #atendentes #conteudo form input[type=number], #conteudo_add_atendente #add_atentente #conteudo form input[type=number] {
+        -moz-appearance: textfield; }
+      #conteudo_adm #atendentes #conteudo form .limpar, #conteudo_adm #add_atentente #conteudo form .limpar, #conteudo_add_atendente #atendentes #conteudo form .limpar, #conteudo_add_atendente #add_atentente #conteudo form .limpar {
+        position: absolute;
+        right: 27%;
+        transform: translateY(-40px);
+        font-size: 15pt;
+        color: #7d7d7d;
+        opacity: 0; }
+        #conteudo_adm #atendentes #conteudo form .limpar:hover, #conteudo_adm #add_atentente #conteudo form .limpar:hover, #conteudo_add_atendente #atendentes #conteudo form .limpar:hover, #conteudo_add_atendente #add_atentente #conteudo form .limpar:hover {
+          text-decoration: none; }
+      #conteudo_adm #atendentes #conteudo form .botao, #conteudo_adm #add_atentente #conteudo form .botao, #conteudo_add_atendente #atendentes #conteudo form .botao, #conteudo_add_atendente #add_atentente #conteudo form .botao {
+        border: solid 2px #4b7191;
+        border-color: #1a3145;
+        background-color: transparent;
+        transition: .4s;
+        margin-top: 25px; }
+        #conteudo_adm #atendentes #conteudo form .botao:hover, #conteudo_adm #add_atentente #conteudo form .botao:hover, #conteudo_add_atendente #atendentes #conteudo form .botao:hover, #conteudo_add_atendente #add_atentente #conteudo form .botao:hover {
+          background-color: #1a3145;
+          color: #fff; }
+    #conteudo_adm #atendentes #conteudo #obs, #conteudo_adm #add_atentente #conteudo #obs, #conteudo_add_atendente #atendentes #conteudo #obs, #conteudo_add_atendente #add_atentente #conteudo #obs {
+      font-size: 16pt;
+      text-align: center;
+      margin-top: 20px; }
+    #conteudo_adm #atendentes #conteudo .mensagem_erro, #conteudo_adm #add_atentente #conteudo .mensagem_erro, #conteudo_add_atendente #atendentes #conteudo .mensagem_erro, #conteudo_add_atendente #add_atentente #conteudo .mensagem_erro {
+      color: #ff0000;
+      text-align: center;
+      font-size: 14pt;
+      font-weight: bold; }
 
 .ativar_menu_info #conteudo_atendente #menu_info {
   transform: translateX(0); }

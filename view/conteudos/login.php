@@ -10,9 +10,11 @@
                 <input type="number" id="matricula" class="campos_login input_attr" name="matricula" maxlength="10" required>
                 <label id="placeholder_matricula" class="placeholder matricula" for="matricula">Matrícula</label>
                 <a href="javascript:void(0)" tabindex="-1" class="limpar limpar_matricula">×</a>
+
                 <input type="password" id="senha" class="campos_login input_attr" name="senha" required>
                 <label id="placeholder_senha" class="placeholder senha" for="senha">Senha</label>
                 <a href="javascript:void(0)" tabindex="-1" class="limpar limpar_senha">×</a>
+
                 <input type="submit" class="campos_login botao" value="ENTRAR">
                 <div id="panel_end">
                     <p id="input_checkbox"><input type="checkbox" name="chkbox" id="checkbox">

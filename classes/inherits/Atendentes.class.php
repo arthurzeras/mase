@@ -90,4 +90,12 @@ class Atendentes extends Crud{
         return $return;
     }
 
+    public function verificarDisponibilidade($coluna, $valor){
+        $sql = "SELECT * FROM $this->table WHERE $coluna = :valor";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":valor", $valor);
+        $stmt->execute();
+        return $stmt->rowCount();
+    }
+
 }

@@ -6,23 +6,51 @@ require_once "classes/Acesso.class.php";
 
 $msg = "";
 $result = "";
+$buceta = "";
+$_SESSION['matricula'] = "";
+$_SESSION['nome'] = "";
+$_SESSION['email'] = "";
+
 $atendente = new Atendentes();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
 $sair = new Acesso();
 
+function formCampos(){
+    if(isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
+        $_SESSION['matricula'] = $_POST['matricula'];
+        $_SESSION['nome'] = $_POST['nome'];
+        $_SESSION['email'] = $_POST['email'];
+    }
+}
+
 if(isset($_SESSION['adm'])) {
     //CADASTRAR NOVO ATENDENTE
-    if (isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['senha'])) {
-        $atendente->setMatricula($_POST['matricula']);
+    if (isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])) {
+        $matriculaAtendente = $_POST['matricula'];
+        $emailAtendente = $_POST['email'];
+        $atendente->setMatricula($matriculaAtendente);
         $atendente->setNome($_POST['nome']);
-        $atendente->setEmail($_POST['email']);
-        $atendente->setSenha(md5($_POST['senha']));
+        $atendente->setEmail($emailAtendente);
+        $atendente->setSenha(md5($_POST['matricula']));
 
-        if ($atendente->inserir() == true) {
-            $msg = "Atendente inserido com sucesso!";
-        } else {
-            $msg = "Ocorreu algum erro";
+
+        //NÃO PERMITIR INSERIR O MESMO E-MAIL OU MATRICULA JÁ EXISTENTE
+        if((($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0) && (($atendente->verificarDisponibilidade("email_atendente",$emailAtendente)) != 0)){
+            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula e campo!</p>";
+            formCampos();
+        }else if(($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0){
+            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula!</p>";
+            formCampos();
+        }else if (($atendente->verificarDisponibilidade("email_atendente",$emailAtendente)) != 0) {
+            $msg = "<p class='mensagem_erro'>Já existe um atendente com este email!</p>";
+            formCampos();
+        }else{
+            if ($atendente->inserir() == true){
+                $msg = '<script>alert("Atendente inserido com sucesso!")</script>';
+            } else {
+                $msg = "Ocorreu algum erro";
+            }
         }
     }
 
