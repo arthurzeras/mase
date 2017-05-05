@@ -2,7 +2,7 @@
 
 require_once "BD.class.php";
 
-class Senhas extends BD{
+class Senhas{
 
     public function qtdeSenhas(){
         $sql = "SELECT senha FROM tabela_senhas";

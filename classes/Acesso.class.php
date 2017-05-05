@@ -2,38 +2,10 @@
 
 require_once "BD.class.php";
 
-class Acesso extends BD{
-
-
+interface Acesso{
     //FAZER LOGIN
-    public function login($matricula, $senha){
-        $nome = "";
-
-        //VERIFICAR SE A MATRÍCULA E A SENHA ESTÃO CORRETAS
-        $sql = "SELECT nome_atendente FROM tabela_atendentes WHERE matricula = :matricula AND senha_atendente = :senha";
-        $stmt = BD::prepare($sql);
-        $stmt->bindParam(":matricula", $matricula);
-        $stmt->bindParam(":senha", $senha);
-        $stmt->execute();
-
-        //SE ESTIVER CORRETA, RETORNA O NOME DO ATENDENTE
-        if ($stmt->rowCount() == 1){
-            foreach ($stmt->fetchAll() as $key){
-                $nome = $key->nome_atendente;
-            }
-
-            return $nome;
-
-        //SE ESTIVER ERRADA, RETORNA FALSO
-        }else{
-            return false;
-        }
-    }
+    public function login($matricula, $senha);
 
     //FAZER LOGOUT
-    public function logout(){
-        unset($_SESSION['atendente']);
-        unset($_SESSION['adm']);
-        session_destroy();
-    }
+    public function logout();
 }

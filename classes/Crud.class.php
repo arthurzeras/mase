@@ -2,7 +2,7 @@
 require_once "BD.class.php";
 
 
-abstract class Crud extends BD{
+abstract class Crud{
     protected $table;
     protected $id;
 

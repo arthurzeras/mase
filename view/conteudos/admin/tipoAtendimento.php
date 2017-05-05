@@ -7,7 +7,7 @@
         <div id="botoes_adm_atendente">
             <a data-toggle="tooltip" id="add_atendimento" data-placement="bottom" title="Cadastrar novo" class="add_novo" href="/mase/admin/tipoatendimento&add=novo"><img src="../assets/img/icon-plus.png"></a>
             <span id="divisor"></span>
-            <?=$botaoLogout?>
+            <a class="icones_header logout" href="/mase/admin/tipoatendimento&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">

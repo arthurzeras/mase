@@ -1,7 +1,7 @@
 <?php
-require "classes/Acesso.class.php";
+require "classes/inherits/Atendentes.class.php";
 
-$atendente = new Acesso();
+$atendente = new Atendentes();
 $error = "";
 
 if(isset($_POST['matricula']) && isset($_POST['senha'])){

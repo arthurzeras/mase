@@ -2,7 +2,6 @@
 require_once "classes/inherits/Atendentes.class.php";
 require_once "classes/inherits/TipoAtendimento.class.php";
 require_once "classes/inherits/Atendimentos.class.php";
-require_once "classes/Acesso.class.php";
 
 $msg = "";
 $result = "";
@@ -14,7 +13,6 @@ $_SESSION['email'] = "";
 $atendente = new Atendentes();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
-$sair = new Acesso();
 
 function formCampos(){
     if(isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
@@ -126,7 +124,7 @@ if(isset($_SESSION['adm'])) {
 
     //LOGOUT
     if(isset($_GET['logout']) && $_GET['logout'] == "true"){
-        $sair->logout();
+        $atendente->logout();
         header("Location: /mase/");
     }
 }else{

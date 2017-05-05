@@ -6,7 +6,6 @@ require_once "classes/inherits/Atendentes.class.php";
 require_once "classes/inherits/Atendimentos.class.php";
 
 $senhas = new Senhas();
-$acesso = new Acesso();
 $atendente = new Atendentes();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
@@ -110,7 +109,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == true){
     if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) == "Em Atendimento"){
         echo "<script>alert('Termine o atendimento antes de sair do sistema.')</script>";
     }else{
-        $acesso->logout();
+        $atendente->logout();
         header("Location: /mase/");
         unset($_SESSION['senha_chamada']);
     }

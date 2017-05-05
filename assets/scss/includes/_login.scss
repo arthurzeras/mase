@@ -55,6 +55,14 @@
         color: $preto;
       }
 
+      #preencha{
+        display: none;
+      }
+
+      .preencha{
+        border: red solid 1px;
+      }
+
       .input_attr:focus ~ .limpar{
         opacity: 1;
       }

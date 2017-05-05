@@ -137,6 +137,10 @@ input[type=number] {
         z-index: 1;
         font-size: 12pt;
         color: #202020; }
+      #conteudo_login #janela_login #formulario_login #preencha {
+        display: none; }
+      #conteudo_login #janela_login #formulario_login .preencha {
+        border: red solid 1px; }
       #conteudo_login #janela_login #formulario_login .input_attr:focus ~ .limpar {
         opacity: 1; }
       #conteudo_login #janela_login #formulario_login .input_attr {

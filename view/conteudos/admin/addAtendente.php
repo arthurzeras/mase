@@ -12,7 +12,7 @@ if($_SESSION['matricula'] != ""){
         <a class="voltar_pagina" href="/mase/admin/atendentes"><i class="flaticon-back"></i></a>
         <?=$imagemLogo?>
         <div id="botoes_adm_atendente">
-            <?=$botaoLogout?>
+            <a class="icones_header logout" href="/mase/admin/addatendente&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">

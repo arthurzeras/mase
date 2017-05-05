@@ -10,7 +10,7 @@ echo $msg;
         <div id="botoes_adm_atendente">
             <a data-toggle="tooltip" data-placement="bottom" title="Cadastrar novo atendente" class="add_novo" href="/mase/admin/addatendente"><img src="../assets/img/icon-plus.png"></a>
             <span id="divisor"></span>
-            <?=$botaoLogout?>
+            <a class="icones_header logout" href="/mase/admin/atendentes&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">
