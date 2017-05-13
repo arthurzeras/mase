@@ -767,6 +767,116 @@ input[type=number] {
       font-size: 14pt;
       font-weight: bold; }
 
+#pedir_senha h1 {
+  text-align: center;
+  font-size: 35pt; }
+#pedir_senha article {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px; }
+  #pedir_senha article #botao_pedir {
+    display: block;
+    font-size: 25pt;
+    background-color: transparent;
+    border: solid 2px #1a3145;
+    padding: 5px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .3s; }
+    #pedir_senha article #botao_pedir:hover {
+      color: #fff;
+      background-color: #1a3145; }
+  #pedir_senha article #preferencial {
+    text-align: center;
+    margin-top: 30px; }
+    #pedir_senha article #preferencial #input_checkbox {
+      margin-top: 10px;
+      width: 35px;
+      height: 12px;
+      background-color: #1a3145;
+      position: relative;
+      border-radius: 50px;
+      border: solid 2px #4b7191;
+      border-color: #202020;
+      display: inline-block; }
+      #pedir_senha article #preferencial #input_checkbox label {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -6px;
+        left: -3px;
+        cursor: pointer;
+        background-color: #fff;
+        border: solid 2px #4b7191;
+        border-color: #1a3145;
+        border-radius: 50px;
+        transition: all .3s ease; }
+      #pedir_senha article #preferencial #input_checkbox input[type=checkbox] {
+        visibility: hidden; }
+        #pedir_senha article #preferencial #input_checkbox input[type=checkbox]:checked + label {
+          left: 14px; }
+    #pedir_senha article #preferencial #label {
+      display: inline-block;
+      font-size: 15pt;
+      transform: translateY(-7px); }
+#pedir_senha #senha {
+  margin-top: 50px;
+  font-size: 25pt;
+  font-weight: bold;
+  color: #4caa8d;
+  text-align: center; }
+  #pedir_senha #senha span {
+    color: #e7982a; }
+
+#recuperar_senha .voltar_pagina {
+  position: absolute;
+  top: 20px;
+  font-size: 16pt;
+  font-weight: bold;
+  color: #1a3145; }
+  #recuperar_senha .voltar_pagina i::before {
+    font-size: 20pt; }
+  #recuperar_senha .voltar_pagina span {
+    transform: translateY(-3px);
+    display: inline-block; }
+#recuperar_senha #janela {
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px; }
+  #recuperar_senha #janela h1 {
+    font-size: 35pt; }
+  #recuperar_senha #janela p {
+    font-size: 16pt;
+    margin-bottom: 50px; }
+  #recuperar_senha #janela .input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  #recuperar_senha #janela #email {
+    font-size: 18pt;
+    width: 400px;
+    border: none;
+    background-color: transparent;
+    border-bottom: #4b7191 2px solid; }
+    #recuperar_senha #janela #email:focus {
+      border-bottom: 2px #e7982a solid; }
+  #recuperar_senha #janela #botao {
+    margin-top: 20px;
+    border: 2px solid #1a3145;
+    transition: .3s;
+    background-color: transparent;
+    font-size: 18pt;
+    width: 200px; }
+    #recuperar_senha #janela #botao:hover {
+      background-color: #1a3145;
+      color: #fff; }
+  #recuperar_senha #janela #mensagem {
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+    font-size: 12pt; }
+
 .ativar_menu_info #conteudo_atendente #menu_info {
   transform: translateX(0); }
 

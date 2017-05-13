@@ -5,12 +5,12 @@ echo $msg;
 
 <section id="conteudo_adm">
     <header class="header" id="header_adm">
-        <a class="voltar_pagina" href="/mase/"><i class="flaticon-back"></i></a>
+        <a class="voltar_pagina" href="<?=PATH?>"><i class="flaticon-back"></i></a>
         <?=$imagemLogo?>
         <div id="botoes_adm_atendente">
-            <a data-toggle="tooltip" data-placement="bottom" title="Cadastrar novo atendente" class="add_novo" href="/mase/admin/addatendente"><img src="../assets/img/icon-plus.png"></a>
+            <a data-toggle="tooltip" data-placement="bottom" title="Cadastrar novo atendente" class="add_novo" href="<?=PATH?>admin/addatendente"><img src="../assets/img/icon-plus.png"></a>
             <span id="divisor"></span>
-            <a class="icones_header logout" href="/mase/admin/atendentes&logout=true"><i class="flaticon flaticon-logout"></i></a>
+            <a class="icones_header logout" href="<?=PATH?>admin/atendentes&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">
@@ -36,10 +36,10 @@ echo $msg;
                                 <td><?=$item->nome_atendente?></td>
                                 <td><?=$item->email_atendente?></td>
                                 <?php if($item->nome_atendente !== "admin") {?>
-                                    <td><a href="/mase/admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
+                                    <td><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                                     <td><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>');"><i class="flaticon-garbage"></i></a></td>
                                 <?php }else{ ?>
-                                    <td colspan="2"><a href="/mase/admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
+                                    <td colspan="2"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                                 <?php }?>
                             </tr>
                         <?php }
@@ -63,17 +63,17 @@ echo $msg;
                                 <td class="editando"><input type="email" value="<?=$result->email_atendente?>" placeholder="Email" name="email" required></td>
                                 <input type="hidden" value="<?=$result->id_atendente?>" name="id">
                                 <td class="editando"><button name="alterar_atendente" type="submit"><img src="../assets/img/icon-save.png"></button></td>
-                                <td class="editando"><a href="/mase/admin/atendentes"><i class="flaticon-cancel"></i></a></td>
+                                <td class="editando"><a href="<?=PATH?>admin/atendentes"><i class="flaticon-cancel"></i></a></td>
                             </form>
                 <?php }else{?>
                             <td class="bloqueado"><?=$item->matricula?></td>
                             <td class="bloqueado"><?=$item->nome_atendente?></td>
                             <td class="bloqueado"><?=$item->email_atendente?></td>
                 <?php if($item->nome_atendente !== "admin") {?>
-                                <td class="bloqueado"><a href="/mase/admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
+                                <td class="bloqueado"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                                 <td class="bloqueado"><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>');"><i class="flaticon-garbage"></i></a></td>
                             <?php }else{ ?>
-                                <td class="bloqueado" colspan="2"><a href="/mase/admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
+                                <td class="bloqueado" colspan="2"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                             <?php }?>
                             </tr>
                 <?php } } }?>

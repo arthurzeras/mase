@@ -130,4 +130,16 @@ class Atendentes extends Crud implements Acesso{
         return $stmt->rowCount();
     }
 
+    public function recuperarEmail(){
+        $sql = "SELECT * FROM $this->table WHERE email_atendente = :email";
+        $stmt = BD::prepare($sql);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->execute();
+
+        if($stmt->rowCount() == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

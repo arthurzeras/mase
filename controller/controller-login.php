@@ -18,10 +18,10 @@ if(isset($_POST['matricula']) && isset($_POST['senha'])){
 
         if($nome == "admin"){
             $_SESSION['adm'] = $nome;
-            header("Location: /mase/");
+            header("Location: ".PATH);
         }else{
             $_SESSION['atendente'] = $nome;
-            header("Location: /mase/");
+            header("Location: ".PATH);
         }
     }
 }

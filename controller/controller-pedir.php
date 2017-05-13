@@ -1,6 +1,5 @@
 <?php
-
-require "../../classes/Senhas.class.php";
+require_once "classes/Senhas.class.php";
 
 $senhas = new Senhas();
 
@@ -8,11 +7,11 @@ if(isset($_POST['gerar'])){
     usleep(rand(0,2000000));
 
     if(isset($_POST['preferencial'])){
-        $senha = "Sua senha é: ".$senhas->pedirSenha("Preferencial");
+        $senha = "Sua senha é: <span>".$senhas->pedirSenha("Preferencial")."</span>";
     }else{
-        $senha = "Sua senha é: ".$senhas->pedirSenha("Normal");
+        $senha = "Sua senha é: <span>".$senhas->pedirSenha("Normal")."</span>";
     }
 
 }else{
-    $senha = "Peça uma senha";
+    $senha = "";
 }

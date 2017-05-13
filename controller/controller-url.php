@@ -1,5 +1,6 @@
 <?php
 
+define("PATH", "/mase/"); //URL RAIZ DO SITE
 $r = (isset($_GET['r'])) ? htmlentities(strip_tags($_GET['r'])) : "";
 
 if(isset($_SESSION['atendente'])){
@@ -12,6 +13,12 @@ if(isset($_SESSION['atendente'])){
             break;
         case "senhas":
             route("visualizadorSenhas");
+            break;
+        case "pedir":
+            route("pedir-senha");
+            break;
+        default:
+            route("404");
             break;
     }
 }else if(isset($_SESSION['adm'])){
@@ -34,6 +41,12 @@ if(isset($_SESSION['atendente'])){
         case "senhas":
             route("visualizadorSenhas");
             break;
+        case "pedir":
+            route("pedir-senha");
+            break;
+        default:
+            route("404");
+            break;
     }
 }else{
     switch ($r){
@@ -42,6 +55,15 @@ if(isset($_SESSION['atendente'])){
             break;
         case "senhas":
             route("visualizadorSenhas");
+            break;
+        case "pedir":
+            route("pedir-senha");
+            break;
+        case "recuperar-senha":
+            route("recuperar-senha");
+            break;
+        default:
+            route("404");
             break;
     }
 }

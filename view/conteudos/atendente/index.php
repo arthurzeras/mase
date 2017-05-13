@@ -33,7 +33,7 @@ require_once "controller/controller-chamar.php";
      if(isset($_GET['finalizar'])){ ?>
         <div id="finalizar_senha">
             <div id="janela_finalizar">
-                <a href="/mase/"><img id="icon_close" src="assets/img/icon-close.png"></a>
+                <a href="<?=PATH?>"><img id="icon_close" src="assets/img/icon-close.png"></a>
                 <h2>Finalizar atendimento</h2>
                 <span id="linha_atendimento"></span>
                 <h3>Selecione o tipo de atendimento realizado:</h3>

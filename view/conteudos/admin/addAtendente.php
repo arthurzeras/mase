@@ -9,10 +9,10 @@ if($_SESSION['matricula'] != ""){
 ?>
 <section id="conteudo_add_atendente">
     <header class="header" id="header_adm">
-        <a class="voltar_pagina" href="/mase/admin/atendentes"><i class="flaticon-back"></i></a>
+        <a class="voltar_pagina" href="<?=PATH?>admin/atendentes"><i class="flaticon-back"></i></a>
         <?=$imagemLogo?>
         <div id="botoes_adm_atendente">
-            <a class="icones_header logout" href="/mase/admin/addatendente&logout=true"><i class="flaticon flaticon-logout"></i></a>
+            <a class="icones_header logout" href="<?=PATH?>admin/addatendente&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">

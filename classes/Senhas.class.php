@@ -1,73 +1,58 @@
 <?php
-
 require_once "BD.class.php";
 
 class Senhas{
+    private $tabela = "tabela_senhas";
 
     public function qtdeSenhas(){
-        $sql = "SELECT senha FROM tabela_senhas";
+        $sql = "SELECT senha FROM $this->tabela";
         $stmt = BD::prepare($sql);
         $stmt->execute();
+
         return $stmt->rowCount();
     }
 
     public function pegarSenhaPorId($idSenha){
-        $result = "";
-
-        $sql = "SELECT senha FROM tabela_senhas WHERE id_senha = :senha";
+        $sql = "SELECT senha FROM $this->tabela WHERE id_senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $idSenha);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key) {
-            $result = $key->senha;
-        }
-
-        return $result;
+        return $result->senha;
     }
 
     public function pegarUltimaSenha($tipoDeSenha = null){
-        $ultima_senha = 0;
-
         if($tipoDeSenha == "Normal"){
-            $sql = "SELECT senha FROM tabela_senhas WHERE id_senha = (SELECT MAX(id_senha) FROM tabela_senhas WHERE tipo_senha = 'Normal')";
+            $sql = "SELECT senha FROM $this->tabela WHERE id_senha = (SELECT MAX(id_senha) FROM $this->tabela WHERE tipo_senha = 'Normal')";
         }else if($tipoDeSenha == "Preferencial"){
-            $sql = "SELECT senha FROM tabela_senhas WHERE id_senha = (SELECT MAX(id_senha) FROM tabela_senhas WHERE tipo_senha = 'preferencial')";
+            $sql = "SELECT senha FROM $this->tabela WHERE id_senha = (SELECT MAX(id_senha) FROM $this->tabela WHERE tipo_senha = 'preferencial')";
         }else if($tipoDeSenha ==  null){
-            $sql = "SELECT senha FROM tabela_senhas WHERE id_senha = (SELECT MAX(id_senha) FROM tabela_senhas)";
+            $sql = "SELECT senha FROM $this->tabela WHERE id_senha = (SELECT MAX(id_senha) FROM $this->tabela)";
         }
 
         $stmt = BD::prepare($sql);
         $stmt->execute();
+        $ultima_senha = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key) {
-           $ultima_senha = $key->senha;
-        }
-
-        return $ultima_senha;
+        return $ultima_senha->senha;
     }
 
     public function pegarIdSenha($senha){
-        $result = 0;
-
-        $sql = "SELECT id_senha from tabela_senhas WHERE senha = :senha";
+        $sql = "SELECT id_senha from $this->tabela WHERE senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha",$senha);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key){
-            $result = $key->id_senha;
-        }
-
-        return $result;
+        return $result->id_senha;
     }
 
     public function inserir($senha,$tipoDeSenha){
-        $sql = "INSERT INTO tabela_senhas (senha,status,tipo_senha) VALUES (:senha, 'Aguardando', :tipo)";
+        $sql = "INSERT INTO $this->tabela (senha,status,tipo_senha) VALUES (:senha, 'Aguardando', :tipo)";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $senha);
         $stmt->bindParam(":tipo", $tipoDeSenha);
-
 
         return $stmt->execute();
     }
@@ -94,7 +79,7 @@ class Senhas{
     }
 
     public function alterarStatus($status, $id_senha, $atendente = null, $hora){
-        $sql = "UPDATE tabela_senhas SET status = :status, fk_atendente = :atendente, hora_chamada = :hora WHERE id_senha = :id_senha";
+        $sql = "UPDATE $this->tabela SET status = :status, fk_atendente = :atendente, hora_chamada = :hora WHERE id_senha = :id_senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":status", $status);
         $stmt->bindParam(":atendente", $atendente);
@@ -104,39 +89,28 @@ class Senhas{
     }
 
     public function statusPorSenha($senha){
-        $result = "";
-
-        $sql = "SELECT status FROM tabela_senhas WHERE senha = :senha";
+        $sql = "SELECT status FROM $this->tabela WHERE senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key){
-            $result = $key->status;
-        }
-
-        return $result;
+        return $result->status;
     }
 
     public function verificarStatus($atendente = null){
-        $result = "";
-
         if($atendente != null){
-            $sql = "SELECT status FROM tabela_senhas WHERE fk_atendente = :atendente";
+            $sql = "SELECT status FROM $this->tabela WHERE fk_atendente = :atendente";
             $stmt = BD::prepare($sql);
             $stmt->bindParam(":atendente", $atendente);
             $stmt->execute();
+            $result = $stmt->fetch();
 
-            foreach ($stmt->fetchAll() as $key){
-                $result = $key->status;
-            }
-
-            return $result;
+            return $result->status;
 
         }else{
-            $sql = "SELECT status FROM tabela_senhas";
+            $sql = "SELECT status FROM $this->tabela";
             $stmt = BD::prepare($sql);
-            $stmt->bindParam(":atendente", $atendente);
             $stmt->execute();
 
             $status_senha = $stmt->fetchAll();
@@ -152,23 +126,18 @@ class Senhas{
     }
 
     public function chamarTipoSenha($tipoSenha){
-        $result = "";
-
-        $sql = "SELECT senha FROM tabela_senhas WHERE status = 'Aguardando' AND tipo_senha = :tipo ORDER BY MAX(id_senha)";
+        $sql = "SELECT senha FROM $this->tabela WHERE status = 'Aguardando' AND tipo_senha = :tipo ORDER BY MAX(id_senha)";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":tipo",$tipoSenha);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key) {
-            $result = $key->senha;
-        }
-
-        return $result;
+        return $result->senha;
     }
 
     public function chamarSenha($atendente, $hora){
         //VERIFICAR SE HÁ ALGUM PREFERENCIAL
-        $sql = "SELECT senha FROM tabela_senhas WHERE status = 'Aguardando' AND tipo_senha = 'Preferencial'";
+        $sql = "SELECT senha FROM $this->tabela WHERE status = 'Aguardando' AND tipo_senha = 'Preferencial'";
         $stmt = BD::prepare($sql);
         $stmt->execute();
         $preferencial = $stmt->rowCount();
@@ -189,7 +158,7 @@ class Senhas{
     }
 
     public function chamarNovamente($senha, $hora){
-        $sql = "UPDATE tabela_senhas SET hora_chamada = :hora WHERE senha = :senha";
+        $sql = "UPDATE $this->tabela SET hora_chamada = :hora WHERE senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":hora", $hora);
         $stmt->bindParam(":senha", $senha);
@@ -199,38 +168,28 @@ class Senhas{
     }
 
     public function finalizarAtendimento($senha){
-        $sql = "UPDATE tabela_senhas SET status = 'Finalizado' WHERE senha = :senha";
+        $sql = "UPDATE $this->tabela SET status = 'Finalizado' WHERE senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();
     }
 
     public function mostrarSenhaChamada(){
-        $result = "";
-
-        $sql = "SELECT senha FROM tabela_senhas WHERE hora_chamada = (SELECT MAX(hora_chamada) FROM tabela_senhas)";
+        $sql = "SELECT senha FROM $this->tabela WHERE hora_chamada = (SELECT MAX(hora_chamada) FROM tabela_senhas)";
         $stmt = BD::prepare($sql);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key){
-            $result = $key->senha;
-        }
-
-        return $result;
+        return $result->senha;
     }
 
     public function pegarHora($senha){
-        $result = "";
-
-        $sql = "SELECT hora_chamada FROM tabela_senhas WHERE senha = :senha";
+        $sql = "SELECT hora_chamada FROM $this->tabela WHERE senha = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();
+        $result = $stmt->fetch();
 
-        foreach ($stmt->fetchAll() as $key){
-            $result = $key->hora_chamada;
-        }
-
-        return $result;
+        return $result->hora_chamada;
     }
 }

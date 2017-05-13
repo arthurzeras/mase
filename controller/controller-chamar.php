@@ -13,7 +13,7 @@ $atendimento = new Atendimentos();
 $senha_chamada = "";
 $mensagem = "";
 $botao = "<button data-toggle='tooltip' title='Chamar próxima senha' class='botao_chamar' type='submit' name='chamar'><img class='icon_call' src='assets/img/icon-next.png'></button>";
-$botao_finalizar = '<a data-toggle="tooltip" title="Finalizar atendimento" class="botao_finalizar disabled" href="/mase/&finalizar=ok" role="button"><img id="icon_finish" src="assets/img/icon-finish.png"></a>';
+$botao_finalizar = '<a data-toggle="tooltip" title="Finalizar atendimento" class="botao_finalizar disabled" href="'.PATH.'&finalizar=ok" role="button"><img id="icon_finish" src="assets/img/icon-stop.png"></a>';
 
 if(isset($_SESSION['atendente'])){
 
@@ -63,7 +63,7 @@ if(isset($_SESSION['atendente'])){
 
         //FINALIZAR O ATENDIMENTO
         $senhas->finalizarAtendimento($_SESSION['senha_chamada']);
-        header("Location: /mase/");
+        header("Location: ".PATH);
         $mensagem = '<p class="box_senha chamar_senha">Chame uma senha</p>';
     }else{
         //PEGAR A SENHA CHAMADA E JOGAR NA SESSÃO PARA SER MOSTRADA MESMO QUE ATUALIZE A PÁGINA
@@ -110,7 +110,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == true){
         echo "<script>alert('Termine o atendimento antes de sair do sistema.')</script>";
     }else{
         $atendente->logout();
-        header("Location: /mase/");
+        header("Location: ".PATH);
         unset($_SESSION['senha_chamada']);
     }
 }

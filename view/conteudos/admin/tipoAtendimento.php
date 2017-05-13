@@ -2,12 +2,12 @@
 
 <section id="conteudo_tipo_atendimento">
     <header class="header" id="header_adm">
-        <a class="voltar_pagina" href="/mase/"><i class="flaticon-back"></i></a>
+        <a class="voltar_pagina" href="<?=PATH?>"><i class="flaticon-back"></i></a>
         <?=$imagemLogo?>
         <div id="botoes_adm_atendente">
-            <a data-toggle="tooltip" id="add_atendimento" data-placement="bottom" title="Cadastrar novo" class="add_novo" href="/mase/admin/tipoatendimento&add=novo"><img src="../assets/img/icon-plus.png"></a>
+            <a data-toggle="tooltip" id="add_atendimento" data-placement="bottom" title="Cadastrar novo" class="add_novo" href="<?=PATH?>admin/tipoatendimento&add=novo"><img src="../assets/img/icon-plus.png"></a>
             <span id="divisor"></span>
-            <a class="icones_header logout" href="/mase/admin/tipoatendimento&logout=true"><i class="flaticon flaticon-logout"></i></a>
+            <a class="icones_header logout" href="<?=PATH?>admin/tipoatendimento&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">
@@ -26,7 +26,7 @@
                     foreach ($tipoAtendimento->pegarTudo() as $key => $item) { ?>
                         <tr class="items">
                             <td><?=$item->nome_tipo?></td>
-                            <td><a href="/mase/admin/tipoatendimento&do=update&id=<?=$item->id_tipo_atendimento?>"><i class="flaticon-edit"></i></a></td>
+                            <td><a href="<?=PATH?>admin/tipoatendimento&do=update&id=<?=$item->id_tipo_atendimento?>"><i class="flaticon-edit"></i></a></td>
                             <td><a onclick="confirmar('tipo_atendimento','<?php echo ($item->id_tipo_atendimento);?>', '<?php echo ($item->nome_tipo);?>');"><i class="flaticon-garbage"></i></a></td>
                         </tr>
                     <?php }
@@ -52,7 +52,7 @@
                         </td>
                         <input type="hidden" value="<?=$result->id_tipo_atendimento?>" name="id">
                         <td class="editando"><button name="alterar_atendimento" type="submit"><img src="../assets/img/icon-save.png"></button></td>
-                        <td class="editando"><a href="/mase/admin/tipoatendimento"><i class="flaticon-cancel"></i></a></td>
+                        <td class="editando"><a href="<?=PATH?>admin/tipoatendimento"><i class="flaticon-cancel"></i></a></td>
                     </form>
         <?php } else { ?>
                     <td class="bloqueado"><?=$item->nome_tipo?></td>
@@ -69,7 +69,7 @@
         ?>
         <div id="add_tipo">
             <div id="janela_add_tipo">
-                <a id="fechar" href="/mase/admin/tipoatendimento"><img src="../assets/img/icon-close.png"></a>
+                <a id="fechar" href="<?=PATH?>admin/tipoatendimento"><img src="../assets/img/icon-close.png"></a>
                 <h2>Novo tipo de atendimento</h2>
                 <form method="post">
                     <input type="text" class="campos_tipo input_attr" id="tipo_atendimento" name="tipo_atendimento" required autofocus>

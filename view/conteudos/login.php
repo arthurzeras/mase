@@ -7,7 +7,7 @@
         <span id="linha_login"></span>
         <div id="formulario_login">
             <form method="post">
-                <input type="number" id="matricula" class="campos_login input_attr" name="matricula" maxlength="10" required>
+                <input type="number" id="matricula" class="campos_login input_attr" name="matricula" maxlength="10" autofocus required>
                 <label id="placeholder_matricula" class="placeholder matricula" for="matricula">Matrícula</label>
                 <a href="javascript:void(0)" tabindex="-1" class="limpar limpar_matricula">×</a>
 
@@ -17,11 +17,12 @@
 
                 <input type="submit" class="campos_login botao" value="ENTRAR">
                 <div id="panel_end">
-                    <p id="input_checkbox"><input type="checkbox" name="chkbox" id="checkbox">
+                    <p id="input_checkbox">
+                        <input type="checkbox" name="chkbox" id="checkbox">
                         <label for="checkbox"></label>
                     </p>
                     <p id="label">Permanecer conectado</p>
-                    <a href="#" id="esqueceu_senha">Esqueceu a senha?</a>
+                    <a href="<?=PATH?>recuperar-senha" id="esqueceu_senha">Esqueceu a senha?</a>
                 </div>
                 <p class="mensagem-erro"><?=$error?></p>
             </form>

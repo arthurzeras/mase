@@ -2,15 +2,15 @@
     $dados_atendente = $atendente->pegarLinha($atendente->pegarId($_SESSION['atendente']));
 
     if(isset($_GET['senha'])){
-        $alterar_senha = '<p>Alterar senha |<a href="/mase/&editar=editar"><i class="flaticon-cancel"></i></a></p>';
+        $alterar_senha = '<p>Alterar senha |<a href="'.PATH.'&editar=editar"><i class="flaticon-cancel"></i></a></p>';
     }else{
-        $alterar_senha = '<a id="botao_alterarSenha" href="/mase/&editar=editar&senha=senha"><i class="flaticon-padlock"></i> Alterar senha</a>';
+        $alterar_senha = '<a id="botao_alterarSenha" href="'.PATH.'&editar=editar&senha=senha"><i class="flaticon-padlock"></i> Alterar senha</a>';
     }
 ?>
 
 <div id="editar_atendente">
     <div id="janela_editar">
-        <a href="/mase/"><img id="fechar_editar" src="assets/img/icon-close.png"></a>
+        <a href="<?=PATH?>"><img id="fechar_editar" src="assets/img/icon-close.png"></a>
         <h2>Seus dados</h2>
         <span id="linha_atendimento"></span>
         <form method="post" id="formulario_editar">

@@ -1,0 +1,63 @@
+#recuperar_senha{
+  .voltar_pagina{
+    position: absolute;
+    top: 20px;
+    font-size: 16pt;
+    font-weight: bold;
+    color: $hard;
+    i{
+      &::before{
+        font-size: 20pt;
+      }
+    }
+    span{
+      transform: translateY(-3px);
+      display: inline-block;
+    }
+  }
+  #janela{
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    h1{
+      font-size: 35pt;
+    }
+    p{
+      font-size: 16pt;
+      margin-bottom: 50px;
+    }
+    .input{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #email{
+      font-size: 18pt;
+      width: 400px;
+      border: none;
+      background-color: transparent;
+      border-bottom: $main 2px solid;
+      &:focus{
+        border-bottom: 2px $links solid;
+      }
+    }
+    #botao{
+      margin-top: 20px;
+      border: 2px solid $hard;
+      transition: .3s;
+      background-color: transparent;
+      font-size: 18pt;
+      width: 200px;
+      &:hover{
+        background-color: $hard;
+        color: #fff;
+      }
+    }
+    #mensagem{
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+      font-size: 12pt;
+    }
+  }
+}

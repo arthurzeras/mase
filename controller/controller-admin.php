@@ -60,7 +60,7 @@ if(isset($_SESSION['adm'])) {
         if($id = $tipoAtendimento->pegarId($tipo) === ""){
             if($tipoAtendimento->inserir() == true){
                 echo '<script>alert("Tipo de atendimento inserido com sucesso!")</script>';
-                echo '<script>window.location.href="/mase/admin/tipoatendimento"</script>';
+                echo '<script>window.location.href="'.PATH.'admin/tipoatendimento"</script>';
             }else{
                 $msg = "Ocorreu algum erro.";
             }
@@ -81,7 +81,7 @@ if(isset($_SESSION['adm'])) {
         $atendente->setEmail($email);
 
         if ($atendente->alterar($idAtendente)) {
-            header("Location: /mase/admin/atendentes&update=ok");
+            header("Location: ".PATH."admin/atendentes&update=ok");
         } else {
             $msg = "Não foi possível alterar";
         }
@@ -93,7 +93,7 @@ if(isset($_SESSION['adm'])) {
         $tipoAtendimento->setNomeAtendimento($_POST['nome_tipo']);
 
         if($tipoAtendimento->alterar($idAtendimento)){
-            header("Location: /mase/admin/tipoatendimento&update=ok");
+            header("Location: ".PATH."admin/tipoatendimento&update=ok");
         }else{
             $msg = "Não foi possível alterar";
         }
@@ -106,11 +106,11 @@ if(isset($_SESSION['adm'])) {
         switch ($pagina){
             case "tipo_atendimento":
                 $tipoAtendimento->excluir($id);
-                header("Location: /mase/admin/tipoatendimento&del=ok");
+                header("Location: ".PATH."admin/tipoatendimento&del=ok");
                 break;
             case "atendentes":
                 $atendente->excluir($id);
-                header("Location: /mase/admin/atendentes&del=ok");
+                header("Location: ".PATH."admin/atendentes&del=ok");
                 break;
         }
     }
@@ -125,8 +125,8 @@ if(isset($_SESSION['adm'])) {
     //LOGOUT
     if(isset($_GET['logout']) && $_GET['logout'] == "true"){
         $atendente->logout();
-        header("Location: /mase/");
+        header("Location: ".PATH);
     }
 }else{
-    header("Location: /mase/");
+    header("Location: ".PATH);
 }

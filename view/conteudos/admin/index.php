@@ -8,10 +8,10 @@
 
     <article id="botoes_adm">
         <div class="botoes">
-            <a href="/mase/admin/atendentes">Atendentes</a>
+            <a href="<?=PATH?>admin/atendentes">Atendentes</a>
         </div>
         <div class="botoes">
-            <a href="/mase/admin/tipoatendimento">Tipos de Atendimentos</a>
+            <a href="<?=PATH?>admin/tipoatendimento">Tipos de Atendimentos</a>
         </div>
     </article>
 </section>
