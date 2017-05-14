@@ -30,7 +30,7 @@ class Guiches extends Crud{
     }
 
     public function alterar($id){
-        $sql = "UPDATE $this->table SET ip_maquina = : ip, numero_guiche = :guiche WHERE $this->id = :id";
+        $sql = "UPDATE $this->table SET ip_maquina = :ip, numero_guiche = :guiche WHERE $this->id = :id";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":ip", $this->ip);
         $stmt->bindParam(":guiche", $this->guiche);

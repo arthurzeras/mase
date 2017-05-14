@@ -61,7 +61,7 @@
                                     <input type="text" name="ip_maquina" value="<?=$result->ip_maquina?>" placeholder="IP da máqina" autofocus required>
                                 </td>
                                 <td class="editando">
-                                    <input type="number" value="<?=$result->numero_guiche?>" placeholder="Número do guichê" required>
+                                    <input type="number" name="num_guiche" value="<?=$result->numero_guiche?>" placeholder="Número do guichê" required>
                                 </td>
                                 <td class="editando"><button name="alterar_guiche" type="submit"><img src="../assets/img/icon-save.png"></button></td>
                                 <td class="editando"><a href="<?=PATH?>admin/guiches"><span class="flaticon-cancel"></span></a></td>

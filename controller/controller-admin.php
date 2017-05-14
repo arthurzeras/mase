@@ -116,11 +116,11 @@ if(isset($_SESSION['adm'])) {
     //ALTERAR GUICHE
     if(isset($_POST['alterar_guiche'])){
         $idGuiche = $_POST['id'];
-        $guiche->setIp($_POST['ip']);
+        $guiche->setIp($_POST['ip_maquina']);
         $guiche->setGuiche($_POST['num_guiche']);
 
         if($guiche->alterar($idGuiche)){
-            header("Location: ".PATH."admin/guiche&update=ok");
+            header("Location: ".PATH."admin/guiches&update=ok");
         }else{
             $msg = "Não foi possível alterar";
         }
