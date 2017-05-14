@@ -1,5 +1,5 @@
 //HEADER ADM
-#conteudo_adm_index,#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento{
+#conteudo_adm_index,#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches{
   #header_adm{
     float: none;
     .voltar_pagina{
@@ -75,7 +75,7 @@
 }
 
 //HEADER DE CADA PAGINA
-#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento{
+#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches{
   #corpo{
     width: 100%;
     .header_corpo{
@@ -106,10 +106,12 @@
   #botoes_adm{
     width: 100%;
     text-align: center;
-    transform: translateY(30vh);
+    transform: translateY(10vh);
     .botoes{
-      display: inline-block;
-      width: 45%;
+      display: block;
+      width: 80%;
+      margin-bottom: 10px;
+      margin-left: 10%;
       a{
         font-size: 35pt;
         color: $hard;
@@ -127,8 +129,8 @@
 }
 
 
-//LISTA DE CADASTROS DE ATENDENTES E TIPOS DE ATENDIMENTO
-#conteudo_adm,#conteudo_tipo_atendimento{
+//LISTA DE ATENDENTES, TIPOS DE ATENDIMENTOS E GUICHÊS
+#conteudo_adm,#conteudo_tipo_atendimento, #conteudo_guiches{
   #corpo{
     .lista_tabela{
       padding: 20px 40px;
@@ -311,7 +313,7 @@
 }
 
 //PÁGINA TIPOS DE ATENDIMENTO
-#conteudo_tipo_atendimento{
+#conteudo_tipo_atendimento,#conteudo_guiches{
   #corpo{
     .header_corpo{
       .linha_header{
@@ -319,7 +321,8 @@
       }
     }
   }
-  #add_tipo{
+  //JANELA DE ADICIONAR NOVO
+  #add_novo{
     position: absolute;
     top: 0;
     right: 0;
@@ -327,7 +330,7 @@
     left: 0;
     z-index: 100;
     background-color: rgba(0, 46, 68, 0.9);
-    #janela_add_tipo{
+    #janela_add{
       padding: 10px;
       width: 30%;
       margin-left: 35%;
@@ -372,11 +375,37 @@
         cursor: text;
       }
 
-      #tipo_atendimento:focus ~ .tipo_atendimento, .active{
+      #tipo_atendimento:focus ~ .tipo_atendimento,
+      #ip_maquina:focus ~ .ip_maquina,
+      #num_guiche:focus ~ .num_guiche,
+      .active{
         transform: translate(1px, -65px);
         z-index: 1;
         font-size: 12pt;
         color: $preto;
+      }
+
+      #ip_maquina:focus ~ .ip_maquina{
+        img{
+          display: inline-block;
+          cursor: pointer;
+          transition: .2s;
+          &:hover{
+            opacity: .5;
+          }
+        }
+      }
+
+      #placeholder_ip_maquina{
+        .tooltip-inner{
+          max-width: 500px;
+          width: 500px;
+        }
+        img{
+          display: none;
+          width: 18px;
+          transform: translate(4px,-1px);
+        }
       }
 
       .input_attr:focus ~ .limpar{
@@ -415,6 +444,17 @@
         text-align: center;
         font-size: 14pt;
         font-weight: bold;
+      }
+    }
+  }
+}
+
+//PÁGINA GUICHÊS
+#conteudo_guiches{
+  #corpo{
+    .header_corpo{
+      .linha_header{
+        margin-left: 120px;
       }
     }
   }

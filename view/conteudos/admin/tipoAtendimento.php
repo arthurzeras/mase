@@ -41,9 +41,7 @@
                 <tr class="items">
         <?php
                 if ($tipoAtendimento->pegarId($item->nome_tipo) == $id){
-                    $tipoEditar = $item->nome_tipo;
                     $result = $tipoAtendimento->pegarLinha($id);
-
         ?>
                     <form method="post">
                         <td class="editando">
@@ -67,8 +65,8 @@
 
     if(isset($_GET['add']) && $_GET['add'] == "novo"){
         ?>
-        <div id="add_tipo">
-            <div id="janela_add_tipo">
+        <div id="add_novo">
+            <div id="janela_add">
                 <a id="fechar" href="<?=PATH?>admin/tipoatendimento"><img src="../assets/img/icon-close.png"></a>
                 <h2>Novo tipo de atendimento</h2>
                 <form method="post">

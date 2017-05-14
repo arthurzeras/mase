@@ -2,6 +2,7 @@
 require_once "classes/inherits/Atendentes.class.php";
 require_once "classes/inherits/TipoAtendimento.class.php";
 require_once "classes/inherits/Atendimentos.class.php";
+require_once "classes/inherits/Guiches.class.php";
 
 $msg = "";
 $result = "";
@@ -13,6 +14,7 @@ $_SESSION['email'] = "";
 $atendente = new Atendentes();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
+$guiche = new Guiches();
 
 function formCampos(){
     if(isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
@@ -24,7 +26,7 @@ function formCampos(){
 
 if(isset($_SESSION['adm'])) {
     //CADASTRAR NOVO ATENDENTE
-    if (isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])) {
+    if(isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
         $matriculaAtendente = $_POST['matricula'];
         $emailAtendente = $_POST['email'];
         $atendente->setMatricula($matriculaAtendente);
@@ -35,7 +37,7 @@ if(isset($_SESSION['adm'])) {
 
         //NÃO PERMITIR INSERIR O MESMO E-MAIL OU MATRICULA JÁ EXISTENTE
         if((($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0) && (($atendente->verificarDisponibilidade("email_atendente",$emailAtendente)) != 0)){
-            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula e campo!</p>";
+            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula e email!</p>";
             formCampos();
         }else if(($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0){
             $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula!</p>";
@@ -69,6 +71,18 @@ if(isset($_SESSION['adm'])) {
         }
     }
 
+    //CADASTRAR NOVO GUICHÊ
+    if(isset($_POST['ip_maquina']) && isset($_POST['num_guiche'])){
+        $guiche->setIp($_POST['ip_maquina']);
+        $guiche->setGuiche($_POST['num_guiche']);
+        if($guiche->validar() == true){
+            $guiche->inserir();
+            echo '<script>alert("Cadastrado com sucesso!")</script>';
+            echo '<script>window.location.href="'.PATH.'admin/guiches"</script>';
+        }else{
+            $msgerr = '<p id="erro">Já existe este ip ou este número cadastrado.</p>';
+        }
+    }
     //ALTERAR ATENDENTE
     if (isset($_POST['alterar_atendente'])) {
         $matricula = (int)$_POST['matricula'];
@@ -99,6 +113,19 @@ if(isset($_SESSION['adm'])) {
         }
     }
 
+    //ALTERAR GUICHE
+    if(isset($_POST['alterar_guiche'])){
+        $idGuiche = $_POST['id'];
+        $guiche->setIp($_POST['ip']);
+        $guiche->setGuiche($_POST['num_guiche']);
+
+        if($guiche->alterar($idGuiche)){
+            header("Location: ".PATH."admin/guiche&update=ok");
+        }else{
+            $msg = "Não foi possível alterar";
+        }
+    }
+
     //DELETAR
     if (isset($_GET['do']) && $_GET['do'] == "del") {
         $pagina = $_GET['pagina'];
@@ -111,6 +138,10 @@ if(isset($_SESSION['adm'])) {
             case "atendentes":
                 $atendente->excluir($id);
                 header("Location: ".PATH."admin/atendentes&del=ok");
+                break;
+            case "guiches":
+                $guiche->excluir($id);
+                header("Location: ".PATH."admin/guiches&del=ok");
                 break;
         }
     }

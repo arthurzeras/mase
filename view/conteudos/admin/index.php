@@ -13,5 +13,8 @@
         <div class="botoes">
             <a href="<?=PATH?>admin/tipoatendimento">Tipos de Atendimentos</a>
         </div>
+        <div class="botoes">
+            <a href="<?=PATH?>admin/guiches">Guichês</a>
+        </div>
     </article>
 </section>

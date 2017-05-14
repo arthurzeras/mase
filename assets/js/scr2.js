@@ -51,5 +51,9 @@ function confirmar(pagina, id, nome) {
                 location.href = "/mase/admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
+        case "guiches":
+            if(confirm("Deletar "+ nome +"?")){
+                location.href = "/mase/admin/guiches&pagina="+pagina+"&do=del&id="+ id;
+            }
     }
 }

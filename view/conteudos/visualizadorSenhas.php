@@ -1,4 +1,4 @@
-<div align="center">
-    <p>Senha:</p>
-    <h1 id="senha_chamada"></h1>
-</div>
+<section id="senhas">
+    <p>Senha: <span id="senha_chamada"></span></p>
+    <p>Guichê: </p>
+</section>

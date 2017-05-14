@@ -30,17 +30,11 @@ class TipoAtendimento extends Crud{
     }
 
     public function pegarId($nome){
-        $return = "";
-
         $sql = "SELECT $this->id FROM $this->table WHERE nome_tipo = :nome";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":nome",$nome);
         $stmt->execute();
-
-        foreach ($stmt->fetchAll() as $key){
-            $return = $key->id_tipo_atendimento;
-        }
-
-        return $return;
+        $result = $stmt->fetch();
+        return $result->id_tipo_atendimento;
     }
 }

@@ -32,6 +32,9 @@ if(isset($_SESSION['atendente'])){
         case "admin/atendentes":
             route("admin/atendentes");
             break;
+        case "admin/guiches":
+            route("admin/guiches");
+            break;
         case "admin/teste":
             route("admin/teste");
             break;
