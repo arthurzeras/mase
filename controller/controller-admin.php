@@ -58,8 +58,7 @@ if(isset($_SESSION['adm'])) {
     if(isset($_POST['tipo_atendimento'])){
         $tipo = $_POST['tipo_atendimento'];
         $tipoAtendimento->setNomeAtendimento($tipo);
-
-        if($id = $tipoAtendimento->pegarId($tipo) === ""){
+        if($tipoAtendimento->pegarId($tipo) === ""){
             if($tipoAtendimento->inserir() == true){
                 echo '<script>alert("Tipo de atendimento inserido com sucesso!")</script>';
                 echo '<script>window.location.href="'.PATH.'admin/tipoatendimento"</script>';

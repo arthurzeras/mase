@@ -72,7 +72,7 @@ class Atendentes extends Crud implements Acesso{
 
 
     public function inserir(){
-        $sql = "INSERT INTO $this->table (matricula, nome_atendente, email_atendente, senha_atendente) VALUES (:matricula, :nome ,:senha)";
+        $sql = "INSERT INTO $this->table (matricula, nome_atendente, email_atendente, senha_atendente) VALUES (:matricula, :nome , :email, :senha)";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":matricula", $this->matricula);
         $stmt->bindParam(":nome", $this->nome);

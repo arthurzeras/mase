@@ -2,7 +2,7 @@
 
 class BD{
     private static $instance;
-    private static $bd = "Senhas";
+    private static $bd = "senhas";
     private static $host = "localhost";
     private static $user = "root";
     private static $pass = "";
