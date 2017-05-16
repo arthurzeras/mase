@@ -20,6 +20,7 @@ $botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="fl
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?=$titulo?></title>
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/flaticon.css">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/SpryValidationTextField.css">

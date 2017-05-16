@@ -4,7 +4,7 @@ class BD{
     private static $instance;
     private static $bd = "senhas";
     private static $host = "localhost";
-    private static $user = "root";
+    private static $user = "arthurzeras";
     private static $pass = "";
 
     public static function getInstance(){
