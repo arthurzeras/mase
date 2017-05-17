@@ -8,6 +8,7 @@ abstract class Crud{
 
     abstract public function inserir();
     abstract public function alterar($id);
+    abstract public function validar($id = null);
 
     public function pegarLinha($id){
         $sql = "SELECT * FROM $this->table WHERE $this->id = :id";

@@ -33,22 +33,13 @@ if(isset($_SESSION['adm'])) {
         $atendente->setNome($_POST['nome']);
         $atendente->setEmail($emailAtendente);
         $atendente->setSenha(md5($_POST['matricula']));
-
-
-        //NÃO PERMITIR INSERIR O MESMO E-MAIL OU MATRICULA JÁ EXISTENTE
-        if((($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0) && (($atendente->verificarDisponibilidade("email_atendente",$emailAtendente)) != 0)){
-            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula e email!</p>";
-            formCampos();
-        }else if(($atendente->verificarDisponibilidade("matricula",$matriculaAtendente)) != 0){
-            $msg = "<p class='mensagem_erro'>Já existe um atendente com esta matrícula!</p>";
-            formCampos();
-        }else if (($atendente->verificarDisponibilidade("email_atendente",$emailAtendente)) != 0) {
-            $msg = "<p class='mensagem_erro'>Já existe um atendente com este email!</p>";
+        if($atendente->validar() == false){
+            $msg = '<p class="mensagem_erro">Já existe essa matrícula ou esse e-mail cadastrado.</p>';
             formCampos();
         }else{
-            if ($atendente->inserir() == true){
-                $msg = '<script>alert("Atendente inserido com sucesso!")</script>';
-            } else {
+            if($atendente->inserir() == true){
+                echo '<script>alert("Atendente inserido com sucesso!")</script>';
+            }else{
                 $msg = "Ocorreu algum erro";
             }
         }
@@ -58,7 +49,7 @@ if(isset($_SESSION['adm'])) {
     if(isset($_POST['tipo_atendimento'])){
         $tipo = $_POST['tipo_atendimento'];
         $tipoAtendimento->setNomeAtendimento($tipo);
-        if($tipoAtendimento->pegarId($tipo) === ""){
+        if($tipoAtendimento->validar() == true){
             if($tipoAtendimento->inserir() == true){
                 echo '<script>alert("Tipo de atendimento inserido com sucesso!")</script>';
                 echo '<script>window.location.href="'.PATH.'admin/tipoatendimento"</script>';
@@ -82,21 +73,27 @@ if(isset($_SESSION['adm'])) {
             $msgerr = '<p id="erro">Já existe este ip ou este número cadastrado.</p>';
         }
     }
+    
     //ALTERAR ATENDENTE
-    if (isset($_POST['alterar_atendente'])) {
-        $matricula = (int)$_POST['matricula'];
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
+    if(isset($_POST['alterar_atendente'])){
+        $matricula = (int)$_POST['matricula_editar'];
+        $nome = $_POST['nome_editar'];
+        $email = $_POST['email_editar'];
         $idAtendente = (int)$_POST['id'];
 
         $atendente->setMatricula($matricula);
         $atendente->setNome($nome);
         $atendente->setEmail($email);
-
-        if ($atendente->alterar($idAtendente)) {
+        
+        //VALIDAR PARA NÃO COLOCAR DADOS REPETIDOS
+        if($atendente->validar($idAtendente) == true){
+            if($atendente->alterar($idAtendente)){
             header("Location: ".PATH."admin/atendentes&update=ok");
-        } else {
-            $msg = "Não foi possível alterar";
+            }else{
+                $msg = "Não foi possível alterar";
+            }    
+        }else{
+            $msg = "Já existe este email ou matrícula cadastrado!";
         }
     }
 
@@ -105,28 +102,36 @@ if(isset($_SESSION['adm'])) {
         $idAtendimento = $_POST['id'];
         $tipoAtendimento->setNomeAtendimento($_POST['nome_tipo']);
 
-        if($tipoAtendimento->alterar($idAtendimento)){
-            header("Location: ".PATH."admin/tipoatendimento&update=ok");
+        if($tipoAtendimento->validar() == true){
+            if($tipoAtendimento->alterar($idAtendimento)){
+                header("Location: ".PATH."admin/tipoatendimento&update=ok");
+            }else{
+                $msg = "Não foi possível alterar";
+            }    
         }else{
-            $msg = "Não foi possível alterar";
+            $msg = "Já existe um tipo de atendimento com este nome.";
         }
     }
 
     //ALTERAR GUICHE
     if(isset($_POST['alterar_guiche'])){
         $idGuiche = $_POST['id'];
-        $guiche->setIp($_POST['ip_maquina']);
-        $guiche->setGuiche($_POST['num_guiche']);
+        $guiche->setIp($_POST['ip_maquina_alterar']);
+        $guiche->setGuiche($_POST['num_guiche_alterar']);
 
-        if($guiche->alterar($idGuiche)){
-            header("Location: ".PATH."admin/guiches&update=ok");
+        if($guiche->validar($idGuiche) == true){
+            if($guiche->alterar($idGuiche)){
+                header("Location: ".PATH."admin/guiches&update=ok");
+            }else{
+                $msg = "Não foi possível alterar";
+            }    
         }else{
-            $msg = "Não foi possível alterar";
+            $msg = "Este IP ou número já existe.";
         }
     }
 
     //DELETAR
-    if (isset($_GET['do']) && $_GET['do'] == "del") {
+    if(isset($_GET['do']) && $_GET['do'] == "del"){
         $pagina = $_GET['pagina'];
         $id = $_GET['id'];
         switch ($pagina){
@@ -146,9 +151,9 @@ if(isset($_SESSION['adm'])) {
     }
 
     //MENSAGENS
-    if (isset($_GET['update']) && $_GET['update'] == "ok") {
+    if(isset($_GET['update']) && $_GET['update'] == "ok"){
         $msg = '<script>alert("Alterado com sucesso.")</script>';
-    } else if (isset($_GET['del']) && $_GET['del'] == "ok") {
+    }else if(isset($_GET['del']) && $_GET['del'] == "ok"){
         $msg = '<script>alert("Deletado com sucesso.")</script>';
     }
 

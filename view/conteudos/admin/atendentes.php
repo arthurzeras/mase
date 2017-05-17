@@ -1,6 +1,5 @@
 <?php
 include_once "controller/controller-admin.php";
-echo $msg;
 ?>
 
 <section id="conteudo_adm">
@@ -37,7 +36,7 @@ echo $msg;
                                 <td><?=$item->email_atendente?></td>
                                 <?php if($item->nome_atendente !== "admin") {?>
                                     <td><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
-                                    <td><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>');"><i class="flaticon-garbage"></i></a></td>
+                                    <td><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>', '<?=PATH?>');"><i class="flaticon-garbage"></i></a></td>
                                 <?php }else{ ?>
                                     <td colspan="2"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                                 <?php }?>
@@ -58,20 +57,21 @@ echo $msg;
                             $result = $atendente->pegarLinha($id);
                 ?>
                             <form method="post">
-                                <td class="editando"><span class="flaticon-edit"></span><input type="text" value="<?=$result->matricula?>" placeholder="Matrícula do Atendente" name="matricula" required autofocus></td>
-                                <td class="editando"><input type="text" value="<?=$result->nome_atendente?>" placeholder="Nome" name="nome" required></td>
-                                <td class="editando"><input type="email" value="<?=$result->email_atendente?>" placeholder="Email" name="email" required></td>
+                                <td class="editando"><span class="flaticon-edit"></span><input type="text" value="<?=$result->matricula?>" placeholder="Matrícula do Atendente" name="matricula_editar" required autofocus></td>
+                                <td class="editando"><input type="text" value="<?=$result->nome_atendente?>" placeholder="Nome" name="nome_editar" required></td>
+                                <td class="editando"><input type="email" value="<?=$result->email_atendente?>" placeholder="Email" name="email_editar" required></td>
                                 <input type="hidden" value="<?=$result->id_atendente?>" name="id">
                                 <td class="editando"><button name="alterar_atendente" type="submit"><img src="../assets/img/icon-save.png"></button></td>
                                 <td class="editando"><a href="<?=PATH?>admin/atendentes"><i class="flaticon-cancel"></i></a></td>
                             </form>
+                            <p id="erro"><?=$msg?></p>
                 <?php }else{?>
                             <td class="bloqueado"><?=$item->matricula?></td>
                             <td class="bloqueado"><?=$item->nome_atendente?></td>
                             <td class="bloqueado"><?=$item->email_atendente?></td>
                 <?php if($item->nome_atendente !== "admin") {?>
                                 <td class="bloqueado"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
-                                <td class="bloqueado"><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>');"><i class="flaticon-garbage"></i></a></td>
+                                <td class="bloqueado"><a onclick="confirmar('atendentes','<?php echo ($item->id_atendente);?>', '<?php echo ($item->nome_atendente);?>', '<?=PATH?>');"><i class="flaticon-garbage"></i></a></td>
                             <?php }else{ ?>
                                 <td class="bloqueado" colspan="2"><a href="<?=PATH?>admin/atendentes&do=update&id=<?=$item->id_atendente?>"><i class="flaticon-edit"></i></a></td>
                             <?php }?>

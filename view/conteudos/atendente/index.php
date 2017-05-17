@@ -26,7 +26,7 @@ require_once "controller/controller-chamar.php";
         </div>
     </div>
     <div id="ultimas_pedidas">
-        <h2>Já pedidas</h2>
+        <h2>Em espera</h2>
         <div id="ultimas_conteudo"></div>
     </div>
     <?php include_once "view/conteudos/atendente/menu-info.php";

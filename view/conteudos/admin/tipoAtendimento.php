@@ -27,7 +27,7 @@
                         <tr class="items">
                             <td><?=$item->nome_tipo?></td>
                             <td><a href="<?=PATH?>admin/tipoatendimento&do=update&id=<?=$item->id_tipo_atendimento?>"><i class="flaticon-edit"></i></a></td>
-                            <td><a onclick="confirmar('tipo_atendimento','<?php echo ($item->id_tipo_atendimento);?>', '<?php echo ($item->nome_tipo);?>');"><i class="flaticon-garbage"></i></a></td>
+                            <td><a onclick="confirmar('tipo_atendimento','<?php echo ($item->id_tipo_atendimento);?>', '<?php echo ($item->nome_tipo);?>','<?=PATH?>')"><i class="flaticon-garbage"></i></a></td>
                         </tr>
                     <?php }
                 }else{ ?>
@@ -52,6 +52,7 @@
                         <td class="editando"><button name="alterar_atendimento" type="submit"><img src="../assets/img/icon-save.png"></button></td>
                         <td class="editando"><a href="<?=PATH?>admin/tipoatendimento"><i class="flaticon-cancel"></i></a></td>
                     </form>
+                    <p id="erro"><?=$msg?></p>
         <?php } else { ?>
                     <td class="bloqueado"><?=$item->nome_tipo?></td>
                 </tr>
@@ -61,8 +62,6 @@
     </div>
 
     <?php
-    echo $msg;
-
     if(isset($_GET['add']) && $_GET['add'] == "novo"){
         ?>
         <div id="add_novo">

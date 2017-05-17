@@ -572,6 +572,11 @@ input[type=number] {
 
 #conteudo_adm #corpo .lista_tabela, #conteudo_tipo_atendimento #corpo .lista_tabela, #conteudo_guiches #corpo .lista_tabela {
   padding: 20px 40px; }
+  #conteudo_adm #corpo .lista_tabela #erro, #conteudo_tipo_atendimento #corpo .lista_tabela #erro, #conteudo_guiches #corpo .lista_tabela #erro {
+    text-align: center;
+    font-size: 15pt;
+    color: #ff0000;
+    font-weight: bold; }
   #conteudo_adm #corpo .lista_tabela table, #conteudo_tipo_atendimento #corpo .lista_tabela table, #conteudo_guiches #corpo .lista_tabela table {
     width: 100%;
     text-align: center; }

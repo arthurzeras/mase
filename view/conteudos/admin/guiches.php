@@ -31,7 +31,7 @@
                             <td><?=$item->numero_guiche?></td>
                             <td><a href="<?=PATH?>admin/guiches&do=update&id=<?=$item->id_guiche?>"><i class="flaticon-edit"></i></a></td>
                             <td>
-                                <a onclick="confirmar('guiches', '<?=$item->id_guiche?>', '<?=$item->ip_maquina?>')">
+                                <a onclick="confirmar('guiches', '<?=$item->id_guiche?>', '<?=$item->ip_maquina?>', <?=PATH?>')">
                                     <i class="flaticon-garbage"></i>
                                 </a>
                             </td>
@@ -58,14 +58,15 @@
                                 <input type="hidden" value="<?=$result->id_guiche?>" name="id">
                                 <td class="editando">
                                     <span class="flaticon-edit"></span>
-                                    <input type="text" name="ip_maquina" value="<?=$result->ip_maquina?>" placeholder="IP da máqina" autofocus required>
+                                    <input type="text" name="ip_maquina_alterar" value="<?=$result->ip_maquina?>" placeholder="IP da máqina" pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$" autofocus required>
                                 </td>
                                 <td class="editando">
-                                    <input type="number" name="num_guiche" value="<?=$result->numero_guiche?>" placeholder="Número do guichê" required>
+                                    <input type="number" name="num_guiche_alterar" value="<?=$result->numero_guiche?>" placeholder="Número do guichê" required>
                                 </td>
                                 <td class="editando"><button name="alterar_guiche" type="submit"><img src="../assets/img/icon-save.png"></button></td>
                                 <td class="editando"><a href="<?=PATH?>admin/guiches"><span class="flaticon-cancel"></span></a></td>
                             </form>
+                            <p id="erro"><?=$msg?></p>
 <?php
                         }else{
 ?>
@@ -78,8 +79,6 @@
     </div>
 
     <?php
-    echo $msg;
-
     if(isset($_GET['add']) && $_GET['add'] == "novo"){
         ?>
         <div id="add_novo">
@@ -87,7 +86,7 @@
                 <a id="fechar" href="<?=PATH?>admin/guiches"><img src="../assets/img/icon-close.png"></a>
                 <h2>Novo guichê</h2>
                 <form method="post">
-                    <input type="text" class="campos_tipo input_attr" id="ip_maquina" name="ip_maquina" required autofocus>
+                    <input type="text" class="campos_tipo input_attr" id="ip_maquina" name="ip_maquina" pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$" required autofocus>
                     <label id="placeholder_ip_maquina" class="placeholder ip_maquina" for="ip_maquina" >
                         IP da máquina. Ex: 192.168.0.155
                         <img src="../assets/img/icon-help.png" data-toggle="tooltip" data-placement="right" title="O ip é um código único de cada computador para identificá-lo na rede. Para descobrir o IP da máquina digite 'ipconfig' no prompt de comando do windows, ele estará descrito como IPv4.">

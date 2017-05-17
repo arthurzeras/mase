@@ -57,4 +57,8 @@ class Atendimentos extends Crud{
     public function alterar($id){
 
     }
+    
+    public function validar($id = null){
+        
+    }
 }

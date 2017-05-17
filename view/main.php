@@ -21,17 +21,16 @@ $botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="fl
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?=$titulo?></title>
+        <link rel="shortcut icon" href="<?=$diretorio?>/img/icone.ico">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/flaticon.css">
-        <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/SpryValidationTextField.css">
         <link rel="stylesheet" type="text/css" href="<?=$diretorio?>/css/estilos.css">
     </head>
     <body>
         <?php require_once $conteudo;?>
         <script type="text/javascript" src="<?=$diretorio?>/js/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="<?=$diretorio?>/js/SpryValidationTextField.js"></script>
-        <script type="text/javascript" src="<?=$diretorio?>/js/validacao-input.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?=$diretorio?>/js/bootbox.min.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/scr2.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/collapse.js"></script>
     </body>

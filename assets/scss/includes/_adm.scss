@@ -37,7 +37,7 @@
       }
     }
 
-    //PÁGINA ADD ATENDENTES
+    //PAGINA ADD ATENDENTES
     #botoes_adm_atendente{
       position: absolute;
       right: 50px;
@@ -101,7 +101,7 @@
   }
 }
 
-//PÁGINA INICIAL DO ADM
+//PAGINA INICIAL DO ADM
 #conteudo_adm_index{
   #botoes_adm{
     width: 100%;
@@ -129,11 +129,17 @@
 }
 
 
-//LISTA DE ATENDENTES, TIPOS DE ATENDIMENTOS E GUICHÊS
+//LISTA DE ATENDENTES, TIPOS DE ATENDIMENTOS E GUICHES
 #conteudo_adm,#conteudo_tipo_atendimento, #conteudo_guiches{
   #corpo{
     .lista_tabela{
       padding: 20px 40px;
+      #erro{
+        text-align: center;
+        font-size: 15pt;
+        color: #ff0000;
+        font-weight: bold;
+      }
       table{
         width: 100%;
         text-align: center;
@@ -312,7 +318,7 @@
   }
 }
 
-//PÁGINA TIPOS DE ATENDIMENTO
+//PAGINA TIPOS DE ATENDIMENTO
 #conteudo_tipo_atendimento,#conteudo_guiches{
   #corpo{
     .header_corpo{
@@ -449,7 +455,7 @@
   }
 }
 
-//PÁGINA GUICHÊS
+//PAGINA GUICHES
 #conteudo_guiches{
   #corpo{
     .header_corpo{

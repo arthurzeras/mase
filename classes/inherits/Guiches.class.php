@@ -37,18 +37,27 @@ class Guiches extends Crud{
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
-
-    public function validar(){
+    
+    public function validar($id = null){
         $sql = "SELECT * FROM $this->table WHERE ip_maquina = :ip OR numero_guiche = :num";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":ip", $this->ip);
         $stmt->bindParam(":num", $this->guiche);
         $stmt->execute();
-
-        if($stmt->rowCount() > 0){
-            return false;
+        $result = $stmt->fetch();
+        
+        if($id != null){
+            if((($stmt->rowCount() == 1) && ($result->id_guiche != $id)) || ($stmt->rowCount() == 2)){
+                return false;
+            }else{
+                return true;
+            }
         }else{
-            return true;
+            if($stmt->rowCount() > 0){
+                return false;
+            }else{
+                return true;
+            }
         }
     }
 

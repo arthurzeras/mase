@@ -39,21 +39,21 @@ $(document).ready(function (){
 });
 
 //POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DE ATENDENTE
-function confirmar(pagina, id, nome) {
+function confirmar(pagina, id, nome, path) {
     switch (pagina){
         case "tipo_atendimento":
             if (confirm("Deletar "+ nome +"?")){
-                location.href = "/mase/admin/tipoatendimento&pagina="+pagina+"&do=del&id=" + id;
+                document.location.href = path+"admin/tipoatendimento&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
         case "atendentes":
             if (confirm("Deletar "+ nome +"?")){
-                location.href = "/mase/admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
+                document.location.href = path+"admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
         case "guiches":
             if(confirm("Deletar "+ nome +"?")){
-                location.href = "/mase/admin/guiches&pagina="+pagina+"&do=del&id="+ id;
+                document.location.href = path+"admin/guiches&pagina="+pagina+"&do=del&id="+ id;
             }
     }
 }
