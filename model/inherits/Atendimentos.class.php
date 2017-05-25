@@ -1,5 +1,5 @@
 <?php
-require_once "classes/Crud.class.php";
+require_once "model/Crud.class.php";
 
 class Atendimentos extends Crud{
     protected $table = "tabela_atendimentos";
@@ -44,7 +44,7 @@ class Atendimentos extends Crud{
 
 
     public function inserir(){
-        $sql = "INSERT INTO $this->table (fk_atendente, fk_tipo_atendimento, duracao_atendimento, data_atendimento) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO $this->table (fk_usuario, fk_tipo_atendimento, duracao_atendimento, data_atendimento) VALUES (?,?,?,?)";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(1, $this->atendente);
         $stmt->bindParam(2, $this->tipo_atendimento);

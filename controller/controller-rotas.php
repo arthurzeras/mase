@@ -26,14 +26,17 @@ if(isset($_SESSION['atendente'])){
         case "admin/tipoatendimento";
             route("admin/tipoAtendimento", "MASE - Tipos de atendimentos - Painel de administração");
             break;
-        case "admin/atendentes":
-            route("admin/atendentes", "MASE - Atendentes - Painel de administração");
+        case "admin/usuarios":
+            route("admin/usuarios", "MASE - Usuários - Painel de administração");
+            break;
+        case "admin/perfis":
+            route("admin/perfis", "MASE - Perfis - Painel de administração");
             break;
         case "admin/guiches":
             route("admin/guiches", "MASE - Guichês - Painel de administração");
             break;
-        case "admin/addatendente":
-            route("admin/addAtendente", "MASE - Cadastrar novo atendente - Painel de administração");
+        case "admin/addusuario":
+            route("admin/add-usuario", "MASE - Cadastrar novo usuário - Painel de administração");
             break;
         case "senhas":
             route("visualizadorSenhas", "MASE - Senhas chamadas");

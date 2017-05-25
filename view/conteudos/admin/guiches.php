@@ -31,7 +31,7 @@
                             <td><?=$item->numero_guiche?></td>
                             <td><a href="<?=PATH?>admin/guiches&do=update&id=<?=$item->id_guiche?>"><i class="flaticon-edit"></i></a></td>
                             <td>
-                                <a onclick="confirmar('guiches', '<?=$item->id_guiche?>', '<?=$item->ip_maquina?>', <?=PATH?>')">
+                                <a onclick="confirmar('guiches', '<?=$item->id_guiche?>', '<?=$item->ip_maquina?>', '<?=PATH?>')">
                                     <i class="flaticon-garbage"></i>
                                 </a>
                             </td>

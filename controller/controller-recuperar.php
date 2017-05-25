@@ -1,4 +1,4 @@
-<?php require_once "classes/inherits/Atendentes.class.php";
+<?php require_once "model/inherits/Atendentes.class.php";
 $atendente = new Atendentes();
 $mensagem = "";
 

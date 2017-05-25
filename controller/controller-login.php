@@ -1,7 +1,7 @@
 <?php
-require "classes/inherits/Atendentes.class.php";
+require "model/inherits/Usuarios.class.php";
 
-$atendente = new Atendentes();
+$usuario = new Usuarios();
 $error = "";
 
 if(isset($_POST['matricula']) && isset($_POST['senha'])){
@@ -9,18 +9,18 @@ if(isset($_POST['matricula']) && isset($_POST['senha'])){
     $senha = md5((string)$_POST['senha']); //CRIPTOGRAFAR SENHA
 
     //SE DIGITOU ALGUMA COISA ERRADA, EXIBE UMA MENSAGEM DE ERRO
-    if ($atendente->login($matricula,$senha) == false){
+    if ($usuario->login($matricula,$senha) == false){
         $error = "Algum campo está errado, tente novamente.";
 
     //SE ESTIVER CERTO, INICIA A SESSÃO
     }else{
-        $nome = $atendente->login($matricula, $senha);
+        $array_usuario = $usuario->login($matricula, $senha);
 
-        if($nome == "admin"){
-            $_SESSION['adm'] = $nome;
+        if($array_usuario->fk_perfil == 1){
+            $_SESSION['adm'] = $array_usuario->nome_usuario;
             header("Location: ".PATH);
-        }else{
-            $_SESSION['atendente'] = $nome;
+        }else if($array_usuario->fk_perfil == 2){
+            $_SESSION['atendente'] = $array_usuario->nome_usuario;
             header("Location: ".PATH);
         }
     }

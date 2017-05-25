@@ -9,19 +9,25 @@ if($_SESSION['matricula'] != ""){
 ?>
 <section id="conteudo_add_atendente">
     <header class="header" id="header_adm">
-        <a class="voltar_pagina" href="<?=PATH?>admin/atendentes"><i class="flaticon-back"></i></a>
+        <a class="voltar_pagina" href="<?=PATH?>admin/usuarios"><i class="flaticon-back"></i></a>
         <?=$imagemLogo?>
         <div id="botoes_adm_atendente">
-            <a class="icones_header logout" href="<?=PATH?>admin/addatendente&logout=true"><i class="flaticon flaticon-logout"></i></a>
+            <a class="icones_header logout" href="<?=PATH?>admin/addusuario&logout=true"><i class="flaticon flaticon-logout"></i></a>
         </div>
     </header>
     <div id="corpo">
         <div class="header_corpo" id="add_atentente_header">
-            <img src="../assets/img/icon-plus.png">&nbsp;<h1>Cadastrar novo atendente</h1>
+            <img src="../assets/img/icon-plus.png">&nbsp;<h1>Cadastrar novo usuário</h1>
             <span class="linha_header"></span>
         </div>
         <div id="formulario_add">
             <form method="post">
+                <select name="id_perfil">
+                    <?php foreach($perfil->pegarTudo() as $key => $item){ ?>
+                        <option value="<?=$item->id_perfil?>"><?=$item->nome_perfil?></option>
+                    <?php }?>
+                </select>
+                
                 <input type="number" value="<?=$_SESSION['matricula']?>" id="matricula" class="campos_add input_attr" name="matricula" required autofocus>
                 <label id="placeholder_matricula" class="placeholder matricula <?=$activePlaceholder?>" for="matricula">Matrícula</label>
                 <a href="javascript:void(0);" tabindex="-1" class="limpar limpar_matricula">×</a>

@@ -1,4 +1,4 @@
-<?php require_once "classes/Crud.class.php";
+<?php require_once "model/Crud.class.php";
 
 class TipoAtendimento extends Crud{
     protected $table = "tabela_tipo_atendimento";

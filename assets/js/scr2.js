@@ -46,9 +46,14 @@ function confirmar(pagina, id, nome, path) {
                 document.location.href = path+"admin/tipoatendimento&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
-        case "atendentes":
+        case "perfis":
             if (confirm("Deletar "+ nome +"?")){
-                document.location.href = path+"admin/atendentes&pagina="+pagina+"&do=del&id=" + id;
+                document.location.href = path+"admin/perfis&pagina="+pagina+"&do=del&id=" + id;
+            }
+            break;
+        case "usuarios":
+            if (confirm("Deletar "+ nome +"?")){
+                document.location.href = path+"admin/usuarios&pagina="+pagina+"&do=del&id=" + id;
             }
             break;
         case "guiches":

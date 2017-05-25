@@ -1,5 +1,5 @@
 <?php
-require_once "classes/Senhas.class.php";
+require_once "model/Senhas.class.php";
 
 $senhas = new Senhas();
 

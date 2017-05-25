@@ -30,7 +30,6 @@ $botaoLogout = '<a class="icones_header logout" href="?logout=true"><i class="fl
         <?php require_once $conteudo;?>
         <script type="text/javascript" src="<?=$diretorio?>/js/jquery-2.2.1.min.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?=$diretorio?>/js/bootbox.min.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/scr2.js"></script>
         <script type="text/javascript" src="<?=$diretorio?>/js/collapse.js"></script>
     </body>

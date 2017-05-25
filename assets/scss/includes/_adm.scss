@@ -1,7 +1,34 @@
 //HEADER ADM
-#conteudo_adm_index,#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches{
+#conteudo_adm_index,#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches, #conteudo_perfil{
   #header_adm{
     float: none;
+    #icon_edit_adm{
+      position: absolute;  
+      left: 30px;
+      top: 35px;
+      button{
+        background: transparent;
+        border: none;
+        &:focus, &:active{
+          box-shadow: none;
+        }
+        i{
+          &::before{
+          font-size: 18pt;
+          }
+        } 
+      }
+      .dropdown-menu{
+        font-size: 15pt;
+        border-radius: 0;
+        border: $borda1px;
+        a{
+          &:hover{
+            background-color: $bg;
+          }
+        }
+      }
+    }
     .voltar_pagina{
       position: absolute;
       float: left;
@@ -75,7 +102,7 @@
 }
 
 //HEADER DE CADA PAGINA
-#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches{
+#conteudo_adm, #conteudo_add_atendente, #conteudo_tipo_atendimento, #conteudo_guiches, #conteudo_perfil{
   #corpo{
     width: 100%;
     .header_corpo{
@@ -109,11 +136,11 @@
     transform: translateY(10vh);
     .botoes{
       display: block;
-      width: 80%;
+      width: 60%;
       margin-bottom: 10px;
-      margin-left: 10%;
+      margin-left: 20%;
       a{
-        font-size: 35pt;
+        font-size: 28pt;
         color: $hard;
         border: $hard 2px solid;
         padding: 15px;
@@ -130,10 +157,30 @@
 
 
 //LISTA DE ATENDENTES, TIPOS DE ATENDIMENTOS E GUICHES
-#conteudo_adm,#conteudo_tipo_atendimento, #conteudo_guiches{
+#conteudo_adm,#conteudo_tipo_atendimento, #conteudo_guiches, #conteudo_perfil{
   #corpo{
     .lista_tabela{
       padding: 20px 40px;
+      #update_admin{
+        font-size: 16pt;
+        margin-bottom: 10px;
+        display: inline-block;
+        font-weight: bold;
+        color: $second;
+        transition: .3s;
+        &:hover{
+          opacity: .7;
+        }
+      }
+      #editar_adm{
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $bg;
+      }
       #erro{
         text-align: center;
         font-size: 15pt;
@@ -319,7 +366,7 @@
 }
 
 //PAGINA TIPOS DE ATENDIMENTO
-#conteudo_tipo_atendimento,#conteudo_guiches{
+#conteudo_tipo_atendimento,#conteudo_guiches,#conteudo_perfil{
   #corpo{
     .header_corpo{
       .linha_header{
@@ -361,7 +408,7 @@
         text-align: center;
       }
 
-      .campos_tipo{
+      .campos_tipo, .campos_perfil{
         width: 100%;
         height: 50px;
         font-size: 18pt;
@@ -382,6 +429,7 @@
       }
 
       #tipo_atendimento:focus ~ .tipo_atendimento,
+      #perfil:focus ~ .perfil,
       #ip_maquina:focus ~ .ip_maquina,
       #num_guiche:focus ~ .num_guiche,
       .active{

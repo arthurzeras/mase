@@ -1,8 +1,9 @@
 <?php
-require_once "classes/inherits/Atendentes.class.php";
-require_once "classes/inherits/TipoAtendimento.class.php";
-require_once "classes/inherits/Atendimentos.class.php";
-require_once "classes/inherits/Guiches.class.php";
+require_once "model/inherits/Usuarios.class.php";
+require_once "model/inherits/TipoAtendimento.class.php";
+require_once "model/inherits/Atendimentos.class.php";
+require_once "model/inherits/Perfis.class.php";
+require_once "model/inherits/Guiches.class.php";
 
 $msg = "";
 $result = "";
@@ -11,9 +12,10 @@ $_SESSION['matricula'] = "";
 $_SESSION['nome'] = "";
 $_SESSION['email'] = "";
 
-$atendente = new Atendentes();
+$usuario = new Usuarios();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
+$perfil = new Perfis();
 $guiche = new Guiches();
 
 function formCampos(){
@@ -26,22 +28,34 @@ function formCampos(){
 
 if(isset($_SESSION['adm'])) {
     //CADASTRAR NOVO ATENDENTE
-    if(isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
+    if(isset($_POST['id_perfil']) && isset($_POST['matricula']) && isset($_POST['nome']) && isset($_POST['email'])){
         $matriculaAtendente = $_POST['matricula'];
         $emailAtendente = $_POST['email'];
-        $atendente->setMatricula($matriculaAtendente);
-        $atendente->setNome($_POST['nome']);
-        $atendente->setEmail($emailAtendente);
-        $atendente->setSenha(md5($_POST['matricula']));
-        if($atendente->validar() == false){
+        $usuario->setPerfil($_POST['id_perfil']);
+        $usuario->setMatricula($matriculaAtendente);
+        $usuario->setNome($_POST['nome']);
+        $usuario->setEmail($emailAtendente);
+        $usuario->setSenha(md5($_POST['matricula']));
+        if($usuario->validar() == false){
             $msg = '<p class="mensagem_erro">Já existe essa matrícula ou esse e-mail cadastrado.</p>';
             formCampos();
         }else{
-            if($atendente->inserir() == true){
-                echo '<script>alert("Atendente inserido com sucesso!")</script>';
+            if($usuario->inserir() == true){
+                echo '<script>alert("Usuário inserido com sucesso!")</script>';
             }else{
                 $msg = "Ocorreu algum erro";
             }
+        }
+    }
+    
+    //CADASTRAR NOVO PERFIL
+    if(isset($_POST['perfil'])){
+        $perfil->setNome($_POST['perfil']);
+        if($perfil->inserir() == true){
+            echo '<script>alert("Perfil inserido com sucesso!")</script>';
+            echo '<script>window.location.href="'.PATH.'admin/perfis"</script>';
+        }else{
+            $msg = "Ocorreu algum erro.";
         }
     }
 
@@ -74,26 +88,40 @@ if(isset($_SESSION['adm'])) {
         }
     }
     
-    //ALTERAR ATENDENTE
-    if(isset($_POST['alterar_atendente'])){
+    //ALTERAR USUÁRIO
+    if(isset($_POST['alterar_usuario'])){
         $matricula = (int)$_POST['matricula_editar'];
         $nome = $_POST['nome_editar'];
         $email = $_POST['email_editar'];
-        $idAtendente = (int)$_POST['id'];
+        $id_usuario = (int)$_POST['id'];
+        $perfil = $_POST['id_perfil'];
 
-        $atendente->setMatricula($matricula);
-        $atendente->setNome($nome);
-        $atendente->setEmail($email);
+        $usuario->setMatricula($matricula);
+        $usuario->setNome($nome);
+        $usuario->setPerfil($perfil);
+        $usuario->setEmail($email);
         
         //VALIDAR PARA NÃO COLOCAR DADOS REPETIDOS
-        if($atendente->validar($idAtendente) == true){
-            if($atendente->alterar($idAtendente)){
-            header("Location: ".PATH."admin/atendentes&update=ok");
+        if($usuario->validar($id_usuario) == true){
+            if($usuario->alterar($id_usuario)){
+            header("Location: ".PATH."admin/usuarios&update=ok");
             }else{
                 $msg = "Não foi possível alterar";
             }    
         }else{
             $msg = "Já existe este email ou matrícula cadastrado!";
+        }
+    }
+    
+    //ALTERAR PERFIL
+    if(isset($_POST['alterar_perfil'])){
+        $id_perfil = $_POST['id'];
+        $perfil->setNome($_POST['perfil_editando']);
+        
+        if($perfil->alterar($id_perfil)){
+            header("Location: ".PATH."admin/perfis&update=ok");
+        }else{
+            $msg = "Não foi possível alterar";
         }
     }
 
@@ -139,9 +167,13 @@ if(isset($_SESSION['adm'])) {
                 $tipoAtendimento->excluir($id);
                 header("Location: ".PATH."admin/tipoatendimento&del=ok");
                 break;
-            case "atendentes":
-                $atendente->excluir($id);
-                header("Location: ".PATH."admin/atendentes&del=ok");
+            case "perfis":
+                $perfil->excluir($id);
+                header("Location: ".PATH."admin/perfis&del=ok");
+                break;
+            case "usuarios":
+                $usuario->excluir($id);
+                header("Location: ".PATH."admin/usuarios&del=ok");
                 break;
             case "guiches":
                 $guiche->excluir($id);
@@ -152,9 +184,9 @@ if(isset($_SESSION['adm'])) {
 
     //MENSAGENS
     if(isset($_GET['update']) && $_GET['update'] == "ok"){
-        $msg = '<script>alert("Alterado com sucesso.")</script>';
+        echo '<script>alert("Alterado com sucesso.")</script>';
     }else if(isset($_GET['del']) && $_GET['del'] == "ok"){
-        $msg = '<script>alert("Deletado com sucesso.")</script>';
+        echo '<script>alert("Deletado com sucesso.")</script>';
     }
 
     //LOGOUT

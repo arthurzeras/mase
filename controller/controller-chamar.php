@@ -1,12 +1,12 @@
 <?php
-require_once "classes/Senhas.class.php";
-require_once "classes/Acesso.class.php";
-require_once "classes/inherits/TipoAtendimento.class.php";
-require_once "classes/inherits/Atendentes.class.php";
-require_once "classes/inherits/Atendimentos.class.php";
+require_once "model/Senhas.class.php";
+require_once "model/Acesso.class.php";
+require_once "model/inherits/TipoAtendimento.class.php";
+require_once "model/inherits/Usuarios.class.php";
+require_once "model/inherits/Atendimentos.class.php";
 
 $senhas = new Senhas();
-$atendente = new Atendentes();
+$usuario = new Usuarios();
 $tipoAtendimento = new TipoAtendimento();
 $atendimento = new Atendimentos();
 
@@ -34,10 +34,10 @@ if(isset($_SESSION['atendente'])){
             $botao_finalizar = '';
 
         //SE EXISTIR SENHAS COM STATUS DIFERENTE DE EM ATENDIMENTO ELE CHAMA A SENHA
-        }else if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) != "Em Atendimento") {
+        }else if($senhas->verificarStatus($usuario->pegarId($_SESSION['atendente'])) != "Em Atendimento") {
             $hora_atual = date("H:i:s");
             $_SESSION['hora_inicial'] = $hora_atual;
-            $senha_chamada = $senhas->chamarSenha($atendente->pegarId($_SESSION['atendente']), $hora_atual);
+            $senha_chamada = $senhas->chamarSenha($usuario->pegarId($_SESSION['atendente']), $hora_atual);
             $_SESSION['senha_chamada'] = $senha_chamada;
             $mensagem = '<p class="box_senha">'.$_SESSION['senha_chamada'].'</p>';
         }else{
@@ -83,10 +83,10 @@ if(isset($_SESSION['atendente'])){
         $email = $_POST['email'];
         $id = $_POST['id_atendente'];
 
-        $atendente->setMatricula($matricula);
-        $atendente->setNome($nome);
-        $atendente->setEmail($email);
-        if($atendente->alterar($id)){
+        $usuario->setMatricula($matricula);
+        $usuario->setNome($nome);
+        $usuario->setEmail($email);
+        if($usuario->alterar($id)){
             $mensagem = '<script>alert("Dados alterados com sucesso!");</script>';
         }else{
             $mensagem = '<script>alert("Ocorreu algum erro");</script>';
@@ -95,8 +95,8 @@ if(isset($_SESSION['atendente'])){
         if(isset($_GET['senha'])){
             $senha_atual = $_POST['senha_atual'];
             $nova_senha = $_POST['nova_senha'];
-            $atendente->setSenha(md5($nova_senha));
-            if ($atendente->alterarSenha($id, md5($senha_atual)) === false){
+            $usuario->setSenha(md5($nova_senha));
+            if ($usuario->alterarSenha($id, md5($senha_atual)) === false){
                 $mensagem = '<script>alert("A senha digitada não existe");</script>';
             }else{
                 $mensagem = '<script>alert("Dados alterados com sucesso!");</script>';
@@ -106,10 +106,10 @@ if(isset($_SESSION['atendente'])){
 }
 //FAZER LOGOUT
 if(isset($_GET['logout']) && $_GET['logout'] == true){
-    if($senhas->verificarStatus($atendente->pegarId($_SESSION['atendente'])) == "Em Atendimento"){
+    if($senhas->verificarStatus($usuario->pegarId($_SESSION['atendente'])) == "Em Atendimento"){
         echo "<script>alert('Termine o atendimento antes de sair do sistema.')</script>";
     }else{
-        $atendente->logout();
+        $usuario->logout();
         header("Location: ".PATH);
         unset($_SESSION['senha_chamada']);
     }

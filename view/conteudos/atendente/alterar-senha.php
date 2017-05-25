@@ -1,5 +1,5 @@
 <?php
-    $dados_atendente = $atendente->pegarLinha($atendente->pegarId($_SESSION['atendente']));
+    $dados_atendente = $usuario->pegarLinha($usuario->pegarId($_SESSION['atendente']));
 
     if(isset($_GET['senha'])){
         $alterar_senha = '<p>Alterar senha |<a href="'.PATH.'&editar=editar"><i class="flaticon-cancel"></i></a></p>';
@@ -20,11 +20,11 @@
             </div>
 
             <div data-toggle="tooltip" title="Campo não editável">
-                <input id="nome" class="campos_input input_attr" name="nome" type="text" value="<?=$dados_atendente->nome_atendente?>">
+                <input id="nome" class="campos_input input_attr" name="nome" type="text" value="<?=$dados_atendente->nome_usuario?>">
                 <label id="" class="placeholder nome active" for="nome">Nome</label>
             </div>
 
-            <input id="email" class="campos_input input_attr" type="email" name="email" value="<?=$dados_atendente->email_atendente?>" required>
+            <input id="email" class="campos_input input_attr" type="email" name="email" value="<?=$dados_atendente->email_usuario?>" required>
             <label id="placeholder_email" class="placeholder email active" for="email">Email</label>
             <a href="javascript:void(0)" class="limpar limpar_email">×</a>
 
@@ -44,7 +44,7 @@
                     <a href="javascript:void(0)" class="limpar limpar_repeteSenha">×</a>
                 </div>
             <?php }?>
-            <input type="hidden" name="id_atendente" value="<?=$dados_atendente->id_atendente?>">
+            <input type="hidden" name="id_atendente" value="<?=$dados_atendente->id_usuario?>">
             <button class="campos_input botao" name="editar" type="submit">Salvar</button>
         </form>
     </div>

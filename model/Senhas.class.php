@@ -78,13 +78,13 @@ class Senhas{
         return self::pegarUltimaSenha($tipoDeAtendimento);
     }
 
-    public function alterarStatus($status, $id_senha, $atendente = null, $hora){
-        $sql = "UPDATE $this->tabela SET status = :status, fk_atendente = :atendente, hora_chamada = :hora WHERE id_senha = :id_senha";
+    public function alterarStatus($status, $id_senha, $usuario = null, $hora){
+        $sql = "UPDATE $this->tabela SET status = ?, fk_usuario = ?, hora_chamada = ? WHERE id_senha = ?";
         $stmt = BD::prepare($sql);
-        $stmt->bindParam(":status", $status);
-        $stmt->bindParam(":atendente", $atendente);
-        $stmt->bindParam(":hora", $hora);
-        $stmt->bindParam(":id_senha", $id_senha);
+        $stmt->bindParam(1, $status);
+        $stmt->bindParam(2, $usuario);
+        $stmt->bindParam(3, $hora);
+        $stmt->bindParam(4, $id_senha);
         $stmt->execute();
     }
 
@@ -98,11 +98,11 @@ class Senhas{
         return $result->status;
     }
 
-    public function verificarStatus($atendente = null){
+    public function verificarStatus($usuario = null){
         if($atendente != null){
-            $sql = "SELECT status FROM $this->tabela WHERE fk_atendente = :atendente";
+            $sql = "SELECT status FROM $this->tabela WHERE fk_usuario = ?";
             $stmt = BD::prepare($sql);
-            $stmt->bindParam(":atendente", $atendente);
+            $stmt->bindParam(1, $usuario);
             $stmt->execute();
             $result = $stmt->fetch();
 

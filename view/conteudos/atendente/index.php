@@ -40,7 +40,7 @@ require_once "controller/controller-chamar.php";
                 <form method="post" id="formulario_finalizar">
                     <?php
                     if($tipoAtendimento->pegarTudoLinhas() > 0){ ?>
-                        <input type="hidden" name="atendente" value="<?=$atendente->pegarId($_SESSION['atendente'])?>">
+                        <input type="hidden" name="atendente" value="<?=$usuario->pegarId($_SESSION['atendente'])?>">
                         <input type="hidden" name="data" value="<?=date("Y-m-d")?>">
                         <span id="botao_select"><img src="assets/img/icon-select.png"></span>
                         <select id="tipos_atendimento" name="tipo_atendimento" required>

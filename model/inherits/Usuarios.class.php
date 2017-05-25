@@ -1,14 +1,15 @@
 <?php
 
-require_once "classes/Crud.class.php";
-require_once "classes/Acesso.class.php";
+require_once "model/Crud.class.php";
+require_once "model/Acesso.class.php";
 
-class Atendentes extends Crud implements Acesso{
-    protected $table = "tabela_atendentes";
-    protected $id = "id_atendente";
+class Usuarios extends Crud implements Acesso{
+    protected $table = "tabela_usuarios";
+    protected $id = "id_usuario";
 
     private $matricula;
     private $nome;
+    private $perfil;
     private $email;
     private $senha;
 
@@ -28,6 +29,14 @@ class Atendentes extends Crud implements Acesso{
         return $this->nome;
     }
 
+    public function setPerfil($perfil){
+        $this->perfil = $perfil;
+    }
+
+    public function getPerfil(){
+        return $this->perfil;
+    }
+    
     public function setEmail($email){
         $this->email = $email;
     }
@@ -44,19 +53,15 @@ class Atendentes extends Crud implements Acesso{
         $nome = "";
 
         //VERIFICAR SE A MATRÍCULA E A SENHA ESTÃO CORRETAS
-        $sql = "SELECT nome_atendente FROM tabela_atendentes WHERE matricula = :matricula AND senha_atendente = :senha";
+        $sql = "SELECT * FROM $this->table WHERE matricula = :matricula AND senha_usuario = :senha";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":matricula", $matricula);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();
 
-        //SE ESTIVER CORRETA, RETORNA O NOME DO ATENDENTE
+        //SE ESTIVER CORRETA, RETORNA OS DADOS DO USUÁRIO
         if ($stmt->rowCount() == 1){
-            foreach ($stmt->fetchAll() as $key){
-                $nome = $key->nome_atendente;
-            }
-
-            return $nome;
+            return $stmt->fetch();
 
             //SE ESTIVER ERRADA, RETORNA FALSO
         }else{
@@ -72,33 +77,35 @@ class Atendentes extends Crud implements Acesso{
 
 
     public function inserir(){
-        $sql = "INSERT INTO $this->table (matricula, nome_atendente, email_atendente, senha_atendente) VALUES (:matricula, :nome , :email, :senha)";
+        $sql = "INSERT INTO $this->table (fk_perfil, matricula, nome_usuario, email_usuario, senha_usuario) VALUES (?,?,?,?,?)";
         $stmt = BD::prepare($sql);
-        $stmt->bindParam(":matricula", $this->matricula);
-        $stmt->bindParam(":nome", $this->nome);
-        $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":senha", $this->senha);
+        $stmt->bindParam(1, $this->perfil);
+        $stmt->bindParam(2, $this->matricula);
+        $stmt->bindParam(3, $this->nome);
+        $stmt->bindParam(4, $this->email);
+        $stmt->bindParam(5, $this->senha);
         $stmt->execute();
 
         return true;
     }
 
     public function alterar($id){
-        $sql = "UPDATE $this->table SET matricula = :matricula, nome_atendente = :nome, email_atendente = :email WHERE $this->id = :id";
+        $sql = "UPDATE $this->table SET fk_perfil = ?, matricula = ?, nome_usuario = ?, email_usuario = ? WHERE $this->id = ?";
         $stmt = BD::prepare($sql);
-        $stmt->bindParam(":matricula", $this->matricula, PDO::PARAM_INT);
-        $stmt->bindParam(":nome", $this->nome);
-        $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(1, $this->perfil);
+        $stmt->bindParam(2, $this->matricula, PDO::PARAM_INT);
+        $stmt->bindParam(3, $this->nome);
+        $stmt->bindParam(4, $this->email);
+        $stmt->bindParam(5, $id);
         return $stmt->execute();
     }
 
     public function alterarSenha($id, $senhaAtual){
         $senha_atual = self::pegarLinha($id);
-        if ($senhaAtual != $senha_atual->senha_atendente){
+        if ($senhaAtual != $senha_atual->senha_usuario){
             return false;
         }else{
-            $sql = "UPDATE $this->table SET senha_atendente = :senha WHERE $this->id = :id";
+            $sql = "UPDATE $this->table SET senha_usuario = :senha WHERE $this->id = :id";
             $stmt = BD::prepare($sql);
             $stmt->bindParam(":senha", $this->senha);
             $stmt->bindParam(":id", $id);
@@ -110,13 +117,13 @@ class Atendentes extends Crud implements Acesso{
     public function pegarId($nome){
         $return = "";
 
-        $sql = "SELECT $this->id FROM $this->table WHERE nome_atendente = :nome";
+        $sql = "SELECT $this->id FROM $this->table WHERE nome_usuario = :nome";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":nome",$nome);
         $stmt->execute();
 
         foreach ($stmt->fetchAll() as $key){
-            $return = $key->id_atendente;
+            $return = $key->id_usuario;
         }
 
         return $return;
@@ -131,7 +138,7 @@ class Atendentes extends Crud implements Acesso{
     }
 
     public function validar($id = null){
-        $sql = "SELECT * FROM $this->table WHERE email_atendente = :email OR matricula = :matricula";
+        $sql = "SELECT * FROM $this->table WHERE email_usuario = :email OR matricula = :matricula";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":matricula", $this->matricula);
@@ -139,7 +146,7 @@ class Atendentes extends Crud implements Acesso{
         $result = $stmt->fetch();
         
         if($id != null){
-            if(($stmt->rowCount() == 1) && ($result->id_atendente != $id) || ($stmt->rowCount() == 2)){
+            if(($stmt->rowCount() == 1) && ($result->id_usuario != $id) || ($stmt->rowCount() == 2)){
                 return false;
             }else{
                 return true;
@@ -155,7 +162,7 @@ class Atendentes extends Crud implements Acesso{
     }
 
     public function recuperarEmail(){
-        $sql = "SELECT * FROM $this->table WHERE email_atendente = :email";
+        $sql = "SELECT * FROM $this->table WHERE email_usuario = :email";
         $stmt = BD::prepare($sql);
         $stmt->bindParam(":email", $this->email);
         $stmt->execute();

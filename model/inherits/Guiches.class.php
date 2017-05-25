@@ -1,5 +1,5 @@
 <?php
-require_once "classes/Crud.class.php";
+require_once "model/Crud.class.php";
 
 class Guiches extends Crud{
     protected $table = "tabela_guiches";
